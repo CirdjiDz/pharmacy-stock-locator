@@ -2,111 +2,242 @@ import React, { useState } from 'react';
 
 export default function PharmacyStockLocator() {
   const meds = [
-    { name: 'Paracetamol', shelf: 'A1', category: 'Pain Relief' },
-    { name: 'Ibuprofen', shelf: 'A2', category: 'Pain Relief' },
-    { name: 'Amoxicillin', shelf: 'B1', category: 'Antibiotic' },
-    { name: 'Vitamin C', shelf: 'C3', category: 'Vitamins' },
-    { name: 'Doliprane', shelf: 'A3', category: 'Pain Relief' },
-    { name: 'Augmentin', shelf: 'B2', category: 'Antibiotic' },
-    { name: 'Magnesium', shelf: 'C1', category: 'Supplements' },
-    { name: 'Zinc', shelf: 'C3', category: 'Supplements' },
-    { name: 'Efferalgan', shelf: 'A4', category: 'Pain Relief' },
-    { name: 'Vitamine D', shelf: 'E2', category: 'Vitamins' },
-    { name: 'Exval', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Extel', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Extel', shelf: 'C5', category: 'Blood Pressure' },
-    { name: 'Rumava', shelf: 'F1', category: 'Immunosuppressant' },
-    { name: 'ZANIDIP', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Aprovasc', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'COTAREC', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'VASTAREL', shelf: 'F1', category: 'Heart Health' },
-    { name: 'Monotildiem', shelf: 'F1', category: 'Heart Health' },
-    { name: 'TELMISARTE +', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'NOVAROL', shelf: 'F1', category: 'Blood Thinner' },
-    { name: 'ASPIRINE Cardio', shelf: 'F1', category: 'Blood Thinner' },
-    { name: 'Exirb', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'CRESTATINE', shelf: 'F1', category: 'Cholesterol' },
-    { name: 'Superstat', shelf: 'F1', category: 'Cholesterol' },
-    { name: 'Cresovast', shelf: 'F1', category: 'Cholesterol' },
-    { name: 'Flecalur', shelf: 'F1', category: 'Heart Rhythm' },
-    { name: 'COVERAM', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Bipreterax', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'BIPROTENS', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'COVERSYL', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'TRIATEC', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'CO-APROVEL', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'APROVEL', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'CO-IRBEK', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'BYZOLEX', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Biopress', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Atacand', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'HYTACAND', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Biopress Plus', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'CO-ATABEK', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'SPIRONOLONE', shelf: 'F1', category: 'Diuretic' },
-    { name: 'Biprostene', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'Sarsand', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'PLAFIX', shelf: 'F1', category: 'Blood Thinner' },
-    { name: 'FLUDEX LP', shelf: 'F1', category: 'Diuretic' },
-    { name: 'ADEX LP', shelf: 'F1', category: 'Diuretic' },
-    { name: 'Nafronyl', shelf: 'F1', category: 'Circulation' },
-    { name: 'AMLOR', shelf: 'F1', category: 'Blood Pressure' },
-    { name: 'EXFORGE', shelf: 'F1', category: 'Blood Pressure' },  
-    { name: 'Montelair 10 mg', shelf: 'F2', category: 'Asthma/Allergy' },
-    { name: 'Symbicort Turbuhaler', shelf: 'F2', category: 'Asthma/COPD' },
-    { name: 'Flixotide', shelf: 'F2', category: 'Asthma/COPD' },
-    { name: 'Flucasone mini', shelf: 'F2', category: 'Allergy/Nasal' },
-    { name: 'Rinonide', shelf: 'F2', category: 'Allergy/Nasal' },
-    { name: 'Budecort 200', shelf: 'F2', category: 'Asthma/COPD' },
-    { name: 'Cozolamide', shelf: 'F2', category: 'Eye Care' },
-    { name: 'Dexamethasone GL', shelf: 'F2', category: 'Eye Care' },
-    { name: 'Lomac 20 mg', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Zimor 20', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Antag 20 mg', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Proton 20 mg', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'FAMOTIDINE MABO', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Dompérone 10 mg', shelf: 'F2', category: 'Nausea/Digestion' },
-    { name: 'LISINOX 20 mg', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Omeprotect 20 mg', shelf: 'F2', category: 'Stomach/Acid' },
-    { name: 'Debridat', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'Trimébutine Biocare', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'Ponctuel', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'Mébévérine BEKER LP', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'DUSPATALIN 200 mg', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'Duspaverine 100 mg', shelf: 'F2', category: 'Digestion/IBS' },
-    { name: 'Meteospasmyl', shelf: 'F2', category: 'Bloating/Gas' },
-    { name: 'Glycerine LS', shelf: 'F2', category: 'Laxative' },
-    { name: 'Riabal 30 mg', shelf: 'F2', category: 'Stomach Spasms' },
-    { name: 'Freegas', shelf: 'F2', category: 'Bloating/Gas' },
-    { name: 'Bilaxten 20 mg', shelf: 'F2', category: 'Allergy' },
-    { name: 'Gatimox', shelf: 'F2', category: 'Antibiotic/Eye' },
-    { name: 'Lowgas', shelf: 'F2', category: 'Bloating/Gas' },
-    { name: 'Dimépra 2 mg', shelf: 'F2', category: 'Diarrhea' },
-    { name: 'Dysentyl', shelf: 'F2', category: 'Diarrhea' },
-    { name: 'Airditine', shelf: 'F2', category: 'Allergy' },
-    { name: 'Isolact', shelf: 'F2', category: 'Laxative' },
-    { name: 'Nobac', shelf: 'F2', category: 'Heartburn' },
-    { name: 'Smecta', shelf: 'F2', category: 'Diarrhea' },
-    { name: 'Flazol 125 mg', shelf: 'F2', category: 'Antibiotic' },
-    { name: 'Bedelix', shelf: 'F2', category: 'Digestion' },
-    { name: 'Diamicron 30 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Levothyrox 100 µg', shelf: 'F3', category: 'Thyroid' },
-    { name: 'Levothyrox 25 µg', shelf: 'F3', category: 'Thyroid' },
-    { name: 'Athyrozol 5 mg', shelf: 'F3', category: 'Thyroid' },
-    { name: 'Minirinmelt 60 µg', shelf: 'F3', category: 'Hormonal' },
-    { name: 'Levothyrox 50 µg', shelf: 'F3', category: 'Thyroid' },
-    { name: 'Diamicron 60 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'IRYS 3 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'IRYS 4 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'IRYS 6 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Glucophage 500 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'NOVOFORMINE 500 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Glucophage 1000 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Larimel 50 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Glinix', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Furozal 40 mg', shelf: 'F3', category: 'Diuretic' },
-    { name: 'Diaglinide 2 mg', shelf: 'F3', category: 'Diabetes' },
-    { name: 'Glybek 100 mg', shelf: 'F3', category: 'Diabetes' }
+    { name: 'Exval', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Extel', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Rumava', shelf: 'F1', category: 'Immunologie' },
+    { name: 'ZANIDIP', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Aprovasc', shelf: 'F1', category: 'CARDIO' },
+    { name: 'COTAREC', shelf: 'F1', category: 'CARDIO' },
+    { name: 'VASTAREL', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Monotildiem', shelf: 'F1', category: 'CARDIO' },
+    { name: 'TELMISARTE +', shelf: 'F1', category: 'CARDIO' },
+    { name: 'NOVAROL', shelf: 'F1', category: 'CARDIO' },
+    { name: 'ASPIRINE Cardio', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Exirb', shelf: 'F1', category: 'CARDIO' },
+    { name: 'CRESTATINE', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Superstat', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Cresovast', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Flecalur', shelf: 'F1', category: 'CARDIO' },
+    { name: 'COVERAM', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Bipreterax', shelf: 'F1', category: 'CARDIO' },
+    { name: 'BIPROTENS', shelf: 'F1', category: 'CARDIO' },
+    { name: 'COVERSYL', shelf: 'F1', category: 'CARDIO' },
+    { name: 'TRIATEC', shelf: 'F1', category: 'CARDIO' },
+    { name: 'CO-APROVEL', shelf: 'F1', category: 'CARDIO' },
+    { name: 'APROVEL', shelf: 'F1', category: 'CARDIO' },
+    { name: 'CO-IRBEK', shelf: 'F1', category: 'CARDIO' },
+    { name: 'BYZOLEX', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Biopress', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Atacand', shelf: 'F1', category: 'CARDIO' },
+    { name: 'HYTACAND', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Biopress Plus', shelf: 'F1', category: 'CARDIO' },
+    { name: 'CO-ATABEK', shelf: 'F1', category: 'CARDIO' },
+    { name: 'SPIRONOLONE', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Biprostene', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Sarsand', shelf: 'F1', category: 'CARDIO' },
+    { name: 'PLAFIX', shelf: 'F1', category: 'CARDIO' },
+    { name: 'FLUDEX LP', shelf: 'F1', category: 'CARDIO' },
+    { name: 'ADEX LP', shelf: 'F1', category: 'CARDIO' },
+    { name: 'Nafronyl', shelf: 'F1', category: 'CARDIO' },
+    { name: 'AMLOR', shelf: 'F1', category: 'CARDIO' },
+    { name: 'EXFORGE', shelf: 'F1', category: 'CARDIO' },  
+    { name: 'Montelair 10 mg', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Symbicort Turbuhaler', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Flixotide', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Flucasone mini', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Rinonide', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Budecort 200', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Cozolamide', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Dexamethasone GL', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Lomac 20 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Zimor 20', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Antag 20 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Proton 20 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'FAMOTIDINE MABO', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Dompérone 10 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'LISINOX 20 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Omeprotect 20 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Debridat', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Trimébutine Biocare', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Ponctuel', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Mébévérine BEKER LP', shelf: 'F2', category: 'GASTRO' },
+    { name: 'DUSPATALIN 200 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Duspaverine 100 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Meteospasmyl', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Glycerine LS', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Riabal 30 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Freegas', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Bilaxten 20 mg', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Gatimox', shelf: 'F2', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Lowgas', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Dimépra 2 mg', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Dysentyl', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Airditine', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Isolact', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Nobac', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Smecta', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Flazol 125 mg', shelf: 'F2', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Bedelix', shelf: 'F2', category: 'GASTRO' },
+    { name: 'Diamicron 30 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Levothyrox 100 µg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Levothyrox 25 µg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Athyrozol 5 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Minirinmelt 60 µg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Levothyrox 50 µg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Diamicron 60 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'IRYS 3 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'IRYS 4 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'IRYS 6 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Glucophage 500 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'NOVOFORMINE 500 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Glucophage 1000 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Larimel 50 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Glinix', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Furozal 40 mg', shelf: 'F3', category: 'CARDIO' },
+    { name: 'Diaglinide 2 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Glybek 100 mg', shelf: 'F3', category: 'Endocrinologie et Diabète' },
+    { name: 'Geltim LP 1 mg/g', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Fluidabak 1.5%', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Cartéol L.P. 2%', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Opticis 1 mg/ml', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Optipred 10 mg/ml', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Clomycine 1%', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Vibac 1.5%', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Dermasone 0.05%', shelf: 'F1', category: 'Dermatologie' },
+    { name: 'Opadex', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Optif Jam 1 mg/ml', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Azyter 15 mg/g', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Zalerg 0.25 mg/ml', shelf: 'F1', category: 'Ophtalmologie / ORL' },
+    { name: 'Respinhal 0.05%', shelf: 'F2', category: 'Respiratoire' },
+    { name: 'Otocrovis Gouttes', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Aqualarm Intensive UD', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Indocollyre 0.1%', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Fucidine 1%', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Désomédine 0.1%', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Timolamid 20 mg/ml + 5 mg/ml', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Artelac 3.20 mg/ml', shelf: 'F2', category: 'Ophtalmologie / ORL' },
+    { name: 'Loradine 10 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Co-Dolyc 500 mg/30 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Xydol 600 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Thymoseptine Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Prospan Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Antalfen 20 mg/ml Sirop', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Loradess 0.5 mg/ml Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Bronchocalm Adultes Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Loradine 0.1% Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Proxan Kids Sirop', shelf: 'F6', category: 'Pédiatrie' },
+    { name: 'Carbodal 5% Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Liblab Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Ivylix 0.7g Sirop', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Carbomex 5%', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Gripex 10 mg/4 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Gripex +', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Doliprane 200 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Doliprane 300 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Xydol 200 mg/400 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Ibuprofène Beker 400 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Antalfen 600 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Xycare 5 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Dioveine 600 mg', shelf: 'F6', category: 'CARDIO' },
+    { name: 'Ebasta 10 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Fradene 20 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Precortyl 5 mg', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Paramol 1000 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Clofenal Adultes 100 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Biofenac LP 100 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Biofenac 75 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Biofenac FAST 50 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Votrex 50 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Divido 75 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Camphobiotic Enfants', shelf: 'F6', category: 'Pédiatrie' },
+    { name: 'Uroxyb 5 mg', shelf: 'F6', category: 'GASTRO' },
+    { name: 'Cebrex 100 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Flovenac L.P. 75 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Ketomex 100 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Gantanil 500 mg', shelf: 'F6', category: 'Neuro / Muscles' },
+    { name: 'Celecox 200 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Coxibrex 200 mg', shelf: 'F6', category: 'Douleur et Inflammation' },
+    { name: 'Fexofénadine Beker 120 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Fexofénadine Beker 180 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Telfast 120 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Telfast 180 mg', shelf: 'F6', category: 'Respiratoire' },
+    { name: 'Betaserc 24 mg', shelf: 'F6', category: 'Neuro / Muscles' },
+    { name: 'Versec 24 mg', shelf: 'F6', category: 'Neuro / Muscles' },
+    { name: 'Phanazol 1%', shelf: 'F6', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Mycocide 15 g', shelf: 'F6', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Cutacnyl 2.5%', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Cutacnyl 5%', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Betacyl Pommade', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Daktazol 2% Crème', shelf: 'F6', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Daktazol 2% Pommade', shelf: 'F6', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Betasone 0.1%', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Clotasol 0.05% 45 g', shelf: 'F6', category: 'Dermatologie' },
+    { name: 'Deslor 0.5 mg/ml', shelf: 'F5', category: 'Respiratoire' },
+    { name: 'Physiolone 1 mg/ml', shelf: 'F5', category: 'Pédiatrie' },
+    { name: 'Predo 15 mg/5 ml', shelf: 'F5', category: 'Pédiatrie' },
+    { name: 'Isomag 150 ml', shelf: 'F5', category: 'Vitamines et Compléments' },
+    { name: 'Salbulam 2 mg/5 ml', shelf: 'F5', category: 'Respiratoire' },
+    { name: 'Carbodal 5%', shelf: 'F5', category: 'Respiratoire' },
+    { name: 'Augmentin Enfant 100 mg/12.5 mg/ml', shelf: 'F5', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Omnipaque 350 mg I/ml', shelf: 'F5', category: 'Ophtalmologie / ORL' },
+    { name: 'Gadovist 1.0 mmol/ml', shelf: 'F5', category: 'Ophtalmologie / ORL' },
+    { name: 'Etamcynone 250 mg/2 ml', shelf: 'F5', category: 'CARDIO' },
+    { name: 'Clamoclav Enfants 100 mg/12.5 mg', shelf: 'F5', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Meprenal 20 mg/2 ml', shelf: 'F5', category: 'Dermatologie' },
+    { name: 'Diclamid 75 mg/3 ml', shelf: 'F5', category: 'Douleur et Inflammation' },
+    { name: 'Genta 80 mg', shelf: 'F5', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Cobavit 1000 µg/2 ml', shelf: 'F5', category: 'Vitamines et Compléments' },
+    { name: 'Gentaxyn 80 mg/2 ml', shelf: 'F5', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Varenox 4000 UI/0.4 ml', shelf: 'F5', category: 'CARDIO' },
+    { name: 'Lamidaz 1% 15 g', shelf: 'F5', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Voltarène 1% 50 g', shelf: 'F5', category: 'Dermatologie' },
+    { name: 'Dipronad 7 mg/ml', shelf: 'F5', category: 'Dermatologie' },
+    { name: 'E-RAX 10% 40 g', shelf: 'F5', category: 'Dermatologie' },
+    { name: 'Clotasol 0.05% 15 g', shelf: 'F5', category: 'Dermatologie' },
+    { name: 'D-Three 200000 UI/ml', shelf: 'F5', category: 'Vitamines et Compléments' },
+    { name: 'Cephadar 250 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Clamoxyl 250 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Clamoxyl 500 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Zomax 100 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Zomax 40 mg/ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Céfimax 40 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Céfimax 100 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Bioclav Adulte', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Augmentin 1g/125mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Augmentin 500mg/62.5mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Xyline', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Solupred oro 20 mg', shelf: 'F4', category: 'Dermatologie' },
+    { name: 'Amoclan BID', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Ancéfal 250 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Lexin 1000 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Orapen', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Métronidazole Beker 250 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Mycozan', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Spiracare', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Fucidine enfant 250 mg/5 ml', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Ciprolon', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Ciprofloxacine 250 mg/500 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Vircet 150 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Uricare 3 g', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Pyostacine 500 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Dotur 100 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Zynax 500 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Proflox 500 mg/750 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Zithromax 250 mg/500 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Zomax 500 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Orogyl', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Bi.Orogyl 1.5M.UI / 250mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Oxyptane BR 5 mg', shelf: 'F4', category: 'Urologie' },
+    { name: 'Nitroxal 100 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Nolib 100 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Cotrimoxal Forte 800 mg/160 mg', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Clamoxyl 1 g', shelf: 'F4', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Xaria 200 mg', shelf: 'F4', category: 'Neuro / Muscles' },
+    { name: 'Zyloric 100 mg', shelf: 'F4', category: 'Endocrinologie et Diabète' },
+    { name: 'Curacné 20 mg', shelf: 'F4', category: 'Dermatologie' },
+    { name: 'Progestogel 1%', shelf: 'F4', category: 'Endocrinologie et Diabète' },
+    { name: 'TGC Plus', shelf: 'F4', category: 'Neuro / Muscles' },
+    { name: 'Ibuthol 5%/3%', shelf: 'F4', category: 'Dermatologie' }
 ]
 
   const [search, setSearch] = useState('');
@@ -124,6 +255,42 @@ export default function PharmacyStockLocator() {
     DCI: '',
     notes: '',
   });
+  const categoryColors = {
+  'CARDIO': 'bg-red-100 text-red-700 border-red-300',
+
+  'Respiratoire': 'bg-green-100 text-green-700 border-green-300',
+
+  'GASTRO': 'bg-yellow-100 text-yellow-700 border-yellow-300',
+
+  'Endocrinologie et Diabète':
+    'bg-blue-100 text-blue-700 border-blue-300',
+
+  'Anti-infectieux (Antibiotic)':
+    'bg-orange-100 text-orange-700 border-orange-300',
+
+  'Douleur et Inflammation':
+    'bg-rose-100 text-rose-700 border-rose-300',
+
+  'Dermatologie':
+    'bg-purple-100 text-purple-700 border-purple-300',
+
+  'Ophtalmologie / ORL':
+    'bg-cyan-100 text-cyan-700 border-cyan-300',
+
+  'Pédiatrie':
+    'bg-indigo-100 text-indigo-700 border-indigo-300',
+
+  'Vitamines et Compléments':
+    'bg-violet-100 text-violet-700 border-violet-300',
+
+  'Immunologie':
+    'bg-teal-100 text-teal-700 border-teal-300',
+
+  'Urologie':
+    'bg-lime-100 text-lime-700 border-lime-300',
+  'Neuro / Muscles':
+    'bg-lime-100 text-lime-700 border-lime-300',
+};
 
   const filtered = medicineList
     .filter((med) =>
@@ -397,9 +564,16 @@ export default function PharmacyStockLocator() {
                   <strong>Shelf:</strong> {med.shelf}
                 </p>
 
-                <p className="text-lg text-gray-700">
-                  <strong>Category:</strong> {med.category}
-                </p>
+                <div className="mt-3">
+  <span
+    className={`inline-block px-3 py-1 rounded-full border text-sm font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
 
                 <div className="flex gap-2 mt-4">
                   <button
@@ -474,7 +648,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
@@ -522,7 +705,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
@@ -571,7 +763,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
@@ -620,7 +821,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
@@ -669,7 +879,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
@@ -730,7 +949,7 @@ export default function PharmacyStockLocator() {
 </div>
 
             {/* F Shelves */}
-<div className="absolute bottom-79 left-[13.6rem] flex gap-4 items-end">
+<div className="absolute bottom-79 left-[13rem] flex gap-4 items-end">
   {['F1', 'F2'].map((shelf) => {
     const isOpen = openedShelf === shelf;
 
@@ -764,7 +983,16 @@ export default function PharmacyStockLocator() {
                   }`}
                 >
                   <div className="font-semibold text-gray-800">{med.name}</div>
-                  <div className="text-sm text-gray-500">{med.category}</div>
+                  <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                 </div>
               ))
             ) : (
@@ -777,7 +1005,7 @@ export default function PharmacyStockLocator() {
   })}
 </div>
 
-<div className="absolute bottom-67 left-[28rem] flex gap-4 items-end">
+<div className="absolute bottom-67 left-[26.5rem] flex gap-4 items-end">
               {['F3', 'F4', 'F5', 'F6'].map((shelf) => {
                 const isOpen = openedShelf === shelf;
 
@@ -812,7 +1040,16 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold text-gray-800">{med.name}</div>
-                              <div className="text-sm text-gray-500">{med.category}</div>
+                              <div className="mt-1">
+  <span
+    className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
+      categoryColors[med.category] ||
+      'bg-gray-100 text-gray-700 border-gray-300'
+    }`}
+  >
+    {med.category}
+  </span>
+</div>
                             </div>
                           ))
                         ) : (
