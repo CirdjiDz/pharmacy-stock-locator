@@ -237,7 +237,107 @@ export default function PharmacyStockLocator() {
     { name: 'Curacné 20 mg', shelf: 'F4', dci: 'Isotrétinoïne', category: 'Dermatologie' },
     { name: 'Progestogel 1%', shelf: 'F4', dci: 'Progestérone', category: 'Endocrinologie et Diabète' },
     { name: 'TGC Plus', shelf: 'F4', dci: 'Thiocolchicoside', category: 'Neuro / Muscles' },
-    { name: 'Ibuthol 5%/3%', shelf: 'F4', dci: 'Ibuprofène + Menthol', category: 'Dermatologie' }
+    { name: 'Ibuthol 5%/3%', shelf: 'F4', dci: 'Ibuprofène + Menthol', category: 'Dermatologie' },
+    {"name": "Solyne C Tonus", "shelf": "G1", "dci": "Vitamine C + D3 + Zinc", "category": "Pédiatrie & Croissance"},
+  {"name": "Multivitamine Kids", "shelf": "G1", "dci": "Multivitamines", "category": "Pédiatrie & Croissance"},
+  {"name": "Apitoux (Pédiactif)", "shelf": "G1", "dci": "Extraits de plantes (Propolis/Thym/Miel)", "category": "Pédiatrie & Croissance"},
+  {"name": "Orofer", "shelf": "G1", "dci": "Complexe d'hydroxyde ferrique-polymaltose", "category": "Pédiatrie & Croissance"},
+  {"name": "Apigrip (Pédiactif)", "shelf": "G1", "dci": "Acérola + Extraits de plantes", "category": "Pédiatrie & Croissance"},
+  {"name": "Omega 3 (Pédiactif)", "shelf": "G1", "dci": "Oméga 3 + Vitamines C, E, A, D", "category": "Pédiatrie & Croissance"},
+  {"name": "Hepalib (Lilium)", "shelf": "G1", "dci": "Silymarine + Vitamines B", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Vomi Kid", "shelf": "G1", "dci": "Extrait de gingembre", "category": "Pédiatrie & Croissance"},
+  {"name": "Apéti Kid", "shelf": "G1", "dci": "Stimulant de l'appétit + Vitamines", "category": "Pédiatrie & Croissance"},
+  {"name": "Phybaby", "shelf": "G1", "dci": "Fortifiant naturel (Extraits de plantes)", "category": "Pédiatrie & Croissance"},
+  {"name": "Zeal Kid", "shelf": "G1", "dci": "Zinc + Multivitamines", "category": "Pédiatrie & Croissance"},
+  {"name": "Neocalcigenol", "shelf": "G1", "dci": "Calcium + Vitamine F/D", "category": "Pédiatrie & Croissance"},
+  {"name": "Fortivit (Pédiactif)", "shelf": "G1", "dci": "Gelée Royale + Propolis + Vitamines", "category": "Pédiatrie & Croissance"},
+  {"name": "Sommeil Vit (Pédiactif)", "shelf": "G1", "dci": "Passiflore", "category": "Pédiatrie & Croissance"},
+  {"name": "Grossivit", "shelf": "G1", "dci": "Complément alimentaire (Vitamines / Minéraux)", "category": "Vitamines & Tonifiants"},
+  {"name": "Vitamine E 400 UI (Biomedical)", "shelf": "G1", "dci": "DL-alpha-tocophéryl acétate", "category": "Vitamines & Tonifiants"},
+  {"name": "Soprodim Vit C + Zinc", "shelf": "G1", "dci": "Vitamine C + Zinc", "category": "Vitamines & Tonifiants"},
+  {"name": "Supradyn Énergie", "shelf": "G1", "dci": "Multivitamines + Coenzyme Q10", "category": "Vitamines & Tonifiants"},
+  {"name": "Supradyn Magnésia", "shelf": "G1", "dci": "Magnésium + Vitamines B / Vitamine C", "category": "Vitamines & Tonifiants"},
+  {"name": "Free Move", "shelf": "G1", "dci": "Glucosamine + Chondroïtine + Acide Hyaluronique", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Les-Neuf B", "shelf": "G1", "dci": "Complexe de Vitamines B (B1, B6, B12, etc.)", "category": "Vitamines & Tonifiants"},
+  {"name": "Calcium D3 (Lilium)", "shelf": "G1", "dci": "Calcium + Vitamine D3", "category": "Vitamines & Tonifiants"},
+  {"name": "Vitamin E (Ineldea / Medec)", "shelf": "G1", "dci": "Vitamine E d'origine naturelle", "category": "Vitamines & Tonifiants"},
+  {"name": "Optifolates", "shelf": "G1", "dci": "L-Méthylfolate (Vitamine B9 active)", "category": "Gynécologie & Obstétrique"},
+  {"name": "Vitamin E (Meda / Medis)", "shelf": "G1", "dci": "Tocophérol", "category": "Vitamines & Tonifiants"},
+  {"name": "Biomax Oméga 3", "shelf": "G1", "dci": "Oméga 3 (Huile de poisson)", "category": "Vitamines & Tonifiants"},
+  {"name": "Soprodim Omega-3", "shelf": "G1", "dci": "Oméga 3 + Extrait de gingembre", "category": "Vitamines & Tonifiants"},
+  {"name": "Omevie Omega 3 - 1000", "shelf": "G1", "dci": "Oméga 3 + Vitamine E", "category": "Vitamines & Tonifiants"},
+  {"name": "Ginkoloba (Ecovar)", "shelf": "G1", "dci": "Extrait de Ginkgo biloba", "category": "Vitamines & Tonifiants"},
+  {"name": "Soprodim Magnésium 400 mg", "shelf": "G1", "dci": "Bisglycinate de Magnésium", "category": "Vitamines & Tonifiants"},
+  {"name": "Omevie Magvit - 500", "shelf": "G1", "dci": "Magnésium + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Memoptic 30", "shelf": "G1", "dci": "Citicoline + Ginkgo biloba + Magnésium + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Nutraxin Magnésium Complexe", "shelf": "G1", "dci": "Magnésium (Citrate, Glycinate, Malate)", "category": "Vitamines & Tonifiants"},
+  {"name": "Vitamine C Upsa Effervescente", "shelf": "G1", "dci": "Acide ascorbique", "category": "Vitamines & Tonifiants"},
+  {"name": "Vitonic Allaitement", "shelf": "G1", "dci": "Vitamines + Minéraux (Spécial allaitement)", "category": "Gynécologie & Obstétrique"},
+  {"name": "Calperos", "shelf": "G1", "dci": "Carbonate de calcium", "category": "Vitamines & Tonifiants"},
+  {"name": "Antacid (Bionutrex)", "shelf": "G1", "dci": "Calcium carbonate + Magnésium carbonate", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Nutraxin A-Oxi Formule", "shelf": "G1", "dci": "Glutathion + Astaxanthine + Coenzyme Q10 + Resvératrol", "category": "Vitamines & Tonifiants"},
+  {"name": "Phylait", "shelf": "G1", "dci": "Extrait de Fenugrec + Extrait de Withania Somnifera", "category": "Gynécologie & Obstétrique"},
+  {"name": "MemoryMax", "shelf": "G1", "dci": "Extrait de Ginkgo-Biloba + Extrait d'Ashwagandha + Oméga-3 + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Vitaboost (Bionutrex)", "shelf": "G1", "dci": "Vitamines + Minéraux + Extrait de gingembre", "category": "Vitamines & Tonifiants"},
+  {"name": "Lactaboost (Bionutrex)", "shelf": "G1", "dci": "Fenugrec + Chardon-Marie + Vitamines B6, B9, B12", "category": "Gynécologie & Obstétrique"},
+  {"name": "Calcitron (Soprodim)", "shelf": "G1", "dci": "Bisglycinate de Calcium + Bisglycinate de Magnésium + Vitamine D3", "category": "Vitamines & Tonifiants"},
+  {"name": "Biotine 10000 µg (Bionutrex)", "shelf": "G1", "dci": "Biotine (Vitamine B8) + Bisglycinate de zinc + Sélénium", "category": "Dermatologie"},
+  {"name": "Lilium Gold Mag", "shelf": "G1", "dci": "Complexe de magnésium + Vitamine B6 + Pipérine", "category": "Vitamines & Tonifiants"},
+  {"name": "FertiFit M (Lilium)", "shelf": "G1", "dci": "Complément pour la fertilité masculine (Vitamines / Minéraux)", "category": "Gynécologie & Obstétrique"},
+  {"name": "Nutrigest+ Grossesse", "shelf": "G1", "dci": "Acide folique (5-MTHF) + Vitamines + Minéraux", "category": "Gynécologie & Obstétrique"},
+  {"name": "Bestfer (Lilium)", "shelf": "G1", "dci": "Fer buvable", "category": "Vitamines & Tonifiants"},
+  {"name": "Ovapure (Thera Sante)", "shelf": "G1", "dci": "Myo-Inositol Pure", "category": "Gynécologie & Obstétrique"},
+  {"name": "Bio-Fertyl Femmes (Biomax)", "shelf": "G1", "dci": "Tribulus + Maca + Fertillet + Oméga 3 + Co-Q10 + Vitamines", "category": "Gynécologie & Obstétrique"},
+  {"name": "Testo Boost (Bio-Gym)", "shelf": "G1", "dci": "Tribulus + Maca + Guarana + Arginine + Zinc + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Venotrit", "shelf": "G2", "dci": "Extraits naturels (Phlébotonique)", "category": "Cardiologie & Vasculaire"},
+  {"name": "Orofer Plus", "shelf": "G2", "dci": "Complexe d'hydroxyde ferrique-polymaltose + Acide folique", "category": "Vitamines & Tonifiants"},
+  {"name": "Ferro Sanol Gyn", "shelf": "G2", "dci": "Complexe de glycine sulfate ferreux + Acide folique", "category": "Gynécologie & Obstétrique"},
+  {"name": "Tiopam", "shelf": "G2", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Diacare", "shelf": "G2", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Calmotrin", "shelf": "G2", "dci": "Huiles essentielles / Extraits naturels (Douleurs musculaires)", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Celofon nourrissons", "shelf": "G2", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Ultrabiotique Instant", "shelf": "G2", "dci": "Souches microbiotiques (Probiotiques)", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Calperos", "shelf": "G2", "dci": "Carbonate de calcium", "category": "Vitamines & Tonifiants"},
+  {"name": "Idéos", "shelf": "G2", "dci": "Calcium + Vitamine D3", "category": "Vitamines & Tonifiants"},
+  {"name": "Endronax", "shelf": "G2", "dci": "Acide alendronique", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Yes Cal + (Lilium)", "shelf": "G2", "dci": "Calcium + Vitamine D3 + K2 + Ca + Mg", "category": "Vitamines & Tonifiants"},
+  {"name": "Zanitra Plus", "shelf": "G2", "dci": "Complément alimentaire", "category": "Vitamines & Tonifiants"},
+  {"name": "DHEA Plus", "shelf": "G2", "dci": "Déhydroépiandrostérone", "category": "Gynécologie & Obstétrique"},
+  {"name": "Dédrogyl", "shelf": "G2", "dci": "Calcifédiol", "category": "Vitamines & Tonifiants"},
+  {"name": "Calcibronat", "shelf": "G2", "dci": "Bromo-galactogluconate de calcium", "category": "Vitamines & Tonifiants"},
+  {"name": "Adragyn Gel", "shelf": "G2", "dci": "Gel vaginal raffermissant & rajeunissant", "category": "Gynécologie & Obstétrique"},
+  {"name": "Lifunor", "shelf": "G2", "dci": "Flunanderm / Complément", "category": "Vitamines & Tonifiants"},
+  {"name": "Marvelon", "shelf": "G2", "dci": "Désogestrel + Éthinylestradiol", "category": "Gynécologie & Obstétrique"},
+  {"name": "Phi Fer", "shelf": "G2", "dci": "Fer + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Adragyn Sticks", "shelf": "G2", "dci": "Acides aminés / Tonifiant", "category": "Vitamines & Tonifiants"},
+  {"name": "Phi Stop-addic", "shelf": "G2", "dci": "Kudzu (Extrait de racine)", "category": "Vitamines & Tonifiants"},
+  {"name": "Phi Grossesse", "shelf": "G2", "dci": "Multivitamines de grossesse", "category": "Gynécologie & Obstétrique"},
+  {"name": "Phi Ginkgo", "shelf": "G2", "dci": "Extrait de Ginkgo biloba", "category": "Vitamines & Tonifiants"},
+  {"name": "Neurovit", "shelf": "G2", "dci": "Vitamines B1 + B6 + B12", "category": "Vitamines & Tonifiants"},
+  {"name": "Utrogestan", "shelf": "G2", "dci": "Progestérone", "category": "Gynécologie & Obstétrique"},
+  {"name": "Ferrum (Hausmann)", "shelf": "G2", "dci": "Complexe d'hydroxyde ferrique-polymaltose", "category": "Vitamines & Tonifiants"},
+  {"name": "Menocare Balance", "shelf": "G2", "dci": "Extraits de plantes (Sauge, Gattilier, Dong Quai) + Vitamines", "category": "Gynécologie & Obstétrique"},
+  {"name": "Zanitra 5 mg", "shelf": "G2", "dci": "Acide folique (Vitamine B9)", "category": "Vitamines & Tonifiants"},
+  {"name": "Diane 35", "shelf": "G2", "dci": "Acétate de cyprotérone + Éthinylestradiol", "category": "Gynécologie & Obstétrique"},
+  {"name": "Porosimax Plus", "shelf": "G2", "dci": "Acide alendronique + Vitamine D3", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Thyrolib (Lilium)", "shelf": "G2", "dci": "L-Tyrosine + Sélénium + Zinc + Vitamines", "category": "Vitamines & Tonifiants"},
+  {"name": "Polygynax", "shelf": "G2", "dci": "Néomycine + Polymyxine B + Nystatine", "category": "Gynécologie & Obstétrique"},
+  {"name": "Caspa (Vasu)", "shelf": "G2", "dci": "Extraits de plantes (Antispasmodique naturel)", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Genesia (Merinal)", "shelf": "G2", "dci": "Gingembre + Vitamine B6 (Anti-nauséeux)", "category": "Vitamines & Tonifiants"},
+  {"name": "Desonette", "shelf": "G2", "dci": "Désogestrel", "category": "Gynécologie & Obstétrique"},
+  {"name": "GynePro+ Grossesse", "shelf": "G2", "dci": "Probiotiques + Metafolin + Oméga 3", "category": "Gynécologie & Obstétrique"},
+  {"name": "Marilon", "shelf": "G2", "dci": "Désogestrel + Éthinylestradiol", "category": "Gynécologie & Obstétrique"},
+  {"name": "Colpovital", "shelf": "G2", "dci": "Promestriène", "category": "Gynécologie & Obstétrique"},
+  {"name": "Cabernex", "shelf": "G2", "dci": "Cabergoline", "category": "Gynécologie & Obstétrique"},
+  {"name": "Fumacur", "shelf": "G2", "dci": "Fumarate ferreux", "category": "Vitamines & Tonifiants"},
+  {"name": "GynoDermofix", "shelf": "G2", "dci": "Sertaconazole nitrate", "category": "Gynécologie & Obstétrique"},
+  {"name": "ProxyMale Fertilité", "shelf": "G2", "dci": "L-Carnitine + L-Arginine + Coenzyme Q10 + Glutathion + Vitamines", "category": "Gynécologie & Obstétrique"},
+  {"name": "Uricitril (Lilium)", "shelf": "G2", "dci": "Acide citrique + Citrate de potassium + Citrate de sodium", "category": "Urologie"},
+  {"name": "Vigormax (Soprodim)", "shelf": "G2", "dci": "Extraits de 13 plantes (Désir, Performance, Puissance)", "category": "Vitamines & Tonifiants"},
+  {"name": "Acouphenis (Nutriva)", "shelf": "G2", "dci": "Extraits de plantes (Audition, Stress réduit, Sommeil profond)", "category": "Vitamines & Tonifiants"},
+  {"name": "Sopk Free (Lilium)", "shelf": "G2", "dci": "Myo-inositol + D-chiro-inositol + Acide folique + Vitamines", "category": "Gynécologie & Obstétrique"},
+  {"name": "Fertigen Femme", "shelf": "G2", "dci": "Complément alimentaire (Fertilité / Endométriose)", "category": "Gynécologie & Obstétrique"},
+  {"name": "Flexicare", "shelf": "G2", "dci": "Chondroïtine + Collagène Type II + Ginkgo Biloba + Calcium + Mg", "category": "Rhumatologie & Confort Articulaire"}
 ]
 
   const [search, setSearch] = useState('');
@@ -328,6 +428,11 @@ export default function PharmacyStockLocator() {
   ),
 
   'PSY',
+  'G1',
+  'G2',
+  'R1',
+  'R2',
+  'R3',
 ];
 
   const medsByShelf = shelves.reduce((acc, shelf) => {
@@ -613,7 +718,7 @@ export default function PharmacyStockLocator() {
             Pharmacy Blueprint Map
           </h2>
 
-          <div className="relative bg-gray-200 rounded-3xl p-8 min-h-[1200px] overflow-hidden">
+          <div className="relative bg-gray-200 rounded-3xl p-8 min-h-[1300px] overflow-hidden">
 
             {/* A Shelf */}
             <div
@@ -651,6 +756,11 @@ export default function PharmacyStockLocator() {
                               }`}
                             >
                               <div className="font-semibold">{med.name}</div>
+                              {med.expiry && (
+  <div className="text-xs text-red-500 font-medium mt-1">
+    date: {med.expiry}
+  </div>
+)}
                               <div className="mt-1">
   <span
     className={`inline-block px-2 py-1 rounded-full border text-xs font-semibold ${
@@ -905,7 +1015,7 @@ export default function PharmacyStockLocator() {
             </div>
 
 {/* PSY Shelf */}
-<div className="absolute left-4 bottom-81">
+<div className="absolute left-4 bottom-105">
   <div key="PSY" id="shelf-PSY" className="relative">
     <button
       onClick={() =>
@@ -952,7 +1062,7 @@ export default function PharmacyStockLocator() {
 </div>
 
             {/* F Shelves */}
-<div className="absolute bottom-79 left-[13rem] flex gap-4 items-end">
+<div className="absolute bottom-90 left-[13rem] flex gap-4 items-end">
   {['F1', 'F2'].map((shelf) => {
     const isOpen = openedShelf === shelf;
 
@@ -1008,7 +1118,7 @@ export default function PharmacyStockLocator() {
   })}
 </div>
 
-<div className="absolute bottom-67 left-[26.5rem] flex gap-4 items-end">
+<div className="absolute bottom-90 left-[26.5rem] flex gap-4 items-end">
               {['F3', 'F4', 'F5', 'F6'].map((shelf) => {
                 const isOpen = openedShelf === shelf;
 
@@ -1027,7 +1137,7 @@ export default function PharmacyStockLocator() {
 
                     {/* This is the part that was missing - it shows the medicines! */}
                     {isOpen && (
-                      <div className="absolute bottom-full mb-2 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+                      <div className="absolute top-0 right-full mr-3 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
 
   <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
     Shelf {shelf}
@@ -1064,6 +1174,303 @@ export default function PharmacyStockLocator() {
                 );
               })}
             </div>
+{/* G1 Shelf */}
+<div className="absolute bottom-55 left-[13.5rem]">
+  {(() => {
+    const shelf = 'G1';
+    const isOpen = openedShelf === shelf;
+
+    return (
+      <div id={`shelf-${shelf}`} className="relative">
+        <button
+          onClick={() => setOpenedShelf(isOpen ? null : shelf)}
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+            isOpen
+              ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
+              : 'bg-white border-gray-300 hover:border-blue-400'
+          }`}
+        >
+          {shelf}
+        </button>
+
+        {isOpen && (
+          <div className="absolute bottom-full mb-2 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+            <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
+              Shelf {shelf}
+            </div>
+
+            {(medsByShelf[shelf] || []).length > 0 ? (
+              medsByShelf[shelf].map((med) => (
+                <div
+                  key={med.name}
+                  className={`p-2 rounded-xl mb-2 ${
+                    highlightedMed === med.name
+                      ? 'bg-yellow-200 border border-yellow-500'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <div className="font-semibold">{med.name}</div>
+                  <div
+  className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
+    categoryColors[med.category] ||
+    'bg-gray-100 text-gray-700 border-gray-300'
+  }`}
+>
+  {med.category}
+</div>
+                </div>
+              ))
+            ) : (
+              <div className="text-sm text-gray-400 italic text-center">
+                Empty shelf
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  })()}
+</div>
+
+{/* G2 Shelf */}
+<div className="absolute bottom-35 left-[2.5rem]">
+<div className="absolute bottom-20 left-[18rem]">
+  {(() => {
+    const shelf = 'G2';
+    const isOpen = openedShelf === shelf;
+
+    return (
+      <div id={`shelf-${shelf}`} className="relative">
+        <button
+          onClick={() => setOpenedShelf(isOpen ? null : shelf)}
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+            isOpen
+              ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
+              : 'bg-white border-gray-300 hover:border-blue-400'
+          }`}
+        >
+          {shelf}
+        </button>
+
+        {isOpen && (
+          <div className="absolute bottom-full mb-2 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+            <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
+              Shelf {shelf}
+            </div>
+
+            {(medsByShelf[shelf] || []).length > 0 ? (
+              medsByShelf[shelf].map((med) => (
+                <div
+                  key={med.name}
+                  className={`p-2 rounded-xl mb-2 ${
+                    highlightedMed === med.name
+                      ? 'bg-yellow-200 border border-yellow-500'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <div className="font-semibold">{med.name}</div>
+                  <div
+  className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
+    categoryColors[med.category] ||
+    'bg-gray-100 text-gray-700 border-gray-300'
+  }`}
+>
+  {med.category}
+</div>
+                </div>
+              ))
+            ) : (
+              <div className="text-sm text-gray-400 italic text-center">
+                Empty shelf
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  })()}
+</div>
+</div>
+
+{/* R1 Shelf */}
+<div className="absolute bottom-35 left-[15.5rem]">
+<div className="absolute bottom-20 left-[18rem]">
+  {(() => {
+    const shelf = 'R1';
+    const isOpen = openedShelf === shelf;
+
+    return (
+      <div id={`shelf-${shelf}`} className="relative">
+        <button
+          onClick={() => setOpenedShelf(isOpen ? null : shelf)}
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+            isOpen
+              ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
+              : 'bg-white border-gray-300 hover:border-blue-400'
+          }`}
+        >
+          {shelf}
+        </button>
+
+        {isOpen && (
+          <div className="absolute top-0 right-full mr-3 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+            <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
+              Shelf {shelf}
+            </div>
+
+            {(medsByShelf[shelf] || []).length > 0 ? (
+              medsByShelf[shelf].map((med) => (
+                <div
+                  key={med.name}
+                  className={`p-2 rounded-xl mb-2 ${
+                    highlightedMed === med.name
+                      ? 'bg-yellow-200 border border-yellow-500'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <div className="font-semibold">{med.name}</div>
+                  <div
+  className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
+    categoryColors[med.category] ||
+    'bg-gray-100 text-gray-700 border-gray-300'
+  }`}
+>
+  {med.category}
+</div>
+                </div>
+              ))
+            ) : (
+              <div className="text-sm text-gray-400 italic text-center">
+                Empty shelf
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  })()}
+</div>
+</div>
+
+{/* R2 Shelf */}
+<div className="absolute bottom-35 left-[22.5rem]">
+<div className="absolute bottom-20 left-[18rem]">
+  {(() => {
+    const shelf = 'R2';
+    const isOpen = openedShelf === shelf;
+
+    return (
+      <div id={`shelf-${shelf}`} className="relative">
+        <button
+          onClick={() => setOpenedShelf(isOpen ? null : shelf)}
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+            isOpen
+              ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
+              : 'bg-white border-gray-300 hover:border-blue-400'
+          }`}
+        >
+          {shelf}
+        </button>
+
+        {isOpen && (
+          <div className="absolute top-0 right-full mr-3xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+            <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
+              Shelf {shelf}
+            </div>
+
+            {(medsByShelf[shelf] || []).length > 0 ? (
+              medsByShelf[shelf].map((med) => (
+                <div
+                  key={med.name}
+                  className={`p-2 rounded-xl mb-2 ${
+                    highlightedMed === med.name
+                      ? 'bg-yellow-200 border border-yellow-500'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <div className="font-semibold">{med.name}</div>
+                  <div
+  className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
+    categoryColors[med.category] ||
+    'bg-gray-100 text-gray-700 border-gray-300'
+  }`}
+>
+  {med.category}
+</div>
+                </div>
+              ))
+            ) : (
+              <div className="text-sm text-gray-400 italic text-center">
+                Empty shelf
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  })()}
+</div>
+</div>
+
+{/* R3 Shelf */}
+<div className="absolute bottom-35 left-[29rem]">
+<div className="absolute bottom-20 left-[18rem]">
+  {(() => {
+    const shelf = 'R3';
+    const isOpen = openedShelf === shelf;
+
+    return (
+      <div id={`shelf-${shelf}`} className="relative">
+        <button
+          onClick={() => setOpenedShelf(isOpen ? null : shelf)}
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+            isOpen
+              ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
+              : 'bg-white border-gray-300 hover:border-blue-400'
+          }`}
+        >
+          {shelf}
+        </button>
+
+        {isOpen && (
+          <div className="absolute top-0 right-full mr-3xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+            <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
+              Shelf {shelf}
+            </div>
+
+            {(medsByShelf[shelf] || []).length > 0 ? (
+              medsByShelf[shelf].map((med) => (
+                <div
+                  key={med.name}
+                  className={`p-2 rounded-xl mb-2 ${
+                    highlightedMed === med.name
+                      ? 'bg-yellow-200 border border-yellow-500'
+                      : 'bg-gray-100'
+                  }`}
+                >
+                  <div className="font-semibold">{med.name}</div>
+                  <div
+  className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
+    categoryColors[med.category] ||
+    'bg-gray-100 text-gray-700 border-gray-300'
+  }`}
+>
+  {med.category}
+</div>
+                </div>
+              ))
+            ) : (
+              <div className="text-sm text-gray-400 italic text-center">
+                Empty shelf
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  })()}
+</div>
+</div>
           </div>
         </div>
       </div>
