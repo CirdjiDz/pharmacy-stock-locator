@@ -809,14 +809,17 @@ if (sortOrder === 'Category') {
 }
 
 if (sortOrder === 'Expiry') {
+
+  // No expiry = bottom
+  if (!a.expiry && !b.expiry) return 0;
   if (!a.expiry) return 1;
   if (!b.expiry) return -1;
 
   const [aMonth, aYear] = a.expiry.split('/');
   const [bMonth, bYear] = b.expiry.split('/');
 
-  const aValue = Number(`20${aYear}${aMonth}`);
-  const bValue = Number(`20${bYear}${bMonth}`);
+  const aValue = parseInt(`20${aYear}${aMonth.padStart(2, '0')}`);
+  const bValue = parseInt(`20${bYear}${bMonth.padStart(2, '0')}`);
 
   return aValue - bValue;
 }
