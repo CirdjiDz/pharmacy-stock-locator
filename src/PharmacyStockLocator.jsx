@@ -392,7 +392,7 @@ export default function PharmacyStockLocator() {
   { name: 'Vitamine D3 Razes 200K Amp Buv', shelf: 'E3', expiry: '03/29', quantity: 3 },
   { name: 'Genta 80 mg Amp 2ml', shelf: 'E3', expiry: '11/27', quantity: 1 },
   { name: 'Herba Bio Vit D3', shelf: 'E3', expiry: '11/28', quantity: 2 },
-  { name: 'Cefazal 1g Sol INJ Poudre', shelf: 'E3', expiry: '?', quantity: 1 },
+  { name: 'Cefazal 1g Sol INJ Poudre', shelf: 'E3', expiry: '08/27', quantity: 1 },
   { name: 'Gectopen 1.000.000 UI Sol INJ Poudre', shelf: 'E3', expiry: '12/28', quantity: 1 },
   { name: 'Diclamid Sol INJ', shelf: 'E3', expiry: '12/28', quantity: 1 },
   { name: 'Gentaxyn Sol INJ', shelf: 'E3', expiry: '09/29', quantity: 1 },
@@ -424,7 +424,6 @@ export default function PharmacyStockLocator() {
   { name: 'Geltime LP 1mg Gel', shelf: 'A2', expiry: '11/27', quantity: 1 },
   { name: 'Toplexil sirop', shelf: 'A2', expiry: '02/29', quantity: 2 },
   { name: 'Naabak 4.9g/100ml Coll', shelf: 'A2', expiry: '10/27', quantity: 3 },
-  { name: 'Systane ultra mdpf goutte', shelf: 'A2', expiry: '07/26', quantity: 1 },
   { name: 'Fucidine 2%', shelf: 'A2', expiry: '08/28', quantity: 1 },
   { name: 'Fucidine 2%', shelf: 'A2', expiry: '11/28', quantity: 1 },
   { name: 'Pulmicort', shelf: 'A2', expiry: '05/27', quantity: 1 },
@@ -483,7 +482,7 @@ export default function PharmacyStockLocator() {
   { name: 'Duphaston 10mg comp', shelf: 'A5', expiry: '04/30', quantity: 4 },
   { name: 'Predo 15mg/5ml sirop', shelf: 'A6', expiry: '09/27', quantity: 5 },
   { name: 'Tabeta 0.5mg/ml Gouttes Buv', shelf: 'A6', expiry: '06/28', quantity: 1 },
-  { name: 'Domperone 1mg/ml susp Buv', shelf: 'A6', expiry: '?', quantity: 1 },
+  { name: 'Domperone 1mg/ml susp Buv', shelf: 'A6', expiry: '08/28?', quantity: 1 },
   { name: 'Loradine 0.1g/100ml sirop', shelf: 'A6', expiry: '07/28', quantity: 1 },
   { name: 'Deslor 0.5mg/ml sirop', shelf: 'A6', expiry: '10/28', quantity: 1 },
   { name: 'Loradess 0.5mg/ml sirop', shelf: 'A6', expiry: '11/27', quantity: 3 },
@@ -578,13 +577,13 @@ export default function PharmacyStockLocator() {
   { name: 'Doliprane 2.4% Susp Buv', shelf: 'B3', expiry: '01/27', quantity: 4 },
   { name: 'Doliprane 2.4% Susp Buv', shelf: 'B3', expiry: '01/28', quantity: 1 },
   { name: 'Dolpriv 150 mg / 5ml Sol Buv', shelf: 'B3', expiry: '04/27', quantity: 2 },
-  { name: 'Newderma Crème', shelf: 'B3', expiry: '?', quantity: 3 },
+  { name: 'Newderma Crème', shelf: 'B3', expiry: '04/26', quantity: 3 },
   { name: 'E-Rax 10%', shelf: 'B3', expiry: '08/27', quantity: 1 },
   { name: 'Ibuthol 5% / 3% Crème derm', shelf: 'B3', expiry: '12/27', quantity: 3 },
   { name: 'Ibuthol 5% / 3% Crème derm', shelf: 'B3', expiry: '04/28', quantity: 1 },
   { name: 'Optifolates 5mg comp', shelf: 'B3', expiry: '12/26', quantity: 1 },
   { name: 'Diane 35 2 mg comp', shelf: 'B3', expiry: '10/27', quantity: 2 },
-  { name: 'Cicatrine', shelf: 'B3', expiry: '?', quantity: 1 },
+  { name: 'Cicatrine', shelf: 'B3', expiry: '07/28', quantity: 1 },
   { name: 'Ferro Sanol gyn 454.13 mg', shelf: 'B3', expiry: '04/28', quantity: 1 },
   { name: 'Microval 0.03 mg comp', shelf: 'B3', expiry: '09/26', quantity: 1 },
   { name: 'Colpovital 10mg', shelf: 'B3', expiry: '03/27', quantity: 1 },
@@ -612,7 +611,8 @@ export default function PharmacyStockLocator() {
   { name: 'Assess AG', shelf: 'B5', expiry: '08/27', quantity: 7 },
   { name: 'Vital check', shelf: 'B5', expiry: '10/27', quantity: 1 },
   { name: 'Vital check', shelf: 'B5', expiry: '11/27', quantity: 2 },
-  { name: 'Bionime Lecteur', shelf: 'B5', expiry: '?', quantity: 1 },
+  { name: 'Bionime Lecteur', shelf: 'B5', expiry: '99/99', quantity: 1 },
+  { name: 'L Vital check', shelf: 'B5', expiry: '99/99', quantity: 1 },
   { name: 'Bandelette Diagnocheck smart', shelf: 'B5', expiry: '09/27', quantity: 1 },
   { name: 'Zecuf sirop Sol Buv', shelf: 'B6', expiry: '10/30', quantity: 3 },
   { name: 'Carbomex 5% sirop', shelf: 'B6', expiry: '12/27', quantity: 2 },
@@ -732,6 +732,163 @@ export default function PharmacyStockLocator() {
   { name: 'Diaglinide 2mg comp', shelf: 'D5', expiry: '12/27', quantity: 1 },
   { name: 'Exirb 300 mg / 5 mg comp', shelf: 'D4', expiry: '03/28', quantity: 1 },
   { name: 'Minirinment 60 µg comp', shelf: 'D4', expiry: '04/29', quantity: 1 },
+    { name: 'Quetiapine Beker 300mg LP', shelf: 'R1', expiry: '01/28', quantity: 1 },
+      { name: 'Lamotrigine Beker 100mg comp', shelf: 'R1', expiry: '12/29', quantity: 2 },
+        { name: 'Aripiprazole Beker 15mg comp oro', shelf: 'R1', expiry: '09/27', quantity: 1 },
+          { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '08/28', quantity: 1 },
+            { name: 'Haloperidol genericlab 2mg/ml gouttes Buv', shelf: 'R1', expiry: '09/28', quantity: 1 },
+              { name: 'Quetiapine Beker LP 50mg', shelf: 'R1', expiry: '12/28', quantity: 1 },
+                { name: 'Baclon 10mg comp', shelf: 'R1', expiry: '11/27', quantity: 1 },
+                  { name: 'Moncitra 30mg comp pelli', shelf: 'R1', expiry: '12/29', quantity: 1 },
+                    { name: 'Largactil 4% gouttes Buv', shelf: 'R1', expiry: '12/27', quantity: 1 },
+                      { name: 'Nozinan 4% gouttes Buv', shelf: 'R1', expiry: '10/28', quantity: 1 },
+                        { name: 'Gabatrex 300mg Gelule', shelf: 'R1', expiry: '10/28', quantity: 1 },
+                          { name: 'Mydocalm Hikma 150mg comp pelli', shelf: 'R1', expiry: '10/27', quantity: 1 },
+                            { name: 'RepaNide 25mg comp pelli', shelf: 'R1', expiry: '01/29', quantity: 1 },
+                              { name: 'Ripsyzen 2mg', shelf: 'R1', expiry: '11/28', quantity: 1 },
+                                { name: 'Clonaprime 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 1 },
+                                  { name: 'Lamotrigine Beker 25mg comp disp', shelf: 'R1', expiry: '10/30', quantity: 2 },
+                                    { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
+  { name: 'Amoxypen 1g B/1+1 Sol INJ B/1', shelf: 'C7', expiry: '07/27', quantity: 5 },
+  { name: 'Zomax 4mg/ml PDRE.P Susp Buv F/30ml', shelf: 'C7', expiry: '11/27', quantity: 1 },
+  { name: 'Zomax 4mg/ml PDRE.P Susp Buv F/30ml', shelf: 'C7', expiry: '04/28', quantity: 1 },
+  { name: 'Omnipaque 300 mg/ml INJ F/50ml I=300 mg/ml Sol INJ', shelf: 'C7', expiry: '12/27', quantity: 2 },
+  { name: 'Omnipaque 300 mg/ml INJ F/50ml I=300 mg/ml Sol INJ', shelf: 'C7', expiry: '09/27', quantity: 3 }, // Fixed date to 09/27
+  { name: 'Omnipaque 300 mg/ml INJ F/50ml I=300 mg/ml Sol INJ', shelf: 'C7', expiry: '10/27', quantity: 1 },
+  { name: 'Omnipaque 300 mg/ml INJ F/50ml I=300 mg/ml Sol INJ', shelf: 'C7', expiry: '01/28', quantity: 1 },
+  { name: 'Dipronad G INJ B/01 7mg/ml (5mg/2mg 1ml) Susp.INJ.IM ou Local', shelf: 'C7', expiry: '11/27', quantity: 2 },
+  { name: 'Dotur 100 mg B/10 comp', shelf: 'C7', expiry: '12/27', quantity: 1 },
+  { name: 'Biopamox 1g pdre Sol INJ', shelf: 'C7', expiry: '02/28', quantity: 2 },
+  { name: 'Amoclan BID 875 mg / 125 mg B/10 comp', shelf: 'C7', expiry: '07/27', quantity: 3 },
+  { name: 'Amoclan 8:1 ENF 100mg/12.5mg/ml Pdr Susp Buv F/60ml', shelf: 'C7', expiry: '09/26', quantity: 1 },
+  { name: 'Kenacortyl Retard 40 mg/ml Susp INJ BTE/1 Seringe', shelf: 'C7', expiry: '10/27', quantity: 1 },
+  { name: 'Zomax 40 mg/ml Pdre Susp Buv Fl/22.5ml', shelf: 'C6', expiry: '11/27', quantity: 1 },
+  { name: 'Zomax 40 mg/ml Pdre Susp Buv Fl/22.5ml', shelf: 'C6', expiry: '12/27', quantity: 2 },
+  { name: 'Zomax 40 mg/ml Pdre Susp Buv Fl/22.5ml', shelf: 'C6', expiry: '07/28', quantity: 1 },
+  { name: 'Lexin 1g B/12 Sachet', shelf: 'C6', expiry: '04/28', quantity: 1 },
+  { name: 'Lexinal Sophal 1g B/12 comp', shelf: 'C6', expiry: '10/27', quantity: 1 },
+  { name: 'Dotur 100 mg B/10 comp', shelf: 'C6', expiry: '11/27', quantity: 4 },
+  { name: 'Dotur 100 mg B/10 comp', shelf: 'C6', expiry: '12/27', quantity: 3 },
+  { name: 'Nitroxal 100 mg', shelf: 'C6', expiry: '03/28', quantity: 1 },
+  { name: 'Augmentin Enfant 100 mg / 12.5 mg/ml Fl/60ml pdre Susp Buv', shelf: 'C6', expiry: '12/26', quantity: 6 },
+  { name: 'Clamoxyl 500 mg / 5 ml F/60ml Pdre Susp Buv', shelf: 'C5', expiry: '04/28', quantity: 5 },
+  { name: 'Clamoxyl 500 mg / 5 ml F/60ml Pdre Susp Buv', shelf: 'C5', expiry: '03/28', quantity: 3 },
+  { name: 'Augmentin AD 1g / 125 mg B/12 Pdre Sachet', shelf: 'C5', expiry: '03/27', quantity: 2 },
+  { name: 'Clamoxyl 1g B/14 comp', shelf: 'C5', expiry: '06/28', quantity: 11 },
+  { name: 'Ancefal 1g comp B/12', shelf: 'C5', expiry: '12/27', quantity: 1 },
+  { name: 'Clamoxyl 250 mg / 5 ml F/60ml Pdre Susp Buv', shelf: 'C4', expiry: '01/28', quantity: 8 },
+  { name: 'Ancefal 1g Comp B/12 comp Pelli', shelf: 'C4', expiry: '11/27', quantity: 1 },
+  { name: 'Ancefal 1g Comp B/12 comp Pelli', shelf: 'C4', expiry: '12/27', quantity: 1 },
+  { name: 'Ancefal 250 mg / 5ml F/60 ml Susp Buv', shelf: 'C4', expiry: '10/27', quantity: 2 },
+  { name: 'Uricare 3g Gles sachet', shelf: 'C4', expiry: '09/27', quantity: 1 },
+  { name: 'Fucare 250 mg comp B/10', shelf: 'C4', expiry: '02/28', quantity: 1 }, // Corrected name
+  { name: 'Bioclav 1g / 125 mg poudre en sachet', shelf: 'C4', expiry: '09/27', quantity: 2 },
+  { name: 'Ultrabiotique Infantile Sachet B/7', shelf: 'C4', expiry: '11/28', quantity: 1 },
+  { name: 'Bioclav Enfants 100mg/12.5mg/ml Pdre Susp Buv F/60ml', shelf: 'C3', expiry: '03/27', quantity: 2 },
+  { name: 'Bioclav Enfants 100mg/12.5mg/ml Pdre Susp Buv F/60ml', shelf: 'C3', expiry: '11/27', quantity: 1 },
+  { name: 'Biopamox 500mg Pdre susp Buv', shelf: 'C3', expiry: '04/27', quantity: 1 }, // Fixed date from 01/27 to 04/27
+  { name: 'Biopamox 250 mg /5ml Pdre Susp Buv', shelf: 'C3', expiry: '03/27', quantity: 1 },
+  { name: 'Biopamox 250 mg /5ml Pdre Susp Buv', shelf: 'C3', expiry: '11/27', quantity: 1 },
+  { name: 'Ancefal 250 mg 15ml susp Buv F/60ml', shelf: 'C3', expiry: '10/27', quantity: 3 },
+  { name: 'Cefimax 200mg comp pelli B/8', shelf: 'C3', expiry: '12/27', quantity: 1 },
+  { name: 'ProFlox 500mg comp enro B/10', shelf: 'C3', expiry: '09/28', quantity: 1 },
+  { name: 'BI-OROGYL 1.5 M. UI / 250 mg B/10 comp pelli', shelf: 'C3', expiry: '01/29', quantity: 1 },
+  { name: 'Vitamine C 1g evexia', shelf: 'C3', expiry: '11/28', quantity: 1 },
+  { name: 'Amoclan 8:1 AD 1G /125 mg B/14 PDre Sachet', shelf: 'C3', expiry: '11/27', quantity: 7 },
+  { name: 'Nutraxin Beauty Collagene Complexe', shelf: 'C3', expiry: '06/28', quantity: 1 },
+  { name: 'Best Fer 40mg', shelf: 'C2', expiry: '03/27', quantity: 1 },
+  { name: 'Magnésium 300mg + Zinc 15mg Effervescent', shelf: 'C2', expiry: '09/28', quantity: 2 },
+  { name: 'Magnésium 300mg + Zinc 15mg Effervescent', shelf: 'C2', expiry: '02/28', quantity: 1 },
+  { name: 'Ferrum Gouttes Buv', shelf: 'C2', expiry: '04/30', quantity: 1 },
+  { name: 'ZelKid', shelf: 'C2', expiry: '10/27', quantity: 1 },
+  { name: 'Calcidose Vit D3', shelf: 'C2', expiry: '11/27', quantity: 2 },
+  { name: 'Nutraxin Beauty Collagene', shelf: 'C2', expiry: '12/28', quantity: 3 },
+  { name: 'Nutraxin Multi vitamine Mineral', shelf: 'C2', expiry: '04/28', quantity: 1 },
+  { name: 'Nutraxin Big Energy', shelf: 'C2', expiry: '08/27', quantity: 1 },
+  { name: 'Nutraxin Immun-S', shelf: 'C2', expiry: '06/28', quantity: 1 },
+  { name: 'Nutraxin Omega 3 enfant sirop', shelf: 'C2', expiry: '07/28', quantity: 1 },
+  { name: 'Nutraxin Multivitamine Mineral sirop', shelf: 'C2', expiry: '02/28', quantity: 1 },
+  { name: 'Genesia Gelule B/20', shelf: 'C2', expiry: '11/27', quantity: 1 },
+  { name: 'Ultra biotique Flore Intestinale Gel B/16 Vitavea Sante', shelf: 'C2', expiry: '06/28', quantity: 4 },
+  { name: 'Vitazyme 250 mg Bte/20', shelf: 'C2', expiry: '08/27', quantity: 1 },
+  { name: 'yes Vit', shelf: 'C2', expiry: '01/28', quantity: 1 },
+  { name: 'Ferti Fit F', shelf: 'C2', expiry: '09/27', quantity: 1 },
+  { name: 'STop Addict (+)', shelf: 'C2', expiry: '01/28', quantity: 1 },
+  { name: 'Ferticare H', shelf: 'C2', expiry: '', quantity: 1 },
+  { name: 'Vitatron', shelf: 'C2', expiry: '02/29', quantity: 1 },
+  { name: 'Ovacare', shelf: 'C2', expiry: '03/29', quantity: 2 },
+  { name: 'Soprodim Vit c+zinc', shelf: 'C2', expiry: '02/29', quantity: 2 },
+  { name: 'Vitamine C 1000 mg', shelf: 'C2', expiry: '08/28', quantity: 1 },
+  { name: 'Ferroton 11', shelf: 'C2', expiry: '11/28', quantity: 1 },
+  { name: 'Vitamine B Complexe Ultra', shelf: 'C2', expiry: '12/28', quantity: 2 },
+  { name: 'Phy Baby sirop', shelf: 'C1', expiry: '07/27', quantity: 1 },
+  { name: 'Vomi Kid sirop', shelf: 'C1', expiry: '06/27', quantity: 1 },
+  { name: 'Calcidose 500 mg', shelf: 'C1', expiry: '05/27', quantity: 1 },
+  { name: 'Vitamine Sirop F/125 ml', shelf: 'C1', expiry: '', quantity: 1 },
+  { name: 'Protoux Arab Ph sirop 100 ml', shelf: 'C1', expiry: '10/26', quantity: 1 },
+  { name: 'Solvityl Baby sirop F/100ml', shelf: 'C1', expiry: '12/26', quantity: 2 },
+  { name: 'Solvityl Baby sirop F/60ml', shelf: 'C1', expiry: '12/27', quantity: 1 },
+  { name: 'Grossi Vit', shelf: 'C1', expiry: '01/29', quantity: 1 },
+  { name: 'Bio mag 400 mg', shelf: 'C1', expiry: '12/27', quantity: 1 },
+  { name: 'Calci bronat', shelf: 'C1', expiry: '09/27', quantity: 2 },
+  { name: 'Calcium D3 WML 500 mg / 400 UI B/60 comp A Sucer', shelf: 'C1', expiry: '09/27', quantity: 2 },
+  { name: 'URSA 200 mg', shelf: 'C1', expiry: '03/28', quantity: 1 },
+  { name: 'Magnesium Moben 400 mg', shelf: 'C1', expiry: '10/27', quantity: 4 },
+  { name: 'Magnesium Moben 300 mg', shelf: 'C1', expiry: '02/28', quantity: 3 },
+  { name: 'Neurovit 250mg / 250 mg B/20 comp', shelf: 'C1', expiry: '10/27', quantity: 1 },
+  { name: 'Neurovit 250mg / 250 mg B/20 comp', shelf: 'C1', expiry: '02/28', quantity: 1 },
+  { name: 'Nutrigest + Fer', shelf: 'C1', expiry: '05/28', quantity: 1 },
+  { name: 'Trois B B/30 comp Enro', shelf: 'C1', expiry: '03/28', quantity: 1 },
+  { name: 'Tri B Vit Inpha 200 / 100 / 1mg B/30 comp pelli', shelf: 'C1', expiry: '12/27', quantity: 1 },
+  { name: 'Tri B Vit Inpha 200 / 100 / 1mg B/30 comp pelli', shelf: 'C1', expiry: '11/27', quantity: 1 },
+  { name: 'Grossesse', shelf: 'C1', expiry: '04/28', quantity: 1 },
+  { name: 'Appetit Pro', shelf: 'C1', expiry: '04/28', quantity: 1 },
+  { name: 'Bisglycinate de Zinc 15mg', shelf: 'C1', expiry: '10/28', quantity: 1 },
+  { name: 'Magnesium 300 mg + Zinc 15 mg', shelf: 'C1', expiry: '02/28', quantity: 4 },
+  { name: 'DepaKine 200mg Sol Buv', shelf: 'R3', expiry: '06/28', quantity: 3 },
+  { name: 'DepaKine 200mg Sol Buv', shelf: 'R3', expiry: '12/28', quantity: 3 },
+  { name: 'Olprexa 10mg comp', shelf: 'R3', expiry: '10/28', quantity: 1 },
+  { name: 'Levocarb 250/25mg comp', shelf: 'R3', expiry: '08/28', quantity: 1 },
+  { name: 'Isoptyl 40mg Gouttes Buv', shelf: 'R3', expiry: '12/28', quantity: 1 },
+  { name: 'Olanza oro 10mg', shelf: 'R3', expiry: '02/28', quantity: 1 },
+  { name: 'Aripiprazole Beker oro 10mg', shelf: 'R3', expiry: '01/29', quantity: 1 },
+  { name: 'Carbimol LP 400mg comp pelli', shelf: 'R3', expiry: '02/29', quantity: 1 },
+  { name: 'Levocarb 100mg comp', shelf: 'R3', expiry: '12/28', quantity: 1 },
+  { name: 'Atryline 25mg comp enro', shelf: 'R3', expiry: '05/28', quantity: 1 },
+  { name: 'Tegretol 200mg comp', shelf: 'R3', expiry: '09/27', quantity: 1 },
+  { name: 'BioZinan BR 25mg comp pelli', shelf: 'R3', expiry: '12/28', quantity: 1 },
+  { name: 'BioZinan BR 100mg comp pelli', shelf: 'R3', expiry: '12/28', quantity: 1 },
+  { name: 'Clonaprime 10mg comp pelli', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Clonaprime 25mg comp pelli', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Clonaprime 75mg comp pelli', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Solotik 50mg comp', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Depakine chrono 500mg comp', shelf: 'R2', expiry: '02/28', quantity: 10 },
+  { name: 'Depakine chrono 500mg comp', shelf: 'R2', expiry: '12/27', quantity: 1 },
+  { name: 'Aripiprazole Beker oro 10mg', shelf: 'R2', expiry: '09/27', quantity: 1 },
+  { name: 'Aripiprazole Beker oro 15mg comp', shelf: 'R2', expiry: '09/27', quantity: 1 },
+  { name: 'Fluoxetine merinal 20mg gles', shelf: 'R2', expiry: '02/29', quantity: 1 },
+  { name: 'Quetiapine Beker LP 50mg', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Depakine 200mg Sol Buv', shelf: 'R2', expiry: '06/28', quantity: 1 },
+  { name: 'Risperidone Beker 2mg comp pelli', shelf: 'R2', expiry: '01/28', quantity: 1 },
+  { name: 'Olprexa 10mg comp', shelf: 'R2', expiry: '10/28', quantity: 1 },
+  { name: 'Ripsyzen 4mg comp', shelf: 'R2', expiry: '11/28', quantity: 1 },
+  { name: 'Gabatrex 300mg Gelule', shelf: 'R2', expiry: '02/29', quantity: 1 },
+  { name: 'Quetiapine Beker 300mg LP', shelf: 'R1', expiry: '01/28', quantity: 1 },
+  { name: 'Lamotrigine Beker 100mg comp', shelf: 'R1', expiry: '12/29', quantity: 2 },
+  { name: 'Aripiprazole Beker 15mg comp oro', shelf: 'R1', expiry: '09/27', quantity: 1 },
+  { name: 'Haloperidol genericlab 2mg/ml gouttes Buv', shelf: 'R1', expiry: '09/28', quantity: 1 },
+  { name: 'Quetiapine Beker LP 50mg', shelf: 'R1', expiry: '12/28', quantity: 1 },
+  { name: 'Baclon 10mg comp', shelf: 'R1', expiry: '11/27', quantity: 1 },
+  { name: 'Moncitra 30mg comp pelli', shelf: 'R1', expiry: '12/29', quantity: 1 },
+  { name: 'Largactil 4% gouttes Buv', shelf: 'R1', expiry: '12/27', quantity: 1 },
+  { name: 'Nozinan 4% gouttes Buv', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Gabatrex 300mg Gelule', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Mydocalm Hikma 150mg comp pelli', shelf: 'R1', expiry: '10/27', quantity: 1 },
+  { name: 'RepaNide 25mg comp pelli', shelf: 'R1', expiry: '01/29', quantity: 1 },
+  { name: 'Ripsyzen 2mg', shelf: 'R1', expiry: '11/28', quantity: 1 },
+  { name: 'Clonaprime 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Lamotrigine Beker 25mg comp disp', shelf: 'R1', expiry: '10/30', quantity: 2 },
+  { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
 ]
 
   const [search, setSearch] = useState('');
@@ -742,7 +899,9 @@ export default function PharmacyStockLocator() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
-  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(
+  localStorage.getItem('pharmacyUnlocked') === 'true'
+);
   const WEBSITE_PASSWORD = '5986';
   const [passwordInput, setPasswordInput] = useState('');
   const [newMedicine, setNewMedicine] = useState({
@@ -973,7 +1132,8 @@ const getExpiryColor = (expiry) => {
         <button
           onClick={() => {
             if (passwordInput === WEBSITE_PASSWORD) {
-              setIsUnlocked(true);
+              localStorage.setItem('pharmacyUnlocked', 'true');
+setIsUnlocked(true);
             } else {
               alert('Wrong password');
             }
@@ -1121,7 +1281,7 @@ const getExpiryColor = (expiry) => {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 mb-10">
           {filtered.length > 0 ? (
             filtered.map((med, index) => (
               <div
@@ -1872,7 +2032,8 @@ const getExpiryColor = (expiry) => {
                   }`}
                 >
                   <div className="font-semibold">{med.name}</div>
-                  <div
+
+<div
   className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
     categoryColors[med.category] ||
     'bg-gray-100 text-gray-700 border-gray-300'
@@ -1880,6 +2041,26 @@ const getExpiryColor = (expiry) => {
 >
   {med.category}
 </div>
+
+{med.expiry && (
+  <div
+    className={`mt-2 text-sm font-bold ${
+      med.expiry.endsWith('/26')
+        ? 'text-red-600 animate-pulse'
+        : med.expiry.endsWith('/27')
+        ? 'text-yellow-500'
+        : 'text-green-600'
+    }`}
+  >
+    Exp: {med.expiry}
+  </div>
+)}
+
+{med.quantity && (
+  <div className="text-sm text-blue-600 font-semibold mt-1">
+    Qty: {med.quantity}
+  </div>
+)}
                 </div>
               ))
             ) : (
@@ -1975,7 +2156,7 @@ const getExpiryColor = (expiry) => {
         </button>
 
         {isOpen && (
-          <div className="absolute top-0 right-full mr-3xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+          <div className="absolute top-0 right-full mr-3 p-3 w-64 max-h-[420px] overflow-y-auto z-50">
             <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
               Shelf {shelf}
             </div>
@@ -1991,7 +2172,8 @@ const getExpiryColor = (expiry) => {
                   }`}
                 >
                   <div className="font-semibold">{med.name}</div>
-                  <div
+
+<div
   className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
     categoryColors[med.category] ||
     'bg-gray-100 text-gray-700 border-gray-300'
@@ -1999,6 +2181,26 @@ const getExpiryColor = (expiry) => {
 >
   {med.category}
 </div>
+
+{med.expiry && (
+  <div
+    className={`mt-2 text-sm font-bold ${
+      med.expiry.endsWith('/26')
+        ? 'text-red-600 animate-pulse'
+        : med.expiry.endsWith('/27')
+        ? 'text-yellow-500'
+        : 'text-green-600'
+    }`}
+  >
+    Exp: {med.expiry}
+  </div>
+)}
+
+{med.quantity && (
+  <div className="text-sm text-blue-600 font-semibold mt-1">
+    Qty: {med.quantity}
+  </div>
+)}
                 </div>
               ))
             ) : (
@@ -2035,7 +2237,7 @@ const getExpiryColor = (expiry) => {
         </button>
 
         {isOpen && (
-          <div className="absolute top-0 right-full mr-3xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+          <div className="absolute top-0 right-full mr-3 p-3 w-64 max-h-[420px] overflow-y-auto z-50">
             <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
               Shelf {shelf}
             </div>
@@ -2051,7 +2253,8 @@ const getExpiryColor = (expiry) => {
                   }`}
                 >
                   <div className="font-semibold">{med.name}</div>
-                  <div
+
+<div
   className={`inline-block mt-1 px-2 py-1 rounded-lg text-xs font-semibold border ${
     categoryColors[med.category] ||
     'bg-gray-100 text-gray-700 border-gray-300'
@@ -2059,6 +2262,26 @@ const getExpiryColor = (expiry) => {
 >
   {med.category}
 </div>
+
+{med.expiry && (
+  <div
+    className={`mt-2 text-sm font-bold ${
+      med.expiry.endsWith('/26')
+        ? 'text-red-600 animate-pulse'
+        : med.expiry.endsWith('/27')
+        ? 'text-yellow-500'
+        : 'text-green-600'
+    }`}
+  >
+    Exp: {med.expiry}
+  </div>
+)}
+
+{med.quantity && (
+  <div className="text-sm text-blue-600 font-semibold mt-1">
+    Qty: {med.quantity}
+  </div>
+)}
                 </div>
               ))
             ) : (
