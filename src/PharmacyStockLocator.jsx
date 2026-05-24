@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function PharmacyStockLocator() {
   const meds = [
@@ -68,7 +68,7 @@ export default function PharmacyStockLocator() {
     { name: 'Riabal 30 mg', shelf: 'F2', dci: 'Prifinium bromure', category: 'GASTRO' },
     { name: 'Freegas', shelf: 'F2', dci: 'Siméticone', category: 'GASTRO' },
     { name: 'Bilaxten 20 mg', shelf: 'F2', dci: 'Bilastine', category: 'Respiratoire' },
-    { name: 'Gatimox', shelf: 'F2', dci: 'Gatifloxacine', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Gatimox', shelf: 'F2', dci: 'Gatifloxacine', category: 'Anti-infectieux' },
     { name: 'Lowgas', shelf: 'F2', dci: 'Siméticone', category: 'GASTRO' },
     { name: 'Dimépra 2 mg', shelf: 'F2', dci: 'Diméticone', category: 'GASTRO' },
     { name: 'Dysentyl', shelf: 'F2', dci: 'Phthalylsulfathiazol + Néomycine + Pectine', category: 'GASTRO' },
@@ -76,7 +76,7 @@ export default function PharmacyStockLocator() {
     { name: 'Isolact', shelf: 'F2', dci: 'Lactulose', category: 'GASTRO' },
     { name: 'Nobac', shelf: 'F2', dci: 'Racecadotril', category: 'GASTRO' },
     { name: 'Smecta', shelf: 'F2', dci: 'Diosmectite', category: 'GASTRO' },
-    { name: 'Flazol 125 mg', shelf: 'F2', dci: 'Métronidazole', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Flazol 125 mg', shelf: 'F2', dci: 'Métronidazole', category: 'Anti-infectieux' },
     { name: 'Bedelix', shelf: 'F2', dci: 'Montmorillonite beidellitique', category: 'GASTRO' },
     { name: 'Diamicron 30 mg', shelf: 'F3', dci: 'Gliclazide', category: 'Endocrinologie et Diabète' },
     { name: 'Levothyrox 100 µg', shelf: 'F3', dci: 'Lévothyroxine sodique', category: 'Endocrinologie et Diabète' },
@@ -163,13 +163,13 @@ export default function PharmacyStockLocator() {
     { name: 'Telfast 180 mg', shelf: 'F6', dci: 'Chlorhydrate de fexofénadine', category: 'Respiratoire' },
     { name: 'Betaserc 24 mg', shelf: 'F6', dci: 'Dichlorhydrate de bétahistine', category: 'Neuro / Muscles' },
     { name: 'Versec 24 mg', shelf: 'F6', dci: 'Dichlorhydrate de bétahistine', category: 'Neuro / Muscles' },
-    { name: 'Phanazol 1%', shelf: 'F6', dci: 'Éconazole nitrate', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Mycocide 15 g', shelf: 'F6', dci: 'Piroctone olamine', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Phanazol 1%', shelf: 'F6', dci: 'Éconazole nitrate', category: 'Anti-infectieux' },
+    { name: 'Mycocide 15 g', shelf: 'F6', dci: 'Piroctone olamine', category: 'Anti-infectieux' },
     { name: 'Cutacnyl 2.5%', shelf: 'F6', dci: 'Peroxyde de benzoyle', category: 'Dermatologie' },
     { name: 'Cutacnyl 5%', shelf: 'F6', dci: 'Peroxyde de benzoyle', category: 'Dermatologie' },
     { name: 'Betacyl Pommade', shelf: 'F6', dci: 'Bétaméthasone + Acide salicylique', category: 'Dermatologie' },
-    { name: 'Daktazol 2% Crème', shelf: 'F6', dci: 'Miconazole', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Daktazol 2% Pommade', shelf: 'F6', dci: 'Miconazole', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Daktazol 2% Crème', shelf: 'F6', dci: 'Miconazole', category: 'Anti-infectieux' },
+    { name: 'Daktazol 2% Pommade', shelf: 'F6', dci: 'Miconazole', category: 'Anti-infectieux' },
     { name: 'Betasone 0.1%', shelf: 'F6', dci: 'Bétaméthasone', category: 'Dermatologie' },
     { name: 'Clotasol 0.05% 45 g', shelf: 'F6', dci: 'Clobetasol propionate', category: 'Dermatologie' },
     { name: 'Deslor 0.5 mg/ml', shelf: 'F5', dci: 'Desloratadine', category: 'Respiratoire' },
@@ -178,86 +178,86 @@ export default function PharmacyStockLocator() {
     { name: 'Isomag 150 ml', shelf: 'F5', dci: 'Pidolate de magnésium', category: 'Vitamines et Compléments' },
     { name: 'Salbulam 2 mg/5 ml', shelf: 'F5', dci: 'Salbutamol', category: 'Respiratoire' },
     { name: 'Carbodal 5%', shelf: 'F5', dci: 'Carbocistéine', category: 'Respiratoire' },
-    { name: 'Augmentin Enfant 100 mg/12.5 mg/ml', shelf: 'F5', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Augmentin Enfant 100 mg/12.5 mg/ml', shelf: 'F5', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
     { name: 'Omnipaque 350 mg I/ml', shelf: 'F5', dci: 'Iohexol', category: 'Ophtalmologie / ORL' },
     { name: 'Gadovist 1.0 mmol/ml', shelf: 'F5', dci: 'Gadobutrol', category: 'Ophtalmologie / ORL' },
     { name: 'Etamcynone 250 mg/2 ml', shelf: 'F5', dci: 'Étamsylate', category: 'CARDIO' },
-    { name: 'Clamoclav Enfants 100 mg/12.5 mg', shelf: 'F5', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Clamoclav Enfants 100 mg/12.5 mg', shelf: 'F5', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
     { name: 'Meprenal 20 mg/2 ml', shelf: 'F5', dci: 'Méthylprednisolone', category: 'Dermatologie' },
     { name: 'Diclamid 75 mg/3 ml', shelf: 'F5', dci: 'Diclofénac de sodium', category: 'Douleur et Inflammation' },
-    { name: 'Genta 80 mg', shelf: 'F5', dci: 'Gentamicine', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Genta 80 mg', shelf: 'F5', dci: 'Gentamicine', category: 'Anti-infectieux' },
     { name: 'Cobavit 1000 µg/2 ml', shelf: 'F5', dci: 'Cyanocobalamine (Vitamine B12)', category: 'Vitamines et Compléments' },
-    { name: 'Gentaxyn 80 mg/2 ml', shelf: 'F5', dci: 'Gentamicine', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Gentaxyn 80 mg/2 ml', shelf: 'F5', dci: 'Gentamicine', category: 'Anti-infectieux' },
     { name: 'Varenox 4000 UI/0.4 ml', shelf: 'F5', dci: 'Énoxaparine sodique', category: 'CARDIO' },
-    { name: 'Lamidaz 1% 15 g', shelf: 'F5', dci: 'Clotrimazole', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Lamidaz 1% 15 g', shelf: 'F5', dci: 'Clotrimazole', category: 'Anti-infectieux' },
     { name: 'Voltarène 1% 50 g', shelf: 'F5', dci: 'Diclofénac diéthylamine', category: 'Dermatologie' },
     { name: 'Dipronad 7 mg/ml', shelf: 'F5', dci: 'Dipropionate de bétamethasone', category: 'Dermatologie' },
     { name: 'E-RAX 10% 40 g', shelf: 'F5', dci: 'Crotamiton', category: 'Dermatologie' },
     { name: 'Clotasol 0.05% 15 g', shelf: 'F5', dci: 'Clobetasol propionate', category: 'Dermatologie' },
     { name: 'D-Three 200000 UI/ml', shelf: 'F5', dci: 'Cholécalciférol (Vitamine D3)', category: 'Vitamines et Compléments' },
-    { name: 'Cephadar 250 mg/5 ml', shelf: 'F4', dci: 'Céfradine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Clamoxyl 250 mg/5 ml', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Clamoxyl 500 mg/5 ml', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Zomax 100 mg/5 ml', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Zomax 40 mg/ml', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Céfimax 40 mg/5 ml', shelf: 'F4', dci: 'Céfixime', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Céfimax 100 mg/5 ml', shelf: 'F4', dci: 'Céfixime', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Bioclav Adulte', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Augmentin 1g/125mg', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Augmentin 500mg/62.5mg', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Xyline', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Cephadar 250 mg/5 ml', shelf: 'F4', dci: 'Céfradine', category: 'Anti-infectieux' },
+    { name: 'Clamoxyl 250 mg/5 ml', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux' },
+    { name: 'Clamoxyl 500 mg/5 ml', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux' },
+    { name: 'Zomax 100 mg/5 ml', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux' },
+    { name: 'Zomax 40 mg/ml', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux' },
+    { name: 'Céfimax 40 mg/5 ml', shelf: 'F4', dci: 'Céfixime', category: 'Anti-infectieux' },
+    { name: 'Céfimax 100 mg/5 ml', shelf: 'F4', dci: 'Céfixime', category: 'Anti-infectieux' },
+    { name: 'Bioclav Adulte', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
+    { name: 'Augmentin 1g/125mg', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
+    { name: 'Augmentin 500mg/62.5mg', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
+    { name: 'Xyline', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux' },
     { name: 'Solupred oro 20 mg', shelf: 'F4', dci: 'Prednisolone', category: 'Dermatologie' },
-    { name: 'Amoclan BID', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Ancéfal 250 mg/5 ml', shelf: 'F4', dci: 'Céfalexine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Lexin 1000 mg', shelf: 'F4', dci: 'Céfalexine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Orapen', shelf: 'F4', dci: 'Phénoxyméthylpénicilline (Pénicilline V)', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Métronidazole Beker 250 mg', shelf: 'F4', dci: 'Métronidazole', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Mycozan', shelf: 'F4', dci: 'Fluconazole', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Spiracare', shelf: 'F4', dci: 'Spiramycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Fucidine enfant 250 mg/5 ml', shelf: 'F4', dci: 'Fusidate de sodium', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Ciprolon', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Ciprofloxacine 250 mg/500 mg', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Vircet 150 mg', shelf: 'F4', dci: 'Fluconazole', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Uricare 3 g', shelf: 'F4', dci: 'Fosfomycine trométamol', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Pyostacine 500 mg', shelf: 'F4', dci: 'Pristinamycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Dotur 100 mg', shelf: 'F4', dci: 'Doxycycline', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Zynax 500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Proflox 500 mg/750 mg', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Zithromax 250 mg/500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Zomax 500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Orogyl', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Bi.Orogyl 1.5M.UI / 250mg', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Amoclan BID', shelf: 'F4', dci: 'Amoxicilline + Acide clavulanique', category: 'Anti-infectieux' },
+    { name: 'Ancéfal 250 mg/5 ml', shelf: 'F4', dci: 'Céfalexine', category: 'Anti-infectieux' },
+    { name: 'Lexin 1000 mg', shelf: 'F4', dci: 'Céfalexine', category: 'Anti-infectieux' },
+    { name: 'Orapen', shelf: 'F4', dci: 'Phénoxyméthylpénicilline (Pénicilline V)', category: 'Anti-infectieux' },
+    { name: 'Métronidazole Beker 250 mg', shelf: 'F4', dci: 'Métronidazole', category: 'Anti-infectieux' },
+    { name: 'Mycozan', shelf: 'F4', dci: 'Fluconazole', category: 'Anti-infectieux' },
+    { name: 'Spiracare', shelf: 'F4', dci: 'Spiramycine', category: 'Anti-infectieux' },
+    { name: 'Fucidine enfant 250 mg/5 ml', shelf: 'F4', dci: 'Fusidate de sodium', category: 'Anti-infectieux' },
+    { name: 'Ciprolon', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux' },
+    { name: 'Ciprofloxacine 250 mg/500 mg', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux' },
+    { name: 'Vircet 150 mg', shelf: 'F4', dci: 'Fluconazole', category: 'Anti-infectieux' },
+    { name: 'Uricare 3 g', shelf: 'F4', dci: 'Fosfomycine trométamol', category: 'Anti-infectieux' },
+    { name: 'Pyostacine 500 mg', shelf: 'F4', dci: 'Pristinamycine', category: 'Anti-infectieux' },
+    { name: 'Dotur 100 mg', shelf: 'F4', dci: 'Doxycycline', category: 'Anti-infectieux' },
+    { name: 'Zynax 500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux' },
+    { name: 'Proflox 500 mg/750 mg', shelf: 'F4', dci: 'Ciprofloxacine', category: 'Anti-infectieux' },
+    { name: 'Zithromax 250 mg/500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux' },
+    { name: 'Zomax 500 mg', shelf: 'F4', dci: 'Azithromycine', category: 'Anti-infectieux' },
+    { name: 'Orogyl', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux' },
+    { name: 'Bi.Orogyl 1.5M.UI / 250mg', shelf: 'F4', dci: 'Spiramycine + Métronidazole', category: 'Anti-infectieux' },
     { name: 'Oxyptane BR 5 mg', shelf: 'F4', dci: 'Chlorhydrate d\'oxybutynine', category: 'Urologie' },
-    { name: 'Nitroxal 100 mg', shelf: 'F4', dci: 'Nitroxoline', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Nolib 100 mg', shelf: 'F4', dci: 'Nitroxoline', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Cotrimoxal Forte 800 mg/160 mg', shelf: 'F4', dci: 'Sulfaméthoxazole + Triméthoprime', category: 'Anti-infectieux (Antibiotic)' },
-    { name: 'Clamoxyl 1 g', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux (Antibiotic)' },
+    { name: 'Nitroxal 100 mg', shelf: 'F4', dci: 'Nitroxoline', category: 'Anti-infectieux' },
+    { name: 'Nolib 100 mg', shelf: 'F4', dci: 'Nitroxoline', category: 'Anti-infectieux' },
+    { name: 'Cotrimoxal Forte 800 mg/160 mg', shelf: 'F4', dci: 'Sulfaméthoxazole + Triméthoprime', category: 'Anti-infectieux' },
+    { name: 'Clamoxyl 1 g', shelf: 'F4', dci: 'Amoxicilline', category: 'Anti-infectieux' },
     { name: 'Xaria 200 mg', shelf: 'F4', dci: 'Célebocoxib', category: 'Neuro / Muscles' },
     { name: 'Zyloric 100 mg', shelf: 'F4', dci: 'Allopurinol', category: 'Endocrinologie et Diabète' },
     { name: 'Curacné 20 mg', shelf: 'F4', dci: 'Isotrétinoïne', category: 'Dermatologie' },
     { name: 'Progestogel 1%', shelf: 'F4', dci: 'Progestérone', category: 'Endocrinologie et Diabète' },
     { name: 'TGC Plus', shelf: 'F4', dci: 'Thiocolchicoside', category: 'Neuro / Muscles' },
     { name: 'Ibuthol 5%/3%', shelf: 'F4', dci: 'Ibuprofène + Menthol', category: 'Dermatologie' },
-    {"name": "Solyne C Tonus", "shelf": "G2", "dci": "Vitamine C + D3 + Zinc", "category": "Pédiatrie & Croissance"},
-  {"name": "Multivitamine Kids", "shelf": "G2", "dci": "Multivitamines", "category": "Pédiatrie & Croissance"},
-  {"name": "Apitoux (Pédiactif)", "shelf": "G2", "dci": "Extraits de plantes (Propolis/Thym/Miel)", "category": "Pédiatrie & Croissance"},
-  {"name": "Orofer", "shelf": "G2", "dci": "Complexe d'hydroxyde ferrique-polymaltose", "category": "Pédiatrie & Croissance"},
-  {"name": "Apigrip (Pédiactif)", "shelf": "G2", "dci": "Acérola + Extraits de plantes", "category": "Pédiatrie & Croissance"},
-  {"name": "Omega 3 (Pédiactif)", "shelf": "G2", "dci": "Oméga 3 + Vitamines C, E, A, D", "category": "Pédiatrie & Croissance"},
-  {"name": "Hepalib (Lilium)", "shelf": "G2", "dci": "Silymarine + Vitamines B", "category": "Hépato-Gastro-Entérologie"},
-  {"name": "Vomi Kid", "shelf": "G2", "dci": "Extrait de gingembre", "category": "Pédiatrie & Croissance"},
-  {"name": "Apéti Kid", "shelf": "G2", "dci": "Stimulant de l'appétit + Vitamines", "category": "Pédiatrie & Croissance"},
-  {"name": "Phybaby", "shelf": "G2", "dci": "Fortifiant naturel (Extraits de plantes)", "category": "Pédiatrie & Croissance"},
-  {"name": "Zeal Kid", "shelf": "G2", "dci": "Zinc + Multivitamines", "category": "Pédiatrie & Croissance"},
-  {"name": "Neocalcigenol", "shelf": "G2", "dci": "Calcium + Vitamine F/D", "category": "Pédiatrie & Croissance"},
-  {"name": "Fortivit (Pédiactif)", "shelf": "G2", "dci": "Gelée Royale + Propolis + Vitamines", "category": "Pédiatrie & Croissance"},
-  {"name": "Sommeil Vit (Pédiactif)", "shelf": "G2", "dci": "Passiflore", "category": "Pédiatrie & Croissance"},
+    {"name": "Solyne C Tonus", "shelf": "G2", "dci": "Vitamine C + D3 + Zinc", "category": "Pédiatrie"},
+  {"name": "Multivitamine Kids", "shelf": "G2", "dci": "Multivitamines", "category": "Pédiatrie"},
+  {"name": "Apitoux (Pédiactif)", "shelf": "G2", "dci": "Extraits de plantes (Propolis/Thym/Miel)", "category": "Pédiatrie"},
+  {"name": "Orofer", "shelf": "G2", "dci": "Complexe d'hydroxyde ferrique-polymaltose", "category": "Pédiatrie"},
+  {"name": "Apigrip (Pédiactif)", "shelf": "G2", "dci": "Acérola + Extraits de plantes", "category": "Pédiatrie"},
+  {"name": "Omega 3 (Pédiactif)", "shelf": "G2", "dci": "Oméga 3 + Vitamines C, E, A, D", "category": "Pédiatrie"},
+  {"name": "Hepalib (Lilium)", "shelf": "G2", "dci": "Silymarine + Vitamines B", "category": "GASTRO"},
+  {"name": "Vomi Kid", "shelf": "G2", "dci": "Extrait de gingembre", "category": "Pédiatrie"},
+  {"name": "Apéti Kid", "shelf": "G2", "dci": "Stimulant de l'appétit + Vitamines", "category": "Pédiatrie"},
+  {"name": "Phybaby", "shelf": "G2", "dci": "Fortifiant naturel (Extraits de plantes)", "category": "Pédiatrie"},
+  {"name": "Zeal Kid", "shelf": "G2", "dci": "Zinc + Multivitamines", "category": "Pédiatrie"},
+  {"name": "Neocalcigenol", "shelf": "G2", "dci": "Calcium + Vitamine F/D", "category": "Pédiatrie"},
+  {"name": "Fortivit (Pédiactif)", "shelf": "G2", "dci": "Gelée Royale + Propolis + Vitamines", "category": "Pédiatrie"},
+  {"name": "Sommeil Vit (Pédiactif)", "shelf": "G2", "dci": "Passiflore", "category": "Pédiatrie"},
   {"name": "Grossivit", "shelf": "G2", "dci": "Complément alimentaire (Vitamines / Minéraux)", "category": "Vitamines et Compléments"},
   {"name": "Vitamine E 400 UI (Biomedical)", "shelf": "G2", "dci": "DL-alpha-tocophéryl acétate", "category": "Vitamines et Compléments"},
   {"name": "Soprodim Vit C + Zinc", "shelf": "G2", "dci": "Vitamine C + Zinc", "category": "Vitamines et Compléments"},
   {"name": "Supradyn Énergie", "shelf": "G2", "dci": "Multivitamines + Coenzyme Q10", "category": "Vitamines et Compléments"},
   {"name": "Supradyn Magnésia", "shelf": "G2", "dci": "Magnésium + Vitamines B / Vitamine C", "category": "Vitamines et Compléments"},
-  {"name": "Free Move", "shelf": "G2", "dci": "Glucosamine + Chondroïtine + Acide Hyaluronique", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Free Move", "shelf": "G2", "dci": "Glucosamine + Chondroïtine + Acide Hyaluronique", "category": "Neuro / Muscles"},
   {"name": "Les-Neuf B", "shelf": "G2", "dci": "Complexe de Vitamines B (B1, B6, B12, etc.)", "category": "Vitamines et Compléments"},
   {"name": "Calcium D3 (Lilium)", "shelf": "G2", "dci": "Calcium + Vitamine D3", "category": "Vitamines et Compléments"},
   {"name": "Vitamin E (Ineldea / Medec)", "shelf": "G2", "dci": "Vitamine E d'origine naturelle", "category": "Vitamines et Compléments"},
@@ -274,7 +274,7 @@ export default function PharmacyStockLocator() {
   {"name": "Vitamine C Upsa Effervescente", "shelf": "G2", "dci": "Acide ascorbique", "category": "Vitamines et Compléments"},
   {"name": "Vitonic Allaitement", "shelf": "G2", "dci": "Vitamines + Minéraux (Spécial allaitement)", "category": "Gynécologie & Obstétrique"},
   {"name": "Calperos", "shelf": "G2", "dci": "Carbonate de calcium", "category": "Vitamines et Compléments"},
-  {"name": "Antacid (Bionutrex)", "shelf": "G2", "dci": "Calcium carbonate + Magnésium carbonate", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Antacid (Bionutrex)", "shelf": "G2", "dci": "Calcium carbonate + Magnésium carbonate", "category": "GASTRO"},
   {"name": "Nutraxin A-Oxi Formule", "shelf": "G2", "dci": "Glutathion + Astaxanthine + Coenzyme Q10 + Resvératrol", "category": "Vitamines et Compléments"},
   {"name": "Phylait", "shelf": "G2", "dci": "Extrait de Fenugrec + Extrait de Withania Somnifera", "category": "Gynécologie & Obstétrique"},
   {"name": "MemoryMax", "shelf": "G2", "dci": "Extrait de Ginkgo-Biloba + Extrait d'Ashwagandha + Oméga-3 + Vitamines", "category": "Vitamines et Compléments"},
@@ -289,17 +289,17 @@ export default function PharmacyStockLocator() {
   {"name": "Ovapure (Thera Sante)", "shelf": "G2", "dci": "Myo-Inositol Pure", "category": "Gynécologie & Obstétrique"},
   {"name": "Bio-Fertyl Femmes (Biomax)", "shelf": "G2", "dci": "Tribulus + Maca + Fertillet + Oméga 3 + Co-Q10 + Vitamines", "category": "Gynécologie & Obstétrique"},
   {"name": "Testo Boost (Bio-Gym)", "shelf": "G2", "dci": "Tribulus + Maca + Guarana + Arginine + Zinc + Vitamines", "category": "Vitamines et Compléments"},
-  {"name": "Venotrit", "shelf": "G1", "dci": "Extraits naturels (Phlébotonique)", "category": "Cardiologie & Vasculaire"},
+  {"name": "Venotrit", "shelf": "G1", "dci": "Extraits naturels (Phlébotonique)", "category": "CARDIO"},
   {"name": "Orofer Plus", "shelf": "G1", "dci": "Complexe d'hydroxyde ferrique-polymaltose + Acide folique", "category": "Vitamines et Compléments"},
   {"name": "Ferro Sanol Gyn", "shelf": "G1", "dci": "Complexe de glycine sulfate ferreux + Acide folique", "category": "Gynécologie & Obstétrique"},
-  {"name": "Tiopam", "shelf": "G1", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
-  {"name": "Diacare", "shelf": "G1", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
-  {"name": "Calmotrin", "shelf": "G1", "dci": "Huiles essentielles / Extraits naturels (Douleurs musculaires)", "category": "Rhumatologie & Confort Articulaire"},
-  {"name": "Celofon nourrissons", "shelf": "G1", "dci": "Racécadotril", "category": "Hépato-Gastro-Entérologie"},
-  {"name": "Ultrabiotique Instant", "shelf": "G1", "dci": "Souches microbiotiques (Probiotiques)", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Tiopam", "shelf": "G1", "dci": "Racécadotril", "category": "GASTRO"},
+  {"name": "Diacare", "shelf": "G1", "dci": "Racécadotril", "category": "GASTRO"},
+  {"name": "Calmotrin", "shelf": "G1", "dci": "Huiles essentielles / Extraits naturels (Douleurs musculaires)", "category": "Neuro / Muscles"},
+  {"name": "Celofon nourrissons", "shelf": "G1", "dci": "Racécadotril", "category": "GASTRO"},
+  {"name": "Ultrabiotique Instant", "shelf": "G1", "dci": "Souches microbiotiques (Probiotiques)", "category": "GASTRO"},
   {"name": "Calperos", "shelf": "G1", "dci": "Carbonate de calcium", "category": "Vitamines et Compléments"},
   {"name": "Idéos", "shelf": "G1", "dci": "Calcium + Vitamine D3", "category": "Vitamines et Compléments"},
-  {"name": "Endronax", "shelf": "G1", "dci": "Acide alendronique", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Endronax", "shelf": "G1", "dci": "Acide alendronique", "category": "Neuro / Muscles"},
   {"name": "Yes Cal + (Lilium)", "shelf": "G1", "dci": "Calcium + Vitamine D3 + K2 + Ca + Mg", "category": "Vitamines et Compléments"},
   {"name": "Zanitra Plus", "shelf": "G1", "dci": "Complément alimentaire", "category": "Vitamines et Compléments"},
   {"name": "DHEA Plus", "shelf": "G1", "dci": "Déhydroépiandrostérone", "category": "Gynécologie & Obstétrique"},
@@ -319,10 +319,10 @@ export default function PharmacyStockLocator() {
   {"name": "Menocare Balance", "shelf": "G1", "dci": "Extraits de plantes (Sauge, Gattilier, Dong Quai) + Vitamines", "category": "Gynécologie & Obstétrique"},
   {"name": "Zanitra 5 mg", "shelf": "G1", "dci": "Acide folique (Vitamine B9)", "category": "Vitamines et Compléments"},
   {"name": "Diane 35", "shelf": "G1", "dci": "Acétate de cyprotérone + Éthinylestradiol", "category": "Gynécologie & Obstétrique"},
-  {"name": "Porosimax Plus", "shelf": "G1", "dci": "Acide alendronique + Vitamine D3", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Porosimax Plus", "shelf": "G1", "dci": "Acide alendronique + Vitamine D3", "category": "Neuro / Muscles"},
   {"name": "Thyrolib (Lilium)", "shelf": "G1", "dci": "L-Tyrosine + Sélénium + Zinc + Vitamines", "category": "Vitamines et Compléments"},
   {"name": "Polygynax", "shelf": "G1", "dci": "Néomycine + Polymyxine B + Nystatine", "category": "Gynécologie & Obstétrique"},
-  {"name": "Caspa (Vasu)", "shelf": "G1", "dci": "Extraits de plantes (Antispasmodique naturel)", "category": "Hépato-Gastro-Entérologie"},
+  {"name": "Caspa (Vasu)", "shelf": "G1", "dci": "Extraits de plantes (Antispasmodique naturel)", "category": "GASTRO"},
   {"name": "Genesia (Merinal)", "shelf": "G1", "dci": "Gingembre + Vitamine B6 (Anti-nauséeux)", "category": "Vitamines et Compléments"},
   {"name": "Desonette", "shelf": "G1", "dci": "Désogestrel", "category": "Gynécologie & Obstétrique"},
   {"name": "GynePro+ Grossesse", "shelf": "G1", "dci": "Probiotiques + Metafolin + Oméga 3", "category": "Gynécologie & Obstétrique"},
@@ -337,7 +337,7 @@ export default function PharmacyStockLocator() {
   {"name": "Acouphenis (Nutriva)", "shelf": "G1", "dci": "Extraits de plantes (Audition, Stress réduit, Sommeil profond)", "category": "Vitamines et Compléments"},
   {"name": "Sopk Free (Lilium)", "shelf": "G1", "dci": "Myo-inositol + D-chiro-inositol + Acide folique + Vitamines", "category": "Gynécologie & Obstétrique"},
   {"name": "Fertigen Femme", "shelf": "G1", "dci": "Complément alimentaire (Fertilité / Endométriose)", "category": "Gynécologie & Obstétrique"},
-  {"name": "Flexicare", "shelf": "G1", "dci": "Chondroïtine + Collagène Type II + Ginkgo Biloba + Calcium + Mg", "category": "Rhumatologie & Confort Articulaire"},
+  {"name": "Flexicare", "shelf": "G1", "dci": "Chondroïtine + Collagène Type II + Ginkgo Biloba + Calcium + Mg", "category": "Neuro / Muscles"},
   {"name": "Nozinan", "shelf": "F7", "dci": "Lévomépromazine", "category": "Neurologie & Psychiatrie"},
   {"name": "Kepam", "shelf": "F7", "dci": "Lévétiracétam", "category": "Neurologie & Psychiatrie"},
   {"name": "Kepnirol", "shelf": "F7", "dci": "Ropinirole", "category": "Neurologie & Psychiatrie"},
@@ -899,6 +899,12 @@ export default function PharmacyStockLocator() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+  localStorage.setItem(
+    'pharmacy-meds',
+    JSON.stringify(medicineList)
+  );
+}, [medicineList]);
   const [isUnlocked, setIsUnlocked] = useState(
   localStorage.getItem('pharmacyUnlocked') === 'true'
 );
@@ -910,42 +916,50 @@ export default function PharmacyStockLocator() {
     category: '',
     DCI: '',
     notes: '',
+    expiry: '',
+    quantity: '',
   });
   const categoryColors = {
-  'CARDIO': 'bg-red-100 text-red-700 border-red-300',
+  'CARDIO': 'bg-red-100 text-red-800 border-red-300',
 
-  'Respiratoire': 'bg-green-100 text-green-700 border-green-300',
+  'Respiratoire': 'bg-cyan-100 text-cyan-800 border-cyan-300',
 
-  'GASTRO': 'bg-yellow-100 text-yellow-700 border-yellow-300',
+  'GASTRO': 'bg-yellow-100 text-yellow-800 border-yellow-300',
 
   'Endocrinologie et Diabète':
-    'bg-blue-100 text-blue-700 border-blue-300',
+    'bg-orange-100 text-orange-800 border-orange-300',
 
-  'Anti-infectieux (Antibiotic)':
-    'bg-orange-100 text-orange-700 border-orange-300',
+  'Anti-infectieux':
+    'bg-emerald-100 text-emerald-800 border-emerald-300',
 
   'Douleur et Inflammation':
-    'bg-rose-100 text-rose-700 border-rose-300',
+    'bg-rose-100 text-rose-800 border-rose-300',
 
   'Dermatologie':
-    'bg-purple-100 text-purple-700 border-purple-300',
+    'bg-pink-100 text-pink-800 border-pink-300',
 
   'Ophtalmologie / ORL':
-    'bg-cyan-100 text-cyan-700 border-cyan-300',
+    'bg-sky-100 text-sky-800 border-sky-300',
 
   'Pédiatrie':
-    'bg-indigo-100 text-indigo-700 border-indigo-300',
+    'bg-indigo-100 text-indigo-800 border-indigo-300',
 
   'Vitamines et Compléments':
-    'bg-violet-100 text-violet-700 border-violet-300',
+    'bg-lime-100 text-lime-800 border-lime-300',
 
   'Immunologie':
-    'bg-teal-100 text-teal-700 border-teal-300',
+    'bg-violet-100 text-violet-800 border-violet-300',
 
   'Urologie':
-    'bg-lime-100 text-lime-700 border-lime-300',
+    'bg-teal-100 text-teal-800 border-teal-300',
+
   'Neuro / Muscles':
-    'bg-lime-100 text-lime-700 border-lime-300',
+    'bg-amber-100 text-amber-800 border-amber-300',
+
+  'Gynécologie & Obstétrique':
+    'bg-fuchsia-100 text-fuchsia-800 border-fuchsia-300',
+  'Neurologie & Psychiatrie':
+  'bg-purple-100 text-purple-800 border-purple-300',
 };
 
   const filtered = medicineList
@@ -1081,8 +1095,9 @@ const getExpiryColor = (expiry) => {
                 name: newMedicine.name,
                 shelf: newMedicine.shelf,
                 category: newMedicine.category,
-                DCI: newMedicine.DCI,
-                notes: newMedicine.notes,
+                dci: newMedicine.dci,
+                expiry: newMedicine.expiry,
+                quantity: newMedicine.quantity,
               }
             : med
         )
@@ -1094,8 +1109,9 @@ const getExpiryColor = (expiry) => {
         name: newMedicine.name,
         shelf: newMedicine.shelf,
         category: newMedicine.category,
-        DCI: newMedicine.DCI,
-        notes: newMedicine.notes,
+        dci: newMedicine.dci,
+        expiry: newMedicine.expiry,
+        quantity: newMedicine.quantity,
       },
           ]);
     }
@@ -1106,8 +1122,9 @@ const getExpiryColor = (expiry) => {
       name: '',
       shelf: 'A1',
       category: '',
-      DCI: '',
-      notes: '',
+      dci: '',
+      expiry: '',
+      quantity: '',
     });
 
     setShowModal(false);
@@ -1207,21 +1224,48 @@ setIsUnlocked(true);
                 <input
                   type="text"
                   placeholder="DCI"
-                  value={newMedicine.DCI}
+                   value={newMedicine.dci}
                   onChange={(e) =>
-                    setNewMedicine({ ...newMedicine, DCI: e.target.value })
+                    setNewMedicine({ ...newMedicine, dci: e.target.value })
                   }
                   className="w-full p-4 rounded-xl border"
                 />
+                <div className="flex gap-3">
+  <input
+    type="text"
+    placeholder="MM/YY"
+    maxLength={5}
+    value={newMedicine.expiry}
+    onChange={(e) => {
+      let value = e.target.value.replace(/\D/g, '');
 
-                <textarea
-                  placeholder="Notes (Optional)"
-                  value={newMedicine.notes}
-                  onChange={(e) =>
-                    setNewMedicine({ ...newMedicine, notes: e.target.value })
-                  }
-                  className="w-full p-4 rounded-xl border min-h-[120px]"
-                />
+      if (value.length >= 3) {
+        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+      }
+
+      setNewMedicine({
+        ...newMedicine,
+        expiry: value,
+      });
+    }}
+    className="w-1/2 p-4 rounded-xl border"
+  />
+
+  <input
+    type="number"
+    placeholder="Quantity"
+    min="1"
+    value={newMedicine.quantity}
+    onChange={(e) =>
+      setNewMedicine({
+        ...newMedicine,
+        quantity: e.target.value,
+      })
+    }
+    className="w-1/2 p-4 rounded-xl border"
+  />
+</div>
+
 
                 <div className="flex justify-end gap-3 pt-4">
                   <button
@@ -1297,7 +1341,11 @@ setIsUnlocked(true);
                   <strong>Shelf:</strong> {med.shelf}
                 </p>
                 <p className="text-lg text-gray-700">
-  <strong>DCI:</strong> {med.dci || 'Not added'}
+  {med.dci && (
+  <p className="text-sm text-gray-600">
+    <strong>DCI:</strong> {med.dci}
+  </p>
+)}
 </p>
 {med.expiry && (
   <p className="text-lg">
