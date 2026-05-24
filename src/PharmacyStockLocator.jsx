@@ -895,11 +895,21 @@ export default function PharmacyStockLocator() {
   const [search, setSearch] = useState('');
   const [openedShelf, setOpenedShelf] = useState(null);
   const [highlightedMed, setHighlightedMed] = useState('');
-  const [medicineList, setMedicineList] = useState(meds);
+  const [medicineList, setMedicineList] = useState(() => {
+  const savedMeds = localStorage.getItem('pharmacy-meds');
+
+  return savedMeds ? JSON.parse(savedMeds) : meds;
+});
   const [editingMedicine, setEditingMedicine] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+  localStorage.setItem(
+    'pharmacy-meds',
+    JSON.stringify(medicineList)
+  );
+}, [medicineList]);
   useEffect(() => {
   localStorage.setItem(
     'pharmacy-meds',
