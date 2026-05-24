@@ -482,7 +482,7 @@ export default function PharmacyStockLocator() {
   { name: 'Duphaston 10mg comp', shelf: 'A5', expiry: '04/30', quantity: 4 },
   { name: 'Predo 15mg/5ml sirop', shelf: 'A6', expiry: '09/27', quantity: 5 },
   { name: 'Tabeta 0.5mg/ml Gouttes Buv', shelf: 'A6', expiry: '06/28', quantity: 1 },
-  { name: 'Domperone 1mg/ml susp Buv', shelf: 'A6', expiry: '08/28?', quantity: 1 },
+  { name: 'Domperone 1mg/ml susp Buv', shelf: 'A6', expiry: '08/28', quantity: 1 },
   { name: 'Loradine 0.1g/100ml sirop', shelf: 'A6', expiry: '07/28', quantity: 1 },
   { name: 'Deslor 0.5mg/ml sirop', shelf: 'A6', expiry: '10/28', quantity: 1 },
   { name: 'Loradess 0.5mg/ml sirop', shelf: 'A6', expiry: '11/27', quantity: 3 },
@@ -732,23 +732,23 @@ export default function PharmacyStockLocator() {
   { name: 'Diaglinide 2mg comp', shelf: 'D5', expiry: '12/27', quantity: 1 },
   { name: 'Exirb 300 mg / 5 mg comp', shelf: 'D4', expiry: '03/28', quantity: 1 },
   { name: 'Minirinment 60 µg comp', shelf: 'D4', expiry: '04/29', quantity: 1 },
-    { name: 'Quetiapine Beker 300mg LP', shelf: 'R1', expiry: '01/28', quantity: 1 },
-      { name: 'Lamotrigine Beker 100mg comp', shelf: 'R1', expiry: '12/29', quantity: 2 },
-        { name: 'Aripiprazole Beker 15mg comp oro', shelf: 'R1', expiry: '09/27', quantity: 1 },
-          { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '08/28', quantity: 1 },
-            { name: 'Haloperidol genericlab 2mg/ml gouttes Buv', shelf: 'R1', expiry: '09/28', quantity: 1 },
-              { name: 'Quetiapine Beker LP 50mg', shelf: 'R1', expiry: '12/28', quantity: 1 },
-                { name: 'Baclon 10mg comp', shelf: 'R1', expiry: '11/27', quantity: 1 },
-                  { name: 'Moncitra 30mg comp pelli', shelf: 'R1', expiry: '12/29', quantity: 1 },
-                    { name: 'Largactil 4% gouttes Buv', shelf: 'R1', expiry: '12/27', quantity: 1 },
-                      { name: 'Nozinan 4% gouttes Buv', shelf: 'R1', expiry: '10/28', quantity: 1 },
-                        { name: 'Gabatrex 300mg Gelule', shelf: 'R1', expiry: '10/28', quantity: 1 },
-                          { name: 'Mydocalm Hikma 150mg comp pelli', shelf: 'R1', expiry: '10/27', quantity: 1 },
-                            { name: 'RepaNide 25mg comp pelli', shelf: 'R1', expiry: '01/29', quantity: 1 },
-                              { name: 'Ripsyzen 2mg', shelf: 'R1', expiry: '11/28', quantity: 1 },
-                                { name: 'Clonaprime 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 1 },
-                                  { name: 'Lamotrigine Beker 25mg comp disp', shelf: 'R1', expiry: '10/30', quantity: 2 },
-                                    { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
+  { name: 'Quetiapine Beker 300mg LP', shelf: 'R1', expiry: '01/28', quantity: 1 },
+  { name: 'Lamotrigine Beker 100mg comp', shelf: 'R1', expiry: '12/29', quantity: 2 },
+  { name: 'Aripiprazole Beker 15mg comp oro', shelf: 'R1', expiry: '09/27', quantity: 1 },
+  { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '08/28', quantity: 1 },
+  { name: 'Haloperidol genericlab 2mg/ml gouttes Buv', shelf: 'R1', expiry: '09/28', quantity: 1 },
+  { name: 'Quetiapine Beker LP 50mg', shelf: 'R1', expiry: '12/28', quantity: 1 },
+  { name: 'Baclon 10mg comp', shelf: 'R1', expiry: '11/27', quantity: 1 },
+  { name: 'Moncitra 30mg comp pelli', shelf: 'R1', expiry: '12/29', quantity: 1 },
+  { name: 'Largactil 4% gouttes Buv', shelf: 'R1', expiry: '12/27', quantity: 1 },
+  { name: 'Nozinan 4% gouttes Buv', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Gabatrex 300mg Gelule', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Mydocalm Hikma 150mg comp pelli', shelf: 'R1', expiry: '10/27', quantity: 1 },
+  { name: 'RepaNide 25mg comp pelli', shelf: 'R1', expiry: '01/29', quantity: 1 },
+  { name: 'Ripsyzen 2mg', shelf: 'R1', expiry: '11/28', quantity: 1 },
+  { name: 'Clonaprime 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 1 },
+  { name: 'Lamotrigine Beker 25mg comp disp', shelf: 'R1', expiry: '10/30', quantity: 2 },
+  { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
   { name: 'Amoxypen 1g B/1+1 Sol INJ B/1', shelf: 'C7', expiry: '07/27', quantity: 5 },
   { name: 'Zomax 4mg/ml PDRE.P Susp Buv F/30ml', shelf: 'C7', expiry: '11/27', quantity: 1 },
   { name: 'Zomax 4mg/ml PDRE.P Susp Buv F/30ml', shelf: 'C7', expiry: '04/28', quantity: 1 },
@@ -889,6 +889,7 @@ export default function PharmacyStockLocator() {
   { name: 'Clonaprime 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 1 },
   { name: 'Lamotrigine Beker 25mg comp disp', shelf: 'R1', expiry: '10/30', quantity: 2 },
   { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
+  { name: '🚫خزانة عمي علي🚫', shelf: 'PSY' },
 ]
 
   const [search, setSearch] = useState('');
@@ -964,8 +965,11 @@ export default function PharmacyStockLocator() {
 
   const filtered = medicineList
     .filter((med) =>
-      med.name.toLowerCase().includes(search.toLowerCase())
-    )
+  med.name.toLowerCase().includes(search.toLowerCase()) ||
+
+  (med.dci &&
+    med.dci.toLowerCase().includes(search.toLowerCase()))
+)
     .filter((med) =>
       selectedCategory === 'All'
         ? true
@@ -1043,6 +1047,23 @@ return 0;
   };
 
   const categories = ['All', ...new Set(medicineList.map((m) => m.category))];
+  const availableCategories = [
+  'CARDIO',
+  'Respiratoire',
+  'GASTRO',
+  'Endocrinologie et Diabète',
+  'Anti-infectieux',
+  'Douleur et Inflammation',
+  'Dermatologie',
+  'Ophtalmologie / ORL',
+  'Pédiatrie',
+  'Vitamines et Compléments',
+  'Immunologie',
+  'Urologie',
+  'Neuro / Muscles',
+  'Neurologie & Psychiatrie',
+  'Gynécologie & Obstétrique',
+];
 
 
 const getExpiryColor = (expiry) => {
@@ -1073,13 +1094,13 @@ const getExpiryColor = (expiry) => {
     setEditingMedicine(med);
 
     setNewMedicine({
-      name: med.name,
-      shelf: med.shelf,
-      category: med.category,
-      DCI: med.DCI || '',
-      notes: med.notes || '',
-    });
-
+  name: med.name,
+  shelf: med.shelf,
+  category: med.category,
+  dci: med.dci || '',
+  expiry: med.expiry || '',
+  quantity: med.quantity || '',
+});
     setShowModal(true);
   };
 
@@ -1117,6 +1138,7 @@ const getExpiryColor = (expiry) => {
     }
 
     setEditingMedicine(null);
+    setHighlightedMed('');
 
     setNewMedicine({
       name: '',
@@ -1168,11 +1190,24 @@ setIsUnlocked(true);
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
           <h1 className="text-4xl font-bold text-gray-800">
-            Pharmacy Stock Locator
+           ⚕️Pharmacy Stock📦
           </h1>
 
           <button
-            onClick={() => setShowModal(true)}
+  onClick={() => {
+    setEditingMedicine(null);
+
+    setNewMedicine({
+      name: '',
+      shelf: 'A1',
+      category: '',
+      dci: '',
+      expiry: '',
+      quantity: '',
+    });
+
+    setShowModal(true);
+  }}
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl shadow-lg font-semibold transition"
           >
             + Add Medicine
@@ -1211,15 +1246,24 @@ setIsUnlocked(true);
                   ))}
                 </select>
 
-                <input
-                  type="text"
-                  placeholder="Category"
-                  value={newMedicine.category}
-                  onChange={(e) =>
-                    setNewMedicine({ ...newMedicine, category: e.target.value })
-                  }
-                  className="w-full p-4 rounded-xl border"
-                />
+<select
+  value={newMedicine.category}
+  onChange={(e) =>
+    setNewMedicine({
+      ...newMedicine,
+      category: e.target.value,
+    })
+  }
+  className="w-full p-4 rounded-xl border"
+>
+  <option value="">Select Category</option>
+
+  {availableCategories.map((category) => (
+    <option key={category} value={category}>
+      {category}
+    </option>
+  ))}
+</select>
 
                 <input
                   type="text"
@@ -1287,7 +1331,7 @@ setIsUnlocked(true);
           </div>
         )}
 
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <div className="sticky top-0 z-50 bg-white rounded-2xl shadow-lg p-6 mb-6 border border-gray-200">
           <div className="flex flex-wrap gap-3 mb-4">
             {categories.map((category) => (
               <button
@@ -1325,7 +1369,7 @@ setIsUnlocked(true);
           />
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 mt-4">
           {filtered.length > 0 ? (
             filtered.map((med, index) => (
               <div
@@ -1926,7 +1970,7 @@ setIsUnlocked(true);
               })}
             </div>
 {/* G1 Shelf */}
-<div className="absolute bottom-55 left-[13.5rem]">
+<div className="absolute bottom-25 left-[13.5rem]">
   {(() => {
     const shelf = 'G1';
     const isOpen = openedShelf === shelf;
@@ -1984,7 +2028,7 @@ setIsUnlocked(true);
 </div>
 
 {/* G2 Shelf */}
-<div className="absolute bottom-35 left-[2.5rem]">
+<div className="absolute bottom-5 left-[2.5rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'G2';
@@ -2044,7 +2088,7 @@ setIsUnlocked(true);
 </div>
 
 {/* R1 Shelf */}
-<div className="absolute bottom-35 left-[15.5rem]">
+<div className="absolute bottom-5 left-[20rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'R1';
@@ -2064,7 +2108,7 @@ setIsUnlocked(true);
         </button>
 
         {isOpen && (
-          <div className="absolute top-0 right-full mr-3 bg-white shadow-xl rounded-2xl p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+          <div className="absolute bottom-0 right-full mr-4 bg-white shadow-2xl rounded-2xl p-3 w-72 max-h-[500px] overflow-y-auto z-[9999]">
             <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
               Shelf {shelf}
             </div>
@@ -2124,7 +2168,7 @@ setIsUnlocked(true);
 </div>
 </div>
 {/* F7 Shelf */}
-<div className="absolute bottom-70 left-[36rem]">
+<div className="absolute bottom-92 left-[29.5rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'F7';
@@ -2184,7 +2228,7 @@ setIsUnlocked(true);
 </div>
 
 {/* R2 Shelf */}
-<div className="absolute bottom-35 left-[22.5rem]">
+<div className="absolute bottom-35 left-[29.5rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'R2';
@@ -2204,7 +2248,7 @@ setIsUnlocked(true);
         </button>
 
         {isOpen && (
-          <div className="absolute top-0 right-full mr-3 p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+          <div className="absolute bottom-0 right-full mr-4 bg-white shadow-2xl rounded-2xl p-3 w-72 max-h-[500px] overflow-y-auto z-[9999]">
             <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
               Shelf {shelf}
             </div>
@@ -2265,7 +2309,7 @@ setIsUnlocked(true);
 </div>
 
 {/* R3 Shelf */}
-<div className="absolute bottom-35 left-[29rem]">
+<div className="absolute bottom-35 left-[20rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'R3';
@@ -2285,7 +2329,7 @@ setIsUnlocked(true);
         </button>
 
         {isOpen && (
-          <div className="absolute top-0 right-full mr-3 p-3 w-64 max-h-[420px] overflow-y-auto z-50">
+          <div className="absolute bottom-0 right-full mr-4 bg-white shadow-2xl rounded-2xl p-3 w-72 max-h-[500px] overflow-y-auto z-[9999]">
             <div className="sticky top-0 bg-white pb-2 mb-2 border-b font-bold text-lg text-gray-700">
               Shelf {shelf}
             </div>
