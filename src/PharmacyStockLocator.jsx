@@ -893,6 +893,12 @@ export default function PharmacyStockLocator() {
 ]
 
   const [search, setSearch] = useState('');
+const [isScrolled, setIsScrolled] = useState(false);
+useEffect(() => {
+  const handleScroll = () => setIsScrolled(window.scrollY > 200);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
   const [openedShelf, setOpenedShelf] = useState(null);
   const [highlightedMed, setHighlightedMed] = useState('');
   const [medicineList, setMedicineList] = useState(() => {
@@ -925,8 +931,7 @@ export default function PharmacyStockLocator() {
     name: '',
     shelf: 'A1',
     category: '',
-    DCI: '',
-    notes: '',
+    dci: '',
     expiry: '',
     quantity: '',
   });
@@ -1115,21 +1120,27 @@ const getExpiryColor = (expiry) => {
   };
 
   const handleAddMedicine = () => {
-    if (!newMedicine.name || !newMedicine.category) return;
+
+    console.log('BUTTON CLICKED');
+console.log(newMedicine);
+
+    if (!newMedicine.name) return;
 
     if (editingMedicine) {
       setMedicineList(
         medicineList.map((med) =>
-          med.name === editingMedicine.name && med.shelf === editingMedicine.shelf
+          med.name === editingMedicine.name &&
+med.shelf === editingMedicine.shelf &&
+med.expiry === editingMedicine.expiry
             ? {
-                ...med,
-                name: newMedicine.name,
-                shelf: newMedicine.shelf,
-                category: newMedicine.category,
-                dci: newMedicine.dci,
-                expiry: newMedicine.expiry,
-                quantity: newMedicine.quantity,
-              }
+    ...med,
+    name: newMedicine.name,
+    shelf: newMedicine.shelf,
+    category: newMedicine.category,
+    dci: newMedicine.dci,
+    expiry: newMedicine.expiry,
+    quantity: newMedicine.quantity,
+  }
             : med
         )
       );
@@ -1195,9 +1206,44 @@ setIsUnlocked(true);
     </div>
   );
 }
+  const expiredMeds = medicineList.filter(
+    (med) => med.expiry && med.expiry.endsWith('/26')
+  );
+
+  const tickerText = expiredMeds.length > 0
+    ? expiredMeds.map((med) => `⚠️ ${med.name} — Exp: ${med.expiry}`).join('          ')
+    : null;
+
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-5xl mx-auto">
+    <div className="min-h-screen bg-gray-100">
+
+      {tickerText && (
+        <div className="fixed top-0 left-0 right-0 z-[999999] bg-red-600 text-white flex items-center overflow-hidden shadow-lg" style={{ height: '40px' }}>
+          <div className="shrink-0 bg-red-800 px-4 h-full flex items-center font-bold text-sm whitespace-nowrap">
+            ⚠️ {expiredMeds.length} EXPIRING SOON
+          </div>
+          <div className="overflow-hidden flex-1 relative">
+            <div
+              className="whitespace-nowrap text-sm font-bold tracking-wide"
+              style={{
+                display: 'inline-block',
+                animation: 'ticker-scroll 30s linear infinite',
+              }}
+            >
+              {tickerText}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{tickerText}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes ticker-scroll {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-20%); }
+        }
+      `}</style>
+
+      <div className="max-w-5xl mx-auto" style={{ paddingTop: tickerText ? '52px' : '24px', paddingLeft: '24px', paddingRight: '24px', paddingBottom: '24px' }}>
         <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
           <h1 className="text-4xl font-bold text-gray-800">
            ⚕️Pharmacy Stock📦
@@ -1225,8 +1271,8 @@ setIsUnlocked(true);
         </div>
 
         {showModal && (
-          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6">
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[99999] p-4">
+            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6 relative z-[100000]">
               <h2 className="text-3xl font-bold mb-6 text-gray-800">
                 {editingMedicine ? 'Edit Medicine' : 'Add New Medicine'}
               </h2>
@@ -1341,7 +1387,7 @@ setIsUnlocked(true);
           </div>
         )}
 
-        <div className="sticky top-0 z-50 bg-white rounded-2xl shadow-lg p-6 mb-6 border border-gray-200">
+        <div className="mb-6">
           <div className="flex flex-wrap gap-3 mb-4">
             {categories.map((category) => (
               <button
@@ -1370,13 +1416,24 @@ setIsUnlocked(true);
               <option>Expiry</option>
             </select>
           </div>
-          <input
+                    <input
             type="text"
-            placeholder="Search medicine name..."
-            className="w-full p-4 rounded-xl border border-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder=" Search medicine name..."
+            className="w-full p-4 rounded-2xl border border-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white shadow-xl mb-6"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
+           {isScrolled && (
+            <div className="fixed left-1/2 z-[9999] transition-all duration-300" style={{ top: '48px', transform: 'translateX(-50%)', width: '600px', maxWidth: '90vw' }}>
+              <input
+                type="text"
+                placeholder=" Search medicine name..."
+                className="w-full p-4 rounded-2xl border border-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white shadow-xl"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 mt-4">
@@ -1464,7 +1521,7 @@ setIsUnlocked(true);
             Pharmacy Blueprint Map
           </h2>
 
-          <div className="relative bg-gray-200 rounded-3xl p-8 min-h-[1300px] overflow-hidden">
+          <div className="relative z-0 bg-gray-200 rounded-3xl p-8 min-h-[1300px] overflow-hidden">
 
             {/* A Shelf */}
             <div
