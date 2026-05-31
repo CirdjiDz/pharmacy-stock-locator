@@ -875,7 +875,6 @@ export default function PharmacyStockLocator() {
   { name: 'Gabatrex 300mg Gelule', shelf: 'R2', expiry: '02/29', quantity: 1 },
   { name: 'Quetiapine Beker 300mg LP', shelf: 'R1', expiry: '01/28', quantity: 1 },
   { name: 'Lamotrigine Beker 100mg comp', shelf: 'R1', expiry: '12/29', quantity: 2 },
-  { name: 'Aripiprazole Beker 15mg comp oro', shelf: 'R1', expiry: '09/27', quantity: 1 },
   { name: 'Haloperidol genericlab 2mg/ml gouttes Buv', shelf: 'R1', expiry: '09/28', quantity: 1 },
   { name: 'Quetiapine Beker LP 50mg', shelf: 'R1', expiry: '12/28', quantity: 1 },
   { name: 'Baclon 10mg comp', shelf: 'R1', expiry: '11/27', quantity: 1 },
@@ -1140,6 +1139,7 @@ med.expiry === editingMedicine.expiry
     dci: newMedicine.dci,
     expiry: newMedicine.expiry,
     quantity: newMedicine.quantity,
+    quantityType: newMedicine.quantityType,
   }
             : med
         )
@@ -1154,6 +1154,7 @@ med.expiry === editingMedicine.expiry
         dci: newMedicine.dci,
         expiry: newMedicine.expiry,
         quantity: newMedicine.quantity,
+        quantityType: newMedicine.quantityType,
       },
           ]);
     }
@@ -1168,6 +1169,7 @@ med.expiry === editingMedicine.expiry
       dci: '',
       expiry: '',
       quantity: '',
+      quantityType: 'Boîte',
     });
 
     setShowModal(false);
@@ -1260,6 +1262,7 @@ setIsUnlocked(true);
       dci: '',
       expiry: '',
       quantity: '',
+      quantityType: 'Boîte',
     });
 
     setShowModal(true);
@@ -1351,19 +1354,33 @@ setIsUnlocked(true);
     className="w-1/2 p-4 rounded-xl border"
   />
 
-  <input
-    type="number"
-    placeholder="Quantity"
-    min="1"
-    value={newMedicine.quantity}
-    onChange={(e) =>
-      setNewMedicine({
-        ...newMedicine,
-        quantity: e.target.value,
-      })
-    }
-    className="w-1/2 p-4 rounded-xl border"
-  />
+  <div className="w-1/2 flex flex-col gap-2">
+    <input
+      type="number"
+      placeholder="Quantity"
+      min="1"
+      value={newMedicine.quantity}
+      onChange={(e) =>
+        setNewMedicine({ ...newMedicine, quantity: e.target.value })
+      }
+      className="w-full p-4 rounded-xl border"
+    />
+    <div className="flex rounded-xl overflow-hidden border">
+      {['Boîte', 'Colis'].map((type) => (
+        <button
+          key={type}
+          onClick={() => setNewMedicine({ ...newMedicine, quantityType: type })}
+          className={`flex-1 py-2 text-sm font-semibold transition ${
+            newMedicine.quantityType === type
+              ? 'bg-blue-600 text-white'
+              : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+          }`}
+        >
+          {type}
+        </button>
+      ))}
+    </div>
+  </div>
 </div>
 
 
@@ -1451,6 +1468,11 @@ setIsUnlocked(true);
                 <p className="text-lg text-gray-700">
                   <strong>Shelf:</strong> {med.shelf}
                 </p>
+                {med.quantity && (
+                  <p className="text-lg text-blue-600 font-semibold">
+                    <strong className="text-gray-700">Qty:</strong> {med.quantity} {med.quantityType || ''}
+                  </p>
+                )}
                 <p className="text-lg text-gray-700">
   {med.dci && (
   <p className="text-sm text-gray-600">
@@ -1564,7 +1586,7 @@ setIsUnlocked(true);
 
 {med.quantity && (
   <div className="text-xs text-blue-600 font-medium">
-    Qty: {med.quantity}
+    Qty: {med.quantity} {med.quantityType || ''}
   </div>
 )}
                               {med.expiry && (
