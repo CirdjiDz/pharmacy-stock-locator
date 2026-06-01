@@ -898,6 +898,62 @@ export default function PharmacyStockLocator() {
 ]
 
   const [search, setSearch] = useState('');
+const [notes, setNotes] = useState([]);
+const [activityLog, setActivityLog] = useState([]);
+
+useEffect(() => {
+  const loadLog = async () => {
+    const { data, error } = await supabase.from('activity_log').select('*').order('created_at', { ascending: false }).limit(50);
+    if (!error && data) setActivityLog(data);
+  };
+  loadLog();
+}, []);
+
+const logActivity = async (action, medicineName, details) => {
+  const entry = {
+    action,
+    medicine_name: medicineName,
+    details,
+    created_at: new Date().toISOString(),
+  };
+  const { data } = await supabase.from('activity_log').insert([entry]).select();
+  if (data) setActivityLog((prev) => [data[0], ...prev.slice(0, 49)]);
+};
+const [newNoteText, setNewNoteText] = useState('');
+const [newNoteAuthor, setNewNoteAuthor] = useState('');
+
+useEffect(() => {
+  const loadNotes = async () => {
+    const { data, error } = await supabase.from('notes').select('*').order('created_at', { ascending: false });
+    if (!error && data) setNotes(data);
+  };
+  loadNotes();
+}, []);
+
+const handleAddNote = async () => {
+  if (!newNoteText.trim()) return;
+  const colors = ['#fef08a', '#86efac', '#93c5fd', '#f9a8d4', '#fdba74'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  const note = {
+    text: newNoteText.trim(),
+    author: newNoteAuthor.trim() || 'Anonyme',
+    color,
+    created_at: new Date().toISOString(),
+  };
+  const { data } = await supabase.from('notes').insert([note]).select();
+  if (data) setNotes([data[0], ...notes]);
+  setNewNoteText('');
+  setNewNoteAuthor('');
+};
+
+const handleDeleteNote = async (id) => {
+  const { error } = await supabase.from('notes').delete().eq('id', id);
+  if (!error) {
+    setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
+  } else {
+    console.error('Delete error:', error);
+  }
+};
 const [isScrolled, setIsScrolled] = useState(false);
 useEffect(() => {
   const handleScroll = () => setIsScrolled(window.scrollY > 200);
@@ -1098,11 +1154,10 @@ const getExpiryColor = (expiry) => {
 
   const handleDeleteMedicine = async (med) => {
     const confirmDelete = window.confirm(`Delete ${med.name} from stock?`);
-
     if (!confirmDelete) return;
-
     await supabase.from('medicines').delete().eq('id', med.id);
     setMedicineList(medicineList.filter((m) => m.id !== med.id));
+    await logActivity('Suppression', med.name, `Supprimé de l'étagère ${med.shelf}`);
   };
 
   const handleEditMedicine = (med) => {
@@ -1138,6 +1193,19 @@ console.log(newMedicine);
       };
       await supabase.from('medicines').update(updated).eq('id', editingMedicine.id);
       setMedicineList(medicineList.map((med) => med.id === editingMedicine.id ? { ...med, ...updated } : med));
+
+      const changes = [];
+      if (editingMedicine.quantity !== newMedicine.quantity)
+        changes.push(`Qté: ${editingMedicine.quantity || '—'} → ${newMedicine.quantity || '—'}`);
+      if (editingMedicine.expiry !== newMedicine.expiry)
+        changes.push(`Exp: ${editingMedicine.expiry || '—'} → ${newMedicine.expiry || '—'}`);
+      if (editingMedicine.shelf !== newMedicine.shelf)
+        changes.push(`Étagère: ${editingMedicine.shelf} → ${newMedicine.shelf}`);
+      if (editingMedicine.category !== newMedicine.category)
+        changes.push(`Catégorie: ${editingMedicine.category || '—'} → ${newMedicine.category || '—'}`);
+      if (editingMedicine.quantityType !== newMedicine.quantityType)
+        changes.push(`Type: ${editingMedicine.quantityType || '—'} → ${newMedicine.quantityType || '—'}`);
+      await logActivity('Modification', newMedicine.name, changes.length > 0 ? changes.join(' · ') : 'Aucun changement détecté');
     } else {
       const newMed = {
         name: newMedicine.name,
@@ -1149,7 +1217,10 @@ console.log(newMedicine);
         quantityType: newMedicine.quantityType,
       };
       const { data } = await supabase.from('medicines').insert([newMed]).select();
-      if (data) setMedicineList([...medicineList, data[0]]);
+      if (data) {
+        setMedicineList([...medicineList, data[0]]);
+        await logActivity('Ajout', newMed.name, `Ajouté sur étagère ${newMed.shelf}${newMed.quantity ? ` · Qté: ${newMed.quantity} ${newMed.quantityType || ''}` : ''}${newMed.expiry ? ` · Exp: ${newMed.expiry}` : ''}`);
+      }
     }
 
     setEditingMedicine(null);
@@ -1238,7 +1309,61 @@ setIsUnlocked(true);
         }
       `}</style>
 
-      <div className="max-w-5xl mx-auto" style={{ paddingTop: tickerText ? '52px' : '24px', paddingLeft: '24px', paddingRight: '24px', paddingBottom: '24px' }}>
+      <div className="flex gap-6" style={{ paddingTop: tickerText ? '52px' : '24px', paddingLeft: '24px', paddingRight: '24px', paddingBottom: '24px' }}>
+
+        {/* LEFT NOTES PANEL */}
+        <div className="hidden lg:flex flex-col gap-3 w-100 shrink-0">
+          <h2 className="text-lg font-bold text-gray-700">📝 Notes partagées</h2>
+
+          <div className="flex flex-col gap-2">
+            <input
+              type="text"
+              placeholder="Votre nom..."
+              value={newNoteAuthor}
+              onChange={(e) => setNewNoteAuthor(e.target.value)}
+              className="w-full p-5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <textarea
+              placeholder="Écrire une note..."
+              value={newNoteText}
+              onChange={(e) => setNewNoteText(e.target.value)}
+              rows={8}
+              className="w-full p-5 rounded-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+            />
+            <button
+              onClick={handleAddNote}
+              className="w-full py-5 bg-blue-600 text-white rounded-xl text-sm font-semibold hover:bg-blue-700 transition"
+            >
+              + Ajouter
+            </button>
+          </div>
+
+          <div className="flex flex-col gap-3 overflow-y-auto" style={{ maxHeight: '70vh' }}>
+            {notes.length === 0 && (
+              <p className="text-sm text-gray-400 text-center mt-4">Aucune note pour l'instant</p>
+            )}
+            {notes.map((note) => (
+              <div
+                key={note.id}
+                className="relative rounded-2xl p-4 shadow-md text-sm"
+                style={{ backgroundColor: note.color }}
+              >
+                <button
+                  onClick={() => handleDeleteNote(note.id)}
+                  className="absolute top-2 right-2 text-gray-500 hover:text-red-500 font-bold text-xs"
+                >
+                  ✕
+                </button>
+                <p className="text-gray-800 font-medium mb-2 pr-4">{note.text}</p>
+                <p className="text-gray-500 text-xs">— {note.author}</p>
+                <p className="text-gray-400 text-xs">{new Date(note.created_at).toLocaleDateString('fr-FR')}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* MAIN CONTENT */}
+        <div className="flex-1 min-w-0">
         <div className="flex items-center justify-between mb-6 gap-4 flex-wrap">
           <h1 className="text-4xl font-bold text-gray-800">
            ⚕️Pharmacy Stock📦
@@ -2472,6 +2597,59 @@ setIsUnlocked(true);
 </div>
           </div>
         </div>
+        </div>
+
+        {/* RIGHT PANEL */}
+        <div className="hidden lg:flex flex-col gap-4 w-72 shrink-0">
+
+          {/* STATS */}
+          <div className="bg-white rounded-2xl shadow p-4 border border-gray-200">
+            <h2 className="text-lg font-bold text-gray-700 mb-3">📊 Statistiques</h2>
+            <div className="flex flex-col gap-2">
+              <div className="flex justify-between items-center bg-blue-50 rounded-xl px-3 py-2">
+                <span className="text-sm text-gray-600">Total médicaments</span>
+                <span className="font-bold text-blue-600">{medicineList.length}</span>
+              </div>
+              <div className="flex justify-between items-center bg-red-50 rounded-xl px-3 py-2">
+                <span className="text-sm text-gray-600">Expirés (2026)</span>
+                <span className="font-bold text-red-500">{medicineList.filter(m => m.expiry && m.expiry.endsWith('/26')).length}</span>
+              </div>
+              <div className="flex justify-between items-center bg-orange-50 rounded-xl px-3 py-2">
+                <span className="text-sm text-gray-600">Expirent bientôt (2027)</span>
+                <span className="font-bold text-orange-500">{medicineList.filter(m => m.expiry && m.expiry.endsWith('/27')).length}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ACTIVITY LOG */}
+          <div className="bg-white rounded-2xl shadow p-4 border border-gray-200 flex flex-col gap-2">
+            <h2 className="text-lg font-bold text-gray-700 mb-1">🕓 Activité récente</h2>
+            <div className="flex flex-col gap-2 overflow-y-auto" style={{ maxHeight: '60vh' }}>
+              {activityLog.length === 0 && (
+                <p className="text-sm text-gray-400 text-center mt-4">Aucune activité pour l'instant</p>
+              )}
+              {activityLog.map((entry) => (
+                <div key={entry.id} className={`rounded-xl p-3 text-xs border ${
+                  entry.action === 'Ajout' ? 'bg-green-50 border-green-200' :
+                  entry.action === 'Suppression' ? 'bg-red-50 border-red-200' :
+                  'bg-blue-50 border-blue-200'
+                }`}>
+                  <div className="flex items-center gap-1 mb-1">
+                    <span className="font-bold text-gray-700">
+                      {entry.action === 'Ajout' ? '✅' : entry.action === 'Suppression' ? '🗑️' : '✏️'}
+                      {' '}{entry.action}
+                    </span>
+                  </div>
+                  <p className="font-semibold text-gray-800">{entry.medicine_name}</p>
+                  <p className="text-gray-500 mt-1">{entry.details}</p>
+                  <p className="text-gray-400 mt-1">{new Date(entry.created_at).toLocaleDateString('fr-FR')} · {new Date(entry.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   );
