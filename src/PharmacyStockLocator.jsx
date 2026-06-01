@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  'https://iqesqrlozabinnaknsow.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZXNxcmxvemFiaW5uYWtuc293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMTMxNzQsImV4cCI6MjA5NTg4OTE3NH0.IUov7mf87hexFAcfYbZ0CgAsVBBrg16Pk49jPI1JgJU'
+);
 
 export default function PharmacyStockLocator() {
   const meds = [
@@ -900,27 +906,21 @@ useEffect(() => {
 }, []);
   const [openedShelf, setOpenedShelf] = useState(null);
   const [highlightedMed, setHighlightedMed] = useState('');
-  const [medicineList, setMedicineList] = useState(() => {
-  const savedMeds = localStorage.getItem('pharmacy-meds');
+  const [medicineList, setMedicineList] = useState(meds);
 
-  return savedMeds ? JSON.parse(savedMeds) : meds;
-});
+  useEffect(() => {
+    const loadMeds = async () => {
+      const { data, error } = await supabase.from('medicines').select('*');
+      if (!error && data && data.length > 0) {
+        setMedicineList(data);
+      }
+    };
+    loadMeds();
+  }, []);
   const [editingMedicine, setEditingMedicine] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
-  useEffect(() => {
-  localStorage.setItem(
-    'pharmacy-meds',
-    JSON.stringify(medicineList)
-  );
-}, [medicineList]);
-  useEffect(() => {
-  localStorage.setItem(
-    'pharmacy-meds',
-    JSON.stringify(medicineList)
-  );
-}, [medicineList]);
   const [isUnlocked, setIsUnlocked] = useState(
   localStorage.getItem('pharmacyUnlocked') === 'true'
 );
@@ -1096,12 +1096,13 @@ const getExpiryColor = (expiry) => {
   return 'text-green-600 font-bold';
 };
 
-  const handleDeleteMedicine = (name) => {
-    const confirmDelete = window.confirm(`Delete ${name} from stock?`);
+  const handleDeleteMedicine = async (med) => {
+    const confirmDelete = window.confirm(`Delete ${med.name} from stock?`);
 
     if (!confirmDelete) return;
 
-    setMedicineList(medicineList.filter((med) => med.name !== name));
+    await supabase.from('medicines').delete().eq('id', med.id);
+    setMedicineList(medicineList.filter((m) => m.id !== med.id));
   };
 
   const handleEditMedicine = (med) => {
@@ -1118,7 +1119,7 @@ const getExpiryColor = (expiry) => {
     setShowModal(true);
   };
 
-  const handleAddMedicine = () => {
+  const handleAddMedicine = async () => {
 
     console.log('BUTTON CLICKED');
 console.log(newMedicine);
@@ -1126,28 +1127,7 @@ console.log(newMedicine);
     if (!newMedicine.name) return;
 
     if (editingMedicine) {
-      setMedicineList(
-        medicineList.map((med) =>
-          med.name === editingMedicine.name &&
-med.shelf === editingMedicine.shelf &&
-med.expiry === editingMedicine.expiry
-            ? {
-    ...med,
-    name: newMedicine.name,
-    shelf: newMedicine.shelf,
-    category: newMedicine.category,
-    dci: newMedicine.dci,
-    expiry: newMedicine.expiry,
-    quantity: newMedicine.quantity,
-    quantityType: newMedicine.quantityType,
-  }
-            : med
-        )
-      );
-    } else {
-      setMedicineList([
-        ...medicineList,
-      {
+      const updated = {
         name: newMedicine.name,
         shelf: newMedicine.shelf,
         category: newMedicine.category,
@@ -1155,8 +1135,21 @@ med.expiry === editingMedicine.expiry
         expiry: newMedicine.expiry,
         quantity: newMedicine.quantity,
         quantityType: newMedicine.quantityType,
-      },
-          ]);
+      };
+      await supabase.from('medicines').update(updated).eq('id', editingMedicine.id);
+      setMedicineList(medicineList.map((med) => med.id === editingMedicine.id ? { ...med, ...updated } : med));
+    } else {
+      const newMed = {
+        name: newMedicine.name,
+        shelf: newMedicine.shelf,
+        category: newMedicine.category,
+        dci: newMedicine.dci,
+        expiry: newMedicine.expiry,
+        quantity: newMedicine.quantity,
+        quantityType: newMedicine.quantityType,
+      };
+      const { data } = await supabase.from('medicines').insert([newMed]).select();
+      if (data) setMedicineList([...medicineList, data[0]]);
     }
 
     setEditingMedicine(null);
@@ -1522,7 +1515,7 @@ setIsUnlocked(true);
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      handleDeleteMedicine(med.name);
+                      handleDeleteMedicine(med);
                     }}
                     className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl font-semibold transition"
                   >
