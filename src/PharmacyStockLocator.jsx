@@ -1040,11 +1040,7 @@ useEffect(() => {
   (med.dci &&
     med.dci.toLowerCase().includes(search.toLowerCase()))
 )
-    .filter((med) =>
-      selectedCategory === 'All'
-        ? true
-        : med.category === selectedCategory
-    )
+    .filter((med) => selectedCategory === 'En couloir' ? med.inHallway : selectedCategory === 'All' || med.category === selectedCategory)
     .sort((a, b) => {
       if (sortOrder === 'A-Z') {
         return a.name.localeCompare(b.name);
@@ -1170,6 +1166,8 @@ const getExpiryColor = (expiry) => {
   dci: med.dci || '',
   expiry: med.expiry || '',
   quantity: med.quantity || '',
+  quantityType: med.quantityType || 'Boîte',
+  inHallway: med.inHallway || false,
 });
     setShowModal(true);
   };
@@ -1190,6 +1188,7 @@ console.log(newMedicine);
         expiry: newMedicine.expiry,
         quantity: newMedicine.quantity,
         quantityType: newMedicine.quantityType,
+        inHallway: newMedicine.inHallway || false,
       };
       await supabase.from('medicines').update(updated).eq('id', editingMedicine.id);
       setMedicineList(medicineList.map((med) => med.id === editingMedicine.id ? { ...med, ...updated } : med));
@@ -1205,6 +1204,8 @@ console.log(newMedicine);
         changes.push(`Catégorie: ${editingMedicine.category || '—'} → ${newMedicine.category || '—'}`);
       if (editingMedicine.quantityType !== newMedicine.quantityType)
         changes.push(`Type: ${editingMedicine.quantityType || '—'} → ${newMedicine.quantityType || '—'}`);
+      if (editingMedicine.inHallway !== newMedicine.inHallway)
+        changes.push(newMedicine.inHallway ? '📦 Déplacé en couloir' : '✅ Placé en étagère');
       await logActivity('Modification', newMedicine.name, changes.length > 0 ? changes.join(' · ') : 'Aucun changement détecté');
     } else {
       const newMed = {
@@ -1215,11 +1216,12 @@ console.log(newMedicine);
         expiry: newMedicine.expiry,
         quantity: newMedicine.quantity,
         quantityType: newMedicine.quantityType,
+        inHallway: newMedicine.inHallway || false,
       };
       const { data } = await supabase.from('medicines').insert([newMed]).select();
       if (data) {
         setMedicineList([...medicineList, data[0]]);
-        await logActivity('Ajout', newMed.name, `Ajouté sur étagère ${newMed.shelf}${newMed.quantity ? ` · Qté: ${newMed.quantity} ${newMed.quantityType || ''}` : ''}${newMed.expiry ? ` · Exp: ${newMed.expiry}` : ''}`);
+        await logActivity('Ajout', newMed.name, `Ajouté sur étagère ${newMed.shelf}${newMed.quantity ? ` · Qté: ${newMed.quantity} ${newMed.quantityType || ''}` : ''}${newMed.expiry ? ` · Exp: ${newMed.expiry}` : ''}${newMed.inHallway ? ' · 📦 En couloir' : ''}`);
       }
     }
 
@@ -1234,6 +1236,7 @@ console.log(newMedicine);
       expiry: '',
       quantity: '',
       quantityType: 'Boîte',
+      inHallway: false,
     });
 
     setShowModal(false);
@@ -1510,8 +1513,21 @@ setIsUnlocked(true);
                     Cancel
                   </button>
 
-                  <button
-                    onClick={handleAddMedicine}
+              <div
+                className="flex items-center justify-between bg-orange-50 border border-orange-200 rounded-2xl px-4 py-3 cursor-pointer"
+                onClick={() => setNewMedicine({ ...newMedicine, inHallway: !newMedicine.inHallway })}
+              >
+                <div>
+                  <p className="font-semibold text-gray-700 text-sm">📦 En couloir</p>
+                  <p className="text-xs text-gray-400">Ce médicament n'est pas encore placé en étagère</p>
+                </div>
+                <div className={`w-12 h-6 rounded-full transition-colors duration-300 flex items-center px-1 ${newMedicine.inHallway ? 'bg-orange-400' : 'bg-gray-300'}`}>
+                  <div className={`w-4 h-4 bg-white rounded-full shadow transition-transform duration-300 ${newMedicine.inHallway ? 'translate-x-6' : 'translate-x-0'}`} />
+                </div>
+              </div>
+
+              <button
+                onClick={handleAddMedicine}
                     className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition"
                   >
                     {editingMedicine ? 'Update Medicine' : 'Save Medicine'}
@@ -1524,6 +1540,16 @@ setIsUnlocked(true);
 
         <div className="mb-6">
           <div className="flex flex-wrap gap-3 mb-4">
+            <button
+              onClick={() => setSelectedCategory('En couloir')}
+              className={`px-4 py-2 rounded-xl transition font-medium ${
+                selectedCategory === 'En couloir'
+                  ? 'bg-orange-500 text-white'
+                  : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
+              }`}
+            >
+              📦 En couloir
+            </button>
             {categories.map((category) => (
               <button
                 key={category}
@@ -1590,6 +1616,11 @@ setIsUnlocked(true);
                   <p className="text-lg text-blue-600 font-semibold">
                     <strong className="text-gray-700">Qty:</strong> {med.quantity} {med.quantityType || ''}
                   </p>
+                )}
+                {med.inHallway && (
+                  <span className="inline-block mt-1 px-3 py-1 bg-orange-100 text-orange-600 text-xs font-bold rounded-full border border-orange-300">
+                    📦 En couloir
+                  </span>
                 )}
                 <p className="text-lg text-gray-700">
   {med.dci && (
