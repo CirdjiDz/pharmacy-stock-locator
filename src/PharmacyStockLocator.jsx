@@ -1309,10 +1309,10 @@ setIsUnlocked(true);
         }
       `}</style>
 
-      <div className="flex gap-6" style={{ paddingTop: tickerText ? '52px' : '24px', paddingLeft: '24px', paddingRight: '24px', paddingBottom: '24px' }}>
+      <div className="flex flex-col lg:flex-row gap-6" style={{ paddingTop: tickerText ? '52px' : '24px', paddingLeft: '24px', paddingRight: '24px', paddingBottom: '24px' }}>
 
         {/* LEFT NOTES PANEL */}
-        <div className="hidden lg:flex flex-col gap-3 w-100 shrink-0">
+        <div className="flex flex-col gap-3 w-100 shrink-0">
           <h2 className="text-lg font-bold text-gray-700">📝 Notes partagées</h2>
 
           <div className="flex flex-col gap-2">
@@ -2600,7 +2600,7 @@ setIsUnlocked(true);
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="hidden lg:flex flex-col gap-4 w-72 shrink-0">
+        <div className="flex flex-col gap-4 w-72 shrink-0">
 
           {/* STATS */}
           <div className="bg-white rounded-2xl shadow p-4 border border-gray-200">
