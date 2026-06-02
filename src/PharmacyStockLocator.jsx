@@ -947,7 +947,7 @@ const handleAddNote = async () => {
 };
 
 const handleDeleteNote = async (id) => {
-  const { error } = await supabase.from('notes').Supprimer().eq('id', id);
+  const { error } = await supabase.from('notes').delete().eq('id', id);
   if (!error) {
     setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
   } else {
@@ -1151,7 +1151,7 @@ const getExpiryColor = (expiry) => {
   const handleDeleteMedicine = async (med) => {
     const confirmDelete = window.confirm(`Supprimer ${med.name} from stock?`);
     if (!confirmDelete) return;
-    await supabase.from('medicines').Supprimer().eq('id', med.id);
+    await supabase.from('medicines').delete().eq('id', med.id);
     setMedicineList(medicineList.filter((m) => m.id !== med.id));
     await logActivity('Suppression', med.name, `Supprimé de l'étagère ${med.shelf}`);
   };
