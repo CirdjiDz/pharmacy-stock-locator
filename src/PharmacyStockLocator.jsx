@@ -947,11 +947,11 @@ const handleAddNote = async () => {
 };
 
 const handleDeleteNote = async (id) => {
-  const { error } = await supabase.from('notes').delete().eq('id', id);
+  const { error } = await supabase.from('notes').Supprimer().eq('id', id);
   if (!error) {
     setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
   } else {
-    console.error('Delete error:', error);
+    console.error('Supprimer error:', error);
   }
 };
 const [isScrolled, setIsScrolled] = useState(false);
@@ -974,7 +974,7 @@ useEffect(() => {
     loadMeds();
   }, []);
   const [editingMedicine, setEditingMedicine] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Tout');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
   const [isUnlocked, setIsUnlocked] = useState(
@@ -1040,7 +1040,7 @@ useEffect(() => {
   (med.dci &&
     med.dci.toLowerCase().includes(search.toLowerCase()))
 )
-    .filter((med) => selectedCategory === 'En couloir' ? med.inHallway : selectedCategory === 'All' || med.category === selectedCategory)
+    .filter((med) => selectedCategory === 'En couloir' ? med.inHallway : selectedCategory === 'Tout' || med.category === selectedCategory)
     .sort((a, b) => {
       if (sortOrder === 'A-Z') {
         return a.name.localeCompare(b.name);
@@ -1051,7 +1051,7 @@ useEffect(() => {
 }
 
 if (sortOrder === 'Category') {
-  return a.category.localeCompare(b.category);
+  return (a.category || '').localeCompare(b.category || '');
 }
 
 if (sortOrder === 'Expiry') {
@@ -1112,7 +1112,7 @@ return 0;
     }
   };
 
-  const categories = ['All', ...new Set(medicineList.map((m) => m.category))];
+  const categories = ['Tout', ...new Set(medicineList.map((m) => m.category))];
   const availableCategories = [
   'CARDIO',
   'Respiratoire',
@@ -1149,9 +1149,9 @@ const getExpiryColor = (expiry) => {
 };
 
   const handleDeleteMedicine = async (med) => {
-    const confirmDelete = window.confirm(`Delete ${med.name} from stock?`);
+    const confirmDelete = window.confirm(`Supprimer ${med.name} from stock?`);
     if (!confirmDelete) return;
-    await supabase.from('medicines').delete().eq('id', med.id);
+    await supabase.from('medicines').Supprimer().eq('id', med.id);
     setMedicineList(medicineList.filter((m) => m.id !== med.id));
     await logActivity('Suppression', med.name, `Supprimé de l'étagère ${med.shelf}`);
   };
@@ -1276,7 +1276,7 @@ setIsUnlocked(true);
   );
 }
   const expiredMeds = medicineList.filter(
-    (med) => med.expiry && med.expiry.endsWith('/26')
+    (med) => med.expiry && typeof med.expiry === 'string' && med.expiry.trim().endsWith('/26')
   );
 
   const tickerText = expiredMeds.length > 0
@@ -1289,7 +1289,7 @@ setIsUnlocked(true);
       {tickerText && (
         <div className="fixed top-0 left-0 right-0 z-[999999] bg-red-600 text-white flex items-center overflow-hidden shadow-lg" style={{ height: '40px' }}>
           <div className="shrink-0 bg-red-800 px-4 h-full flex items-center font-bold text-sm whitespace-nowrap">
-            ⚠️ {expiredMeds.length} EXPIRING SOON
+            ⚠️ {expiredMeds.length} EXPIRE BIENTÔT
           </div>
           <div className="overflow-hidden flex-1 relative">
             <div
@@ -1308,7 +1308,7 @@ setIsUnlocked(true);
       <style>{`
         @keyframes ticker-scroll {
           0% { transform: translateX(0%); }
-          100% { transform: translateX(-20%); }
+          100% { transform: translateX(-50%); }
         }
       `}</style>
 
@@ -1398,7 +1398,7 @@ setIsUnlocked(true);
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[99999] p-4">
             <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6 relative z-[100000]">
               <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                {editingMedicine ? 'Edit Medicine' : 'Add New Medicine'}
+                {editingMedicine ? 'Editer Le Médicament' : 'Ajouter un Médicament'}
               </h2>
 
               <div className="space-y-4">
@@ -1510,7 +1510,7 @@ setIsUnlocked(true);
                     onClick={() => setShowModal(false)}
                     className="px-5 py-3 rounded-xl bg-gray-200 hover:bg-gray-300 transition"
                   >
-                    Cancel
+                    Annuler
                   </button>
 
               <div
@@ -1530,7 +1530,7 @@ setIsUnlocked(true);
                 onClick={handleAddMedicine}
                     className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition"
                   >
-                    {editingMedicine ? 'Update Medicine' : 'Save Medicine'}
+                    {editingMedicine ? 'Mettre à jour le médicament' : 'Enregistrer le médicament'}
                   </button>
                 </div>
               </div>
@@ -1585,7 +1585,7 @@ setIsUnlocked(true);
             onChange={(e) => setSearch(e.target.value)}
           />
            {isScrolled && (
-            <div className="fixed left-1/2 z-[9999] transition-all duration-300" style={{ top: '48px', transform: 'translateX(-50%)', width: '600px', maxWidth: '90vw' }}>
+            <div className="fixed left-1/2 z-[9999] transition-Tout duration-300" style={{ top: '48px', transform: 'translateX(-50%)', width: '600px', maxWidth: '90vw' }}>
               <input
                 type="text"
                 placeholder=" Search medicine name..."
@@ -1665,7 +1665,7 @@ setIsUnlocked(true);
                     }}
                     className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 rounded-xl font-semibold transition"
                   >
-                    Edit
+                    Editer
                   </button>
 
                   <button
@@ -1675,7 +1675,7 @@ setIsUnlocked(true);
                     }}
                     className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-xl font-semibold transition"
                   >
-                    Delete
+                    Supprimer
                   </button>
                 </div>
               </div>
@@ -1696,7 +1696,7 @@ setIsUnlocked(true);
 
             {/* A Shelf */}
             <div
-  className={`absolute left-4 top-10 flex flex-col gap-3 transition-all ${
+  className={`absolute left-4 top-10 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('A') ? 'z-50' : 'z-10'
   }`}
 >
@@ -1767,7 +1767,7 @@ setIsUnlocked(true);
 
             {/* E Shelf */}
             <div 
-  className={`absolute top-4 left-1/3 -translate-x-1/2 flex gap-3 transition-all ${
+  className={`absolute top-4 left-1/4 -translate-x-1/2 flex gap-3 transition-Tout ${
     openedShelf?.startsWith('E') ? 'z-50' : 'z-20'
   }`}
 >
@@ -1837,7 +1837,7 @@ setIsUnlocked(true);
 
             {/* B Shelf */}
             <div
-  className={`absolute left-[22%] top-40 flex flex-col gap-3 transition-all ${
+  className={`absolute left-[17%] top-55 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('B') ? 'z-50' : 'z-10'
   }`}
 >
@@ -1907,7 +1907,7 @@ setIsUnlocked(true);
 
             {/* C Shelf */}
             <div
-  className={`absolute left-[34%] top-40 flex flex-col gap-3 transition-all ${
+  className={`absolute left-[27%] top-55 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('C') ? 'z-50' : 'z-10'
   }`}
 >
@@ -1978,7 +1978,7 @@ setIsUnlocked(true);
 
             {/* D Shelf */}
             <div 
-  className={`absolute right-85 top-5 flex flex-col gap-3 transition-all ${
+  className={`absolute right-200 top-10 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('D') ? 'z-50' : 'z-10'
   }`}
 >
@@ -2054,7 +2054,7 @@ setIsUnlocked(true);
       onClick={() =>
         setOpenedShelf(openedShelf === 'PSY' ? null : 'PSY')
       }
-      className={`w-24 h-24 rounded-2xl border-2 font-bold text-2xl transition-all ${
+      className={`w-24 h-24 rounded-2xl border-2 font-bold text-2xl transition-Tout ${
         openedShelf === 'PSY'
           ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
           : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2103,7 +2103,7 @@ setIsUnlocked(true);
       <div key={shelf} id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2159,7 +2159,7 @@ setIsUnlocked(true);
                   <div key={shelf} id={`shelf-${shelf}`} className="relative">
                     <button
                       onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-                      className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+                      className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
                         isOpen
                           ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
                           : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2217,7 +2217,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2276,7 +2276,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2336,7 +2336,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2416,7 +2416,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2476,7 +2476,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
@@ -2557,7 +2557,7 @@ setIsUnlocked(true);
       <div id={`shelf-${shelf}`} className="relative">
         <button
           onClick={() => setOpenedShelf(isOpen ? null : shelf)}
-          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-all ${
+          className={`w-24 h-20 rounded-2xl border-2 font-bold text-xl transition-Tout ${
             isOpen
               ? 'bg-blue-200 border-blue-600 scale-105 shadow-md'
               : 'bg-white border-gray-300 hover:border-blue-400'
