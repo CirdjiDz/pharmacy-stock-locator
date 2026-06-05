@@ -1767,7 +1767,7 @@ setIsUnlocked(true);
 
             {/* E Shelf */}
             <div 
-  className={`absolute top-4 left-1/4 -translate-x-1/2 flex gap-3 transition-Tout ${
+  className={`absolute top-4 left-1/3 -translate-x-1/2 flex gap-3 transition-Tout ${
     openedShelf?.startsWith('E') ? 'z-50' : 'z-20'
   }`}
 >
@@ -1837,7 +1837,7 @@ setIsUnlocked(true);
 
             {/* B Shelf */}
             <div
-  className={`absolute left-[17%] top-55 flex flex-col gap-3 transition-Tout ${
+  className={`absolute left-[20%] top-43 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('B') ? 'z-50' : 'z-10'
   }`}
 >
@@ -1907,7 +1907,7 @@ setIsUnlocked(true);
 
             {/* C Shelf */}
             <div
-  className={`absolute left-[27%] top-55 flex flex-col gap-3 transition-Tout ${
+  className={`absolute left-[35%] top-43 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('C') ? 'z-50' : 'z-10'
   }`}
 >
@@ -1978,7 +1978,7 @@ setIsUnlocked(true);
 
             {/* D Shelf */}
             <div 
-  className={`absolute right-200 top-10 flex flex-col gap-3 transition-Tout ${
+  className={`absolute right-80 top-10 flex flex-col gap-3 transition-Tout ${
     openedShelf?.startsWith('D') ? 'z-50' : 'z-10'
   }`}
 >
@@ -2095,7 +2095,7 @@ setIsUnlocked(true);
 </div>
 
             {/* F Shelves */}
-<div className="absolute bottom-90 left-[13rem] flex gap-4 items-end">
+<div className="absolute bottom-90 left-[10rem] flex gap-4 items-end">
   {['F1', 'F2'].map((shelf) => {
     const isOpen = openedShelf === shelf;
 
@@ -2151,7 +2151,7 @@ setIsUnlocked(true);
   })}
 </div>
 
-<div className="absolute bottom-90 left-[26.5rem] flex gap-4 items-end">
+<div className="absolute bottom-90 left-[23.5rem] flex gap-4 items-end">
               {['F3', 'F4', 'F5', 'F6'].map((shelf) => {
                 const isOpen = openedShelf === shelf;
 
@@ -2406,7 +2406,7 @@ setIsUnlocked(true);
 </div>
 </div>
 {/* F7 Shelf */}
-<div className="absolute bottom-92 left-[29.5rem]">
+<div className="absolute bottom-91 left-[29.5rem]">
 <div className="absolute bottom-20 left-[18rem]">
   {(() => {
     const shelf = 'F7';
