@@ -1692,7 +1692,8 @@ setIsUnlocked(true);
             Pharmacy Blueprint Map
           </h2>
 
-          <div className="relative z-0 bg-gray-200 rounded-3xl p-8 min-h-[1300px] overflow-hidden">
+          <div className="overflow-x-auto overflow-y-auto rounded-3xl">
+          <div className="relative z-0 bg-gray-200 rounded-3xl p-8 min-h-[1300px] min-w-[750px]">
 
             {/* A Shelf */}
             <div
@@ -2627,6 +2628,7 @@ setIsUnlocked(true);
 </div>
 </div>
           </div>
+        </div>
         </div>
         </div>
 
