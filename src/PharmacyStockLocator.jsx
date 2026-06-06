@@ -1371,6 +1371,14 @@ setIsUnlocked(true);
           <h1 className="text-4xl font-bold text-gray-800">
            ⚕️Pharmacy Stock📦
           </h1>
+          <div className="flex gap-2">
+            <button onClick={() => window.location.href = '/aide-vente'} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-semibold transition text-sm">
+              💊 Aide à la Vente
+            </button>
+            <button onClick={() => window.location.href = '/encyclopedie'} className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl font-semibold transition text-sm">
+              📖 Encyclopédie
+            </button>
+          </div>
 
           <button
   onClick={() => {
