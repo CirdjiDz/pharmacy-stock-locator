@@ -96,8 +96,6 @@ export default function AideVente() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
           messages: [{
             role: 'user',
             content: `Tu es un pharmacien expert. Donne-moi une fiche complète en français pour le médicament suivant:
