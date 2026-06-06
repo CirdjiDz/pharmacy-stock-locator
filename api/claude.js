@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     const { messages } = req.body;
     const userMessage = messages[0].content;
 
-    const response = await fetch(
+    const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: 'POST',
@@ -28,20 +28,16 @@ export default async function handler(req, res) {
       }
     );
 
-    const data = await response.json();
+    const data = await geminiRes.json();
     
-    // Return full Gemini response for debugging
-    const candidate = data.candidates?.[0];
-    const text = candidate?.content?.parts?.[0]?.text || '';
-    const finishReason = candidate?.finishReason || '';
-    
-    if (!text && finishReason === 'SAFETY') {
-      res.status(200).json({ content: [{ type: 'text', text: '{"blocked": true}' }] });
-      return;
-    }
-    
-    res.status(200).json({ content: [{ type: 'text', text }] });
+    // Return everything for debugging
+    res.status(200).json({ 
+      content: [{ type: 'text', text: data.candidates?.[0]?.content?.parts?.[0]?.text || '' }],
+      fullResponse: data,
+      keyExists: !!process.env.GEMINI_API_KEY,
+      keyLength: process.env.GEMINI_API_KEY?.length
+    });
   } catch (error) {
-    res.status(500).json({ error: 'Internal server error', details: error.message });
+    res.status(500).json({ error: error.message });
   }
 }
