@@ -974,6 +974,7 @@ useEffect(() => {
     loadMeds();
   }, []);
   const [editingMedicine, setEditingMedicine] = useState(null);
+  const [showMedInfo, setShowMedInfo] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('Tout');
   const [sortOrder, setSortOrder] = useState('A-Z');
   const [showModal, setShowModal] = useState(false);
@@ -1168,6 +1169,17 @@ const getExpiryColor = (expiry) => {
   quantity: med.quantity || '',
   quantityType: med.quantityType || 'Boîte',
   inHallway: med.inHallway || false,
+  indication: med.indication || '',
+  dosage_adulte: med.dosage_adulte || '',
+  dosage_enfant: med.dosage_enfant || '',
+  dosage_nourrisson: med.dosage_nourrisson || '',
+  effets_secondaires: med.effets_secondaires || '',
+  contre_indications: med.contre_indications || '',
+  conseil: med.conseil || '',
+  forme: med.forme || '',
+  age_min: med.age_min || '',
+  age_max: med.age_max || '',
+  condition: med.condition || '',
 });
     setShowModal(true);
   };
@@ -1189,6 +1201,17 @@ console.log(newMedicine);
         quantity: newMedicine.quantity,
         quantityType: newMedicine.quantityType,
         inHallway: newMedicine.inHallway || false,
+        indication: newMedicine.indication || '',
+        dosage_adulte: newMedicine.dosage_adulte || '',
+        dosage_enfant: newMedicine.dosage_enfant || '',
+        dosage_nourrisson: newMedicine.dosage_nourrisson || '',
+        effets_secondaires: newMedicine.effets_secondaires || '',
+        contre_indications: newMedicine.contre_indications || '',
+        conseil: newMedicine.conseil || '',
+        forme: newMedicine.forme || '',
+        age_min: newMedicine.age_min || null,
+        age_max: newMedicine.age_max || null,
+        condition: newMedicine.condition || '',
       };
       await supabase.from('medicines').update(updated).eq('id', editingMedicine.id);
       setMedicineList(medicineList.map((med) => med.id === editingMedicine.id ? { ...med, ...updated } : med));
@@ -1217,6 +1240,17 @@ console.log(newMedicine);
         quantity: newMedicine.quantity,
         quantityType: newMedicine.quantityType,
         inHallway: newMedicine.inHallway || false,
+        indication: newMedicine.indication || '',
+        dosage_adulte: newMedicine.dosage_adulte || '',
+        dosage_enfant: newMedicine.dosage_enfant || '',
+        dosage_nourrisson: newMedicine.dosage_nourrisson || '',
+        effets_secondaires: newMedicine.effets_secondaires || '',
+        contre_indications: newMedicine.contre_indications || '',
+        conseil: newMedicine.conseil || '',
+        forme: newMedicine.forme || '',
+        age_min: newMedicine.age_min || null,
+        age_max: newMedicine.age_max || null,
+        condition: newMedicine.condition || '',
       };
       const { data } = await supabase.from('medicines').insert([newMed]).select();
       if (data) {
@@ -1237,6 +1271,17 @@ console.log(newMedicine);
       quantity: '',
       quantityType: 'Boîte',
       inHallway: false,
+      indication: '',
+      dosage_adulte: '',
+      dosage_enfant: '',
+      dosage_nourrisson: '',
+      effets_secondaires: '',
+      contre_indications: '',
+      conseil: '',
+      forme: '',
+      age_min: '',
+      age_max: '',
+      condition: '',
     });
 
     setShowModal(false);
@@ -1392,6 +1437,18 @@ setIsUnlocked(true);
       expiry: '',
       quantity: '',
       quantityType: 'Boîte',
+      inHallway: false,
+      indication: '',
+      dosage_adulte: '',
+      dosage_enfant: '',
+      dosage_nourrisson: '',
+      effets_secondaires: '',
+      contre_indications: '',
+      conseil: '',
+      forme: '',
+      age_min: '',
+      age_max: '',
+      condition: '',
     });
 
     setShowModal(true);
@@ -1404,7 +1461,7 @@ setIsUnlocked(true);
 
         {showModal && (
           <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[99999] p-4">
-            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-lg p-6 relative z-[100000]">
+            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-4xl p-8 relative z-[100000] max-h-[95vh] overflow-y-auto">
               <h2 className="text-3xl font-bold mb-6 text-gray-800">
                 {editingMedicine ? 'Editer Le Médicament' : 'Ajouter un Médicament'}
               </h2>
@@ -1521,6 +1578,127 @@ setIsUnlocked(true);
                     Annuler
                   </button>
 
+              <div className="border-t pt-4 mt-2">
+                <button
+                  type="button"
+                  onClick={() => setShowMedInfo(!showMedInfo)}
+                  className="w-full flex items-center justify-between text-left font-semibold text-gray-600 text-sm mb-3 hover:text-blue-600 transition"
+                >
+                  <span>📋 Informations médicales (optionnel)</span>
+                  <span>{showMedInfo ? '▲ Masquer' : '▼ Afficher'}</span>
+                </button>
+                {showMedInfo && <div className="flex flex-col gap-3">
+                  <textarea
+                    placeholder="Indication (pour quelle maladie...)"
+                    rows={2}
+                    value={newMedicine.indication || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, indication: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                  />
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder="Posologie adulte"
+                      value={newMedicine.dosage_adulte || ''}
+                      onChange={(e) => setNewMedicine({ ...newMedicine, dosage_adulte: e.target.value })}
+                      className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Posologie enfant"
+                      value={newMedicine.dosage_enfant || ''}
+                      onChange={(e) => setNewMedicine({ ...newMedicine, dosage_enfant: e.target.value })}
+                      className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Posologie nourrisson"
+                    value={newMedicine.dosage_nourrisson || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, dosage_nourrisson: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                  <textarea
+                    placeholder="Effets secondaires (séparés par des virgules)"
+                    rows={2}
+                    value={newMedicine.effets_secondaires || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, effets_secondaires: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                  />
+                  <textarea
+                    placeholder="Contre-indications"
+                    rows={2}
+                    value={newMedicine.contre_indications || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, contre_indications: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Conseil au patient"
+                    value={newMedicine.conseil || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, conseil: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  />
+                  <select
+                    value={newMedicine.condition || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, condition: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
+                  >
+                    <option value="">-- Sélectionner une condition --</option>
+                    <option>Grippe / Rhume</option>
+                    <option>Douleur / Fièvre</option>
+                    <option>Infection bactérienne</option>
+                    <option>Allergie</option>
+                    <option>Troubles digestifs</option>
+                    <option>Diabète</option>
+                    <option>Hypertension</option>
+                    <option>Toux</option>
+                    <option>Infection fongique</option>
+                    <option>Inflammation</option>
+                    <option>Troubles neurologiques</option>
+                    <option>Gynécologie</option>
+                    <option>Vitamines / Compléments</option>
+                    <option>Ophtalmologie / ORL</option>
+                    <option>Dermatologie</option>
+                    <option>Urologie</option>
+                    <option>Psychiatrie</option>
+                  </select>
+                  <select
+                    value={newMedicine.forme || ''}
+                    onChange={(e) => setNewMedicine({ ...newMedicine, forme: e.target.value })}
+                    className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white"
+                  >
+                    <option value="">-- Sélectionner une forme --</option>
+                    <option>Comprimé</option>
+                    <option>Sirop</option>
+                    <option>Gélule</option>
+                    <option>Crème / Pommade</option>
+                    <option>Injectable</option>
+                    <option>Gouttes</option>
+                    <option>Sachet</option>
+                    <option>Suppositoire</option>
+                  </select>
+                  <div className="flex gap-2 items-center">
+                    <input
+                      type="number"
+                      placeholder="Âge min"
+                      value={newMedicine.age_min || ''}
+                      onChange={(e) => setNewMedicine({ ...newMedicine, age_min: e.target.value })}
+                      className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    <span className="text-gray-400 shrink-0">→</span>
+                    <input
+                      type="number"
+                      placeholder="Âge max"
+                      value={newMedicine.age_max || ''}
+                      onChange={(e) => setNewMedicine({ ...newMedicine, age_max: e.target.value })}
+                      className="w-full p-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    <span className="text-gray-400 shrink-0 text-xs">ans</span>
+                  </div>
+                </div>}
+              </div>
+
               <div
                 className="flex items-center justify-between bg-orange-50 border border-orange-200 rounded-2xl px-4 py-3 cursor-pointer"
                 onClick={() => setNewMedicine({ ...newMedicine, inHallway: !newMedicine.inHallway })}
@@ -1630,13 +1808,11 @@ setIsUnlocked(true);
                     📦 En couloir
                   </span>
                 )}
-                <p className="text-lg text-gray-700">
-  {med.dci && (
+                {med.dci && (
   <p className="text-sm text-gray-600">
     <strong>DCI:</strong> {med.dci}
   </p>
 )}
-</p>
 {med.expiry && (
   <p className="text-lg">
     <strong>Expiry:</strong>{' '}
