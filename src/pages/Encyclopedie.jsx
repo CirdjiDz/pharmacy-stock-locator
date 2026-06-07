@@ -38,13 +38,17 @@ export default function Encyclopedie() {
 
   const categories = [t.allCats, ...new Set(medicines.map(m => m.category).filter(Boolean))].sort();
 
-  const filtered = medicines.filter((med) => {
-    const matchSearch = med.name?.toLowerCase().includes(search.toLowerCase()) ||
-      med.dci?.toLowerCase().includes(search.toLowerCase()) ||
-      med.indication?.toLowerCase().includes(search.toLowerCase());
-    const matchCat = selectedCategory === t.allCats || med.category === selectedCategory;
-    return matchSearch && matchCat;
-  });
+  const filtered = medicines
+    .filter((med) => {
+      const matchSearch = med.name?.toLowerCase().includes(search.toLowerCase()) ||
+        med.dci?.toLowerCase().includes(search.toLowerCase()) ||
+        med.indication?.toLowerCase().includes(search.toLowerCase());
+      const matchCat = selectedCategory === t.allCats || med.category === selectedCategory;
+      return matchSearch && matchCat;
+    })
+    .filter((med, index, self) =>
+      index === self.findIndex((m) => m.name?.toLowerCase() === med.name?.toLowerCase())
+    );
 
   const hasInfo = (med) => med.indication || med.dosage_adulte || med.effets_secondaires || med.contre_indications;
 
