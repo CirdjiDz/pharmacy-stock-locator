@@ -6,7 +6,12 @@ const supabase = createClient(
   'https://iqesqrlozabinnaknsow.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZXNxcmxvemFiaW5uYWtuc293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMTMxNzQsImV4cCI6MjA5NTg4OTE3NH0.IUov7mf87hexFAcfYbZ0CgAsVBBrg16Pk49jPI1JgJU'
 );
-
+const normalizeText = (text) => {
+  return (text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+};
 const TRANSLATIONS = {
   fr: {
     title: '💊 Aide à la Vente',
@@ -43,7 +48,7 @@ const TRANSLATIONS = {
       'Gynécologie', 'Vitamines / Compléments', 'Ophtalmologie / ORL',
       'Dermatologie', 'Urologie', 'Psychiatrie'
     ],
-    formes: ['Toutes', 'Comprimé', 'Sirop', 'Gélule', 'Crème / Pommade', 'Injectable', 'Gouttes', 'Sachet', 'Suppositoire'],
+    formes: ['Toutes', 'Comprimé', 'Sirop', 'Gélule', 'Crème / Pommade', 'Injectable', 'Gouttes', 'Sachet', 'Suppositoire', 'Cosmétique'],
   },
   en: {
     title: '💊 Sales Assistant',
@@ -80,7 +85,7 @@ const TRANSLATIONS = {
       'Gynecology', 'Vitamins / Supplements', 'Ophthalmology / ENT',
       'Dermatology', 'Urology', 'Psychiatry'
     ],
-    formes: ['All', 'Tablet', 'Syrup', 'Capsule', 'Cream / Ointment', 'Injectable', 'Drops', 'Sachet', 'Suppository'],
+    formes: ['All', 'Tablet', 'Syrup', 'Capsule', 'Cream / Ointment', 'Injectable', 'Drops', 'Sachet', 'Suppository', 'Cosmetic'],
   },
   ar: {
     title: '💊 مساعد البيع',
@@ -117,7 +122,7 @@ const TRANSLATIONS = {
       'أمراض نسائية', 'فيتامينات / مكملات', 'طب العيون / أنف وأذن وحنجرة',
       'أمراض جلدية', 'المسالك البولية', 'الطب النفسي'
     ],
-    formes: ['الكل', 'أقراص', 'شراب', 'كبسول', 'كريم / مرهم', 'حقن', 'قطرات', 'أكياس', 'تحاميل'],
+    formes: ['الكل', 'أقراص', 'شراب', 'كبسول', 'كريم / مرهم', 'حقن', 'قطرات', 'أكياس', 'تحاميل', 'مستحضرات تجميل'],
   }
 };
 
@@ -228,9 +233,9 @@ export default function AideVente() {
     const isAllCondition = selectedCondition === t.allConditions;
     const isAllForm = selectedForm === t.allFormes;
     const matchCondition = isAllCondition || conditionMatchesCategory(frCondition, med.category, med.indication, med.condition);
-    const matchSearch = med.name?.toLowerCase().includes(search.toLowerCase()) ||
-      med.dci?.toLowerCase().includes(search.toLowerCase()) ||
-      med.indication?.toLowerCase().includes(search.toLowerCase());
+    const matchSearch = normalizeText(med.name).includes(normalizeText(search)) ||
+      normalizeText(med.dci).includes(normalizeText(search)) ||
+      normalizeText(med.indication).includes(normalizeText(search));
     const matchForm = isAllForm || formMatchesName(frForm, med.name, med.forme);
     const matchAge = !patientAge || (() => {
       const age = parseInt(patientAge);

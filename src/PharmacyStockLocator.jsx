@@ -5,6 +5,12 @@ const supabase = createClient(
   'https://iqesqrlozabinnaknsow.supabase.co',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZXNxcmxvemFiaW5uYWtuc293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMTMxNzQsImV4cCI6MjA5NTg4OTE3NH0.IUov7mf87hexFAcfYbZ0CgAsVBBrg16Pk49jPI1JgJU'
 );
+const normalizeText = (text) => {
+  return (text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+};
 
 export default function PharmacyStockLocator() {
   const meds = [
@@ -896,6 +902,8 @@ export default function PharmacyStockLocator() {
   { name: 'Escitalopram Beker 10mg comp pelli', shelf: 'R1', expiry: '10/28', quantity: 2 },
   { name: '🚫خزانة عمي علي🚫', shelf: 'PSY' },
 ]
+const [dciSuggestions, setDciSuggestions] = useState([]);
+const [showDciSuggestions, setShowDciSuggestions] = useState(false);
 
   const [search, setSearch] = useState('');
 const [notes, setNotes] = useState([]);
@@ -1036,11 +1044,9 @@ useEffect(() => {
 
   const filtered = medicineList
     .filter((med) =>
-  med.name.toLowerCase().includes(search.toLowerCase()) ||
-
-  (med.dci &&
-    med.dci.toLowerCase().includes(search.toLowerCase()))
-)
+      normalizeText(med.name).includes(normalizeText(search)) ||
+      normalizeText(med.dci).includes(normalizeText(search))
+    )
     .filter((med) => selectedCategory === 'En couloir' ? med.inHallway : selectedCategory === 'Tout' || med.category === selectedCategory)
     .sort((a, b) => {
       if (sortOrder === 'A-Z') {
@@ -1404,7 +1410,9 @@ setIsUnlocked(true);
                 </button>
                 <p className="text-gray-800 font-medium mb-2 pr-4">{note.text}</p>
                 <p className="text-gray-500 text-xs">— {note.author}</p>
-                <p className="text-gray-400 text-xs">{new Date(note.created_at).toLocaleDateString('fr-FR')}</p>
+                <p className="text-gray-400 text-xs">
+                  {new Date(note.created_at).toLocaleDateString('fr-FR')} à {new Date(note.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+                </p>
               </div>
             ))}
           </div>
@@ -1510,15 +1518,47 @@ setIsUnlocked(true);
   ))}
 </select>
 
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="DCI"
-                   value={newMedicine.dci}
-                  onChange={(e) =>
-                    setNewMedicine({ ...newMedicine, dci: e.target.value })
-                  }
+                  value={newMedicine.dci}
+                  onChange={(e) => {
+                    const val = e.target.value;
+                    setNewMedicine({ ...newMedicine, dci: val });
+                    if (val.length >= 2) {
+                      const allDcis = [...new Set(
+                        medicineList
+                          .map(m => m.dci)
+                          .filter(d => d && normalizeText(d).includes(normalizeText(val)))
+                      )].slice(0, 6);
+                      setDciSuggestions(allDcis);
+                      setShowDciSuggestions(allDcis.length > 0);
+                    } else {
+                      setShowDciSuggestions(false);
+                    }
+                  }}
+                  onBlur={() => setTimeout(() => setShowDciSuggestions(false), 150)}
                   className="w-full p-4 rounded-xl border"
                 />
+                {showDciSuggestions && (
+                  <div className="absolute z-[999] top-full left-0 right-0 bg-white border border-gray-200 rounded-xl shadow-lg mt-1 overflow-hidden">
+                    {dciSuggestions.map((dci, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => {
+                          setNewMedicine({ ...newMedicine, dci });
+                          setShowDciSuggestions(false);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-700 transition border-b last:border-b-0"
+                      >
+                        {dci}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
                 <div className="flex gap-3">
   <input
     type="text"
@@ -1677,6 +1717,7 @@ setIsUnlocked(true);
                     <option>Gouttes</option>
                     <option>Sachet</option>
                     <option>Suppositoire</option>
+                    <option>cosmétique</option>
                   </select>
                   <div className="flex gap-2 items-center">
                     <input

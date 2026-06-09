@@ -7,6 +7,13 @@ const supabase = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlxZXNxcmxvemFiaW5uYWtuc293Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMTMxNzQsImV4cCI6MjA5NTg4OTE3NH0.IUov7mf87hexFAcfYbZ0CgAsVBBrg16Pk49jPI1JgJU'
 );
 
+const normalizeText = (text) => {
+  return (text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+};
+
 const TRANSLATIONS_ENC = {
   fr: { title: '📖 Encyclopédie des Médicaments', search: '🔍 Rechercher par nom ou DCI...', back: '← Retour', assistant: '💊 Aide à la Vente', allCats: 'Toutes', count: 'médicament(s)', indication: '🏥 Indication', dosage: '📋 Posologie', adulte: 'Adulte', enfant: 'Enfant', nourrisson: 'Nourrisson', sideEffects: '⚠️ Effets secondaires', contra: '🚫 Contre-indications', advice: '💡 Conseil au patient', shelf: 'Étagère', noInfo: '⚠️ Aucune information médicale ajoutée. Modifiez ce médicament pour ajouter les détails.', age: 'ans' },
   en: { title: '📖 Medicine Encyclopedia', search: '🔍 Search by name or DCI...', back: '← Back', assistant: '💊 Sales Assistant', allCats: 'All', count: 'medicine(s)', indication: '🏥 Indication', dosage: '📋 Dosage', adulte: 'Adult', enfant: 'Child', nourrisson: 'Infant', sideEffects: '⚠️ Side effects', contra: '🚫 Contraindications', advice: '💡 Patient advice', shelf: 'Shelf', noInfo: '⚠️ No medical information added. Edit this medicine to add details.', age: 'years' },
@@ -40,9 +47,9 @@ export default function Encyclopedie() {
 
   const filtered = medicines
     .filter((med) => {
-      const matchSearch = med.name?.toLowerCase().includes(search.toLowerCase()) ||
-        med.dci?.toLowerCase().includes(search.toLowerCase()) ||
-        med.indication?.toLowerCase().includes(search.toLowerCase());
+    const matchSearch = normalizeText(med.name).includes(normalizeText(search)) ||
+      normalizeText(med.dci).includes(normalizeText(search)) ||
+      normalizeText(med.indication).includes(normalizeText(search));
       const matchCat = selectedCategory === t.allCats || med.category === selectedCategory;
       return matchSearch && matchCat;
     })
