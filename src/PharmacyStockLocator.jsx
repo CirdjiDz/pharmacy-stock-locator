@@ -1425,6 +1425,9 @@ setIsUnlocked(true);
            ⚕️Pharmacy Stock📦
           </h1>
           <div className="flex gap-2">
+            <button onClick={() => window.location.href = '/decision'} className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-xl font-semibold transition text-sm">
+   Aide Décisionnelle
+            </button>
             <button onClick={() => window.location.href = '/aide-vente'} className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-semibold transition text-sm">
               💊 Aide à la Vente
             </button>
