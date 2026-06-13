@@ -3778,5 +3778,1067 @@
       "age_max": 120,
       "condition": "اضطرابات هضمية"
     }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Fluoxetine merinal 20mg gles",
+    "original": { "category": "Neurologie & Psychiatrie", "dci": "Fluoxétine" },
+    "enriched": {
+      "indication": "Antidépresseur ISRS pour traitement des épisodes dépressifs majeurs, trouble obsessionnel compulsif (TOC), boulimie nerveuse et trouble panique chez l'adulte.",
+      "dosage_adulte": "Dépression et TOC: 20 mg une fois par jour le matin. Augmentation possible jusqu'à 60 mg/jour. Boulimie: 60 mg/jour. Maximum 80 mg/jour.",
+      "dosage_enfant": "TOC uniquement à partir de 8 ans sous surveillance psychiatrique: 10 mg/jour initialement puis augmentation progressive.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Insomnie, maux de tête, nausées, diarrhées, baisse d'appétit, nervosité, agitation initiale, baisse de libido, sudation. Disparaissent souvent après 2 à 3 semaines.",
+      "contre_indications": "Association aux IMAO (risque de syndrome sérotoninergique grave, délai de 14 jours), allergie à la fluoxétine. Prudence épilepsie et insuffisance hépatique.",
+      "conseil": "Prendre le matin de préférence (évite l'insomnie). Effet thérapeutique après 3 à 6 semaines. Ne jamais arrêter brutalement. Eviter l'alcool. Demi-vie très longue: effets persistent plusieurs semaines après l'arrêt.",
+      "forme": "Gélule",
+      "age_min": 8,
+      "age_max": 120,
+      "condition": "Psychiatrie"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Biopress",
+    "original": { "category": "CARDIO", "dci": "Candésartan cilexetil" },
+    "enriched": {
+      "indication": "Antagoniste des récepteurs de l'angiotensine II (sartan) pour traitement de l'hypertension artérielle essentielle et de l'insuffisance cardiaque avec dysfonction systolique.",
+      "dosage_adulte": "Hypertension: dose initiale 8 mg une fois par jour. Dose d'entretien: 8 à 32 mg/jour. Insuffisance cardiaque: dose initiale 4 mg/jour, augmentation progressive jusqu'à 32 mg/jour.",
+      "dosage_enfant": "À partir de 6 ans sous prescription médicale: 0.2 mg/kg/jour initialement.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, maux de tête, infections respiratoires, hyperkaliémie, insuffisance rénale. Pas de toux contrairement aux IEC.",
+      "contre_indications": "Grossesse (2e et 3e trimestre), insuffisance hépatique sévère, cholestase biliaire, hyperkaliémie sévère.",
+      "conseil": "Peut être pris avec ou sans nourriture. Prendre à heure fixe. Surveiller la tension et le potassium. Ne jamais arrêter sans avis médical.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Sarsand",
+    "original": { "category": "CARDIO", "dci": "Candésartan cilexetil" },
+    "enriched": {
+      "indication": "Antagoniste des récepteurs de l'angiotensine II pour traitement de l'hypertension artérielle essentielle chez l'adulte.",
+      "dosage_adulte": "8 mg une fois par jour. Augmentation possible jusqu'à 32 mg/jour selon la réponse tensionnelle.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, maux de tête, hyperkaliémie, infections respiratoires hautes. Très bien toléré sans toux.",
+      "contre_indications": "Grossesse (2e et 3e trimestre), insuffisance hépatique sévère, hyperkaliémie, obstruction biliaire.",
+      "conseil": "Peut être pris avec ou sans repas à heure fixe. Surveiller la tension artérielle régulièrement. Ne jamais arrêter sans avis médical.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "SPIRONOLONE",
+    "original": { "category": "CARDIO", "dci": "Spironolactone" },
+    "enriched": {
+      "indication": "Diurétique épargneur de potassium et anti-aldostérone pour traitement de l'hypertension artérielle, insuffisance cardiaque sévère, hyperaldostéronisme et états œdémateux.",
+      "dosage_adulte": "Hypertension: 50 à 100 mg/jour en 1 à 2 prises. Insuffisance cardiaque: 25 à 50 mg/jour. Hyperaldostéronisme: jusqu'à 300 mg/jour. Ajuster selon réponse.",
+      "dosage_enfant": "1.5 à 3 mg/kg/jour en 1 à 2 prises. Sur prescription médicale.",
+      "dosage_nourrisson": "Sur prescription stricte du pédiatre.",
+      "effets_secondaires": "Hyperkaliémie (excès de potassium: surveillance obligatoire), gynécomastie chez l'homme, troubles menstruels chez la femme, troubles digestifs, fatigue.",
+      "contre_indications": "Hyperkaliémie, insuffisance rénale sévère, maladie d'Addison, allergie à la spironolactone. Eviter avec les IEC et les suppléments de potassium.",
+      "conseil": "Prendre le matin avec nourriture. Surveiller le potassium sanguin régulièrement. Eviter les aliments très riches en potassium (banane, avocat en excès). Ne pas associer aux suppléments potassiques.",
+      "forme": "Comprimé",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "BYZOLEX",
+    "original": { "category": "CARDIO", "dci": "Nébivolol" },
+    "enriched": {
+      "indication": "Bêtabloquant cardiosélectif de 3e génération pour traitement de l'hypertension artérielle essentielle et de l'insuffisance cardiaque chronique stable chez l'adulte de plus de 70 ans.",
+      "dosage_adulte": "Hypertension: 5 mg une fois par jour le matin. Insuffisance cardiaque: dose initiale 1.25 mg/jour, doublement toutes les 2 semaines jusqu'à 10 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Fatigue, céphalées, vertiges, mains et pieds froids, bradycardie, dyspnée légère. Moins d'effets métaboliques que les bêtabloquants anciens.",
+      "contre_indications": "Asthme sévère ou BPCO, bradycardie sévère, bloc auriculo-ventriculaire, insuffisance cardiaque décompensée aiguë, phéochromocytome.",
+      "conseil": "Ne jamais arrêter brutalement. Prendre à heure fixe le matin. Surveiller la fréquence cardiaque. Informer le médecin en cas d'essoufflement ou de pouls très lent.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Nafronyl",
+    "original": { "category": "CARDIO", "dci": "Naftidrofuryl" },
+    "enriched": {
+      "indication": "Vasodilatateur périphérique pour traitement de l'artériopathie oblitérante des membres inférieurs (claudication intermittente) et des troubles vasculaires périphériques.",
+      "dosage_adulte": "200 mg 3 fois par jour au cours des repas. Durée minimale: 3 mois pour évaluer l'efficacité.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs (nausées, douleurs abdominales), maux de tête. Très rares: hépatite médicamenteuse.",
+      "contre_indications": "Allergie au naftidrofuryl. Grossesse et allaitement: déconseillé par précaution.",
+      "conseil": "Prendre au cours des repas pour réduire les effets digestifs. Traitement de longue durée: minimum 3 mois. Associer à la marche régulière pour améliorer l'efficacité.",
+      "forme": "Gélule",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Dioveine 600 mg",
+    "original": { "category": "CARDIO", "dci": "Diosmine" },
+    "enriched": {
+      "indication": "Veinotonique et vasculoprotecteur pour traitement de l'insuffisance veineuse chronique (jambes lourdes, douleurs, œdèmes) et des hémorroïdes.",
+      "dosage_adulte": "Insuffisance veineuse: 1 comprimé par jour au cours du repas principal. Hémorroïdes en crise aiguë: 2 comprimés/jour pendant 7 jours puis 1 comprimé/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Très bien toléré. Troubles digestifs légers (nausées, diarrhées) très rares. Maux de tête occasionnels.",
+      "contre_indications": "Allergie à la diosmine. Grossesse: utiliser uniquement si nécessaire et sur avis médical.",
+      "conseil": "Prendre au cours du repas principal. Associer à des mesures hygiéno-diététiques: surélever les jambes, marche régulière, bas de contention. Traitement de longue durée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Venotrit",
+    "original": { "category": "CARDIO", "dci": "Extraits naturels (Phlébotonique)" },
+    "enriched": {
+      "indication": "Veinotonique à base d'extraits naturels pour traitement symptomatique de l'insuffisance veineuse chronique: jambes lourdes, œdèmes des membres inférieurs, crampes nocturnes.",
+      "dosage_adulte": "1 à 2 comprimés par jour selon la posologie indiquée. Prendre au cours des repas.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Très bien toléré. Troubles digestifs très légers et rares.",
+      "contre_indications": "Allergie à l'un des composants. Grossesse et allaitement: consulter le médecin avant utilisation.",
+      "conseil": "Prendre au cours des repas. Associer à des mesures posturales (jambes surélevées), marche régulière et bas de contention pour optimiser l'efficacité.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Monotildiem",
+    "original": { "category": "CARDIO", "dci": "Diltiazem" },
+    "enriched": {
+      "indication": "Inhibiteur calcique non dihydropyridine pour traitement de l'hypertension artérielle, de l'angine de poitrine stable et de certains troubles du rythme cardiaque (fibrillation auriculaire).",
+      "dosage_adulte": "120 à 360 mg par jour en une ou deux prises selon la forme (LP). Dose initiale: 120 mg/jour, augmentation progressive.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Bradycardie, œdèmes des chevilles, constipation, maux de tête, bouffées de chaleur, fatigue, bloc auriculo-ventriculaire.",
+      "contre_indications": "Bradycardie sévère, bloc auriculo-ventriculaire 2e et 3e degré, insuffisance cardiaque sévère, grossesse, association au vérapamil.",
+      "conseil": "Ne jamais arrêter brutalement. Prendre à heure fixe. Surveiller la fréquence cardiaque et la tension. Eviter le jus de pamplemousse (augmente les taux sanguins).",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "VASTAREL",
+    "original": { "category": "CARDIO", "dci": "Trimétazidine" },
+    "enriched": {
+      "indication": "Anti-ischémique métabolique pour traitement préventif des crises d'angine de poitrine (angor) en association aux autres traitements anti-angineux.",
+      "dosage_adulte": "35 mg 2 fois par jour au cours des repas (forme LP). Ne pas écraser ni croquer.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Nausées, vomissements, vertiges, maux de tête. Rarement: troubles du mouvement (tremblements, rigidité musculaire) surtout chez la personne âgée.",
+      "contre_indications": "Maladie de Parkinson ou troubles du mouvement, allergie à la trimétazidine, insuffisance rénale sévère. Personnes âgées: surveillance accrue.",
+      "conseil": "Prendre au cours des repas. Ne pas écraser les comprimés LP. Signaler immédiatement tout tremblement ou trouble du mouvement. Traitement d'appoint: ne remplace pas les traitements principaux de l'angor.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Flecalur",
+    "original": { "category": "CARDIO", "dci": "Flécaïnide" },
+    "enriched": {
+      "indication": "Antiarythmique de classe IC pour traitement des troubles du rythme cardiaque: tachycardies supraventriculaires, fibrillation auriculaire paroxystique, tachycardies ventriculaires.",
+      "dosage_adulte": "Dose initiale: 50 mg 2 fois par jour. Augmentation possible jusqu'à 200 mg 2 fois par jour selon le trouble du rythme. Dose minimale efficace.",
+      "dosage_enfant": "Sur prescription stricte du cardiopédiatre uniquement.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, vision trouble ou double, maux de tête, nausées, effets proarythmiques (aggravation du trouble du rythme), insuffisance cardiaque.",
+      "contre_indications": "Insuffisance cardiaque sévère, antécédents d'infarctus, troubles de la conduction sévères, insuffisance rénale ou hépatique sévère, allergie au flécaïnide.",
+      "conseil": "Prise à heure fixe matin et soir. Surveillance cardiaque (ECG) régulière obligatoire. Ne jamais augmenter la dose sans avis médical. Signaler immédiatement palpitations ou malaises.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Molsidomine Beker 2mg comp",
+    "original": { "category": "CARDIO", "dci": "Molsidomine" },
+    "enriched": {
+      "indication": "Vasodilatateur nitré de substitution pour prévention et traitement de l'angine de poitrine (angor) chez les patients intolérants aux dérivés nitrés classiques.",
+      "dosage_adulte": "2 mg 3 fois par jour. Peut être augmenté à 4 mg 3 fois par jour selon la réponse clinique.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Maux de tête (fréquents en début de traitement), hypotension orthostatique (vertiges au lever), bouffées de chaleur, tachycardie.",
+      "contre_indications": "Hypotension sévère, choc cardiogénique, allergie à la molsidomine. Association aux inhibiteurs de la phosphodiestérase (sildénafil, tadalafil): hypotension grave.",
+      "conseil": "Se lever doucement pour éviter les vertiges. Les maux de tête diminuent après quelques jours. Ne jamais associer avec le Viagra ou médicaments similaires. Prendre à heure fixe.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Amlodipine Beker 5mg Gelule",
+    "original": { "category": "CARDIO", "dci": "Amlodipine" },
+    "enriched": {
+      "indication": "Inhibiteur calcique pour traitement de l'hypertension artérielle essentielle et de l'angine de poitrine stable ou vasospastique.",
+      "dosage_adulte": "5 mg une fois par jour. Peut être augmenté à 10 mg/jour après 2 à 4 semaines si nécessaire.",
+      "dosage_enfant": "À partir de 6 ans: 2.5 à 5 mg/jour selon prescription médicale.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Œdèmes des chevilles (fréquents), bouffées de chaleur, maux de tête, palpitations, fatigue.",
+      "contre_indications": "Hypotension sévère, choc cardiogénique, allergie aux dihydropyridines, sténose aortique sévère.",
+      "conseil": "Peut être pris avec ou sans nourriture. Prendre à heure fixe. Ne jamais arrêter brutalement. Surveiller la tension régulièrement. Les œdèmes des chevilles peuvent être soulagés en surélévant les jambes.",
+      "forme": "Gélule",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Aldomet 250 mg comp enro",
+    "original": { "category": "CARDIO", "dci": "Méthyldopa" },
+    "enriched": {
+      "indication": "Antihypertenseur central pour traitement de l'hypertension artérielle, particulièrement recommandé pendant la grossesse comme traitement de référence.",
+      "dosage_adulte": "250 mg 2 à 3 fois par jour initialement. Augmentation progressive jusqu'à 2g/jour maximum en 2 à 4 prises.",
+      "dosage_enfant": "10 mg/kg/jour en 2 à 4 prises. Maximum 65 mg/kg/jour ou 3g/jour.",
+      "dosage_nourrisson": "Sur prescription médicale stricte.",
+      "effets_secondaires": "Somnolence (surtout en début), sécheresse buccale, vertiges, céphalées, fatigue, dépression, anémie hémolytique rare.",
+      "contre_indications": "Hépatite active, cirrhose hépatique, dépression sévère, phéochromocytome, allergie à la méthyldopa.",
+      "conseil": "Prendre à heure fixe. Peut provoquer de la somnolence en début de traitement. Surveiller la fonction hépatique. Antihypertenseur de référence pendant la grossesse. Ne jamais arrêter brutalement.",
+      "forme": "Comprimé",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Biprostene",
+    "original": { "category": "CARDIO", "dci": "Bisoprolol" },
+    "enriched": {
+      "indication": "Bêtabloquant cardiosélectif pour traitement de l'hypertension artérielle, de l'angine de poitrine et de l'insuffisance cardiaque chronique stable.",
+      "dosage_adulte": "Hypertension et angor: 5 à 10 mg une fois par jour le matin. Insuffisance cardiaque: dose initiale 1.25 mg/jour, augmentation très progressive jusqu'à 10 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Fatigue, extrémités froides, bradycardie, vertiges, troubles du sommeil. Moins de bronchospasme que les bêtabloquants non sélectifs.",
+      "contre_indications": "Asthme sévère, BPCO sévère, bradycardie sévère, bloc auriculo-ventriculaire 2e et 3e degré, insuffisance cardiaque décompensée.",
+      "conseil": "Ne jamais arrêter brutalement (risque d'infarctus ou d'arythmie grave). Prendre le matin à heure fixe. Surveiller la fréquence cardiaque. Peut masquer les symptômes d'hypoglycémie.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Minirinmelt 60 µg",
+    "original": { "category": "Endocrinologie et Diabète", "dci": "Desmopressine" },
+    "enriched": {
+      "indication": "Analogue de l'hormone antidiurétique (ADH) pour traitement du diabète insipide central, de l'énurésie nocturne primaire chez l'enfant et de la nycturie chez l'adulte.",
+      "dosage_adulte": "Nycturie: 60 à 240 µg au coucher selon la réponse. Diabète insipide: dose adaptée par le médecin selon la diurèse.",
+      "dosage_enfant": "Énurésie: 120 µg au coucher (forme orodispersible). Augmentation possible à 240 µg si réponse insuffisante.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hyponatrémie (baisse du sodium: maux de tête, nausées, convulsions si sévère), rétention hydrique, maux de tête.",
+      "contre_indications": "Polydipsie psychogène, insuffisance cardiaque, hyponatrémie, insuffisance rénale modérée à sévère, allergie à la desmopressine.",
+      "conseil": "Laisser fondre sous la langue (ne pas avaler). Restreindre les liquides 1 heure avant et 8 heures après la prise (risque d'hyponatrémie). Surveiller le sodium sanguin. Ne pas boire excessivement.",
+      "forme": "Comprimé",
+      "age_min": 5,
+      "age_max": 120,
+      "condition": "Diabète"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Athyrozol 5 mg",
+    "original": { "category": "Endocrinologie et Diabète", "dci": "Thiamazole" },
+    "enriched": {
+      "indication": "Antithyroïdien de synthèse pour traitement de l'hyperthyroïdie (maladie de Basedow, goitre toxique) et préparation à la chirurgie thyroïdienne.",
+      "dosage_adulte": "Dose initiale: 20 à 60 mg/jour en 2 à 3 prises selon la sévérité. Dose d'entretien: 5 à 20 mg/jour. Ajustée selon bilan thyroïdien.",
+      "dosage_enfant": "0.4 à 0.5 mg/kg/jour en 3 prises. Sur prescription médicale du pédiatre-endocrinologue.",
+      "dosage_nourrisson": "Sur prescription stricte en milieu spécialisé.",
+      "effets_secondaires": "Agranulocytose (baisse des globules blancs: risque d'infection grave, fièvre: urgence médicale), éruptions cutanées, nausées, arthralgies, hépatite médicamenteuse rare.",
+      "contre_indications": "Allergie au thiamazole, antécédents d'agranulocytose sous antithyroïdiens, grossesse (risque tératogène, préférer le propylthiouracile au 1er trimestre).",
+      "conseil": "Surveillance hématologique régulière obligatoire (NFS). Consulter immédiatement en cas de fièvre, maux de gorge ou infections (risque d'agranulocytose). Ne jamais arrêter brutalement.",
+      "forme": "Comprimé",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Diabète"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Stagid 700 mg comp",
+    "original": { "category": "Endocrinologie et Diabète", "dci": "Metformine" },
+    "enriched": {
+      "indication": "Antidiabétique biguanide pour traitement du diabète de type 2 chez l'adulte en association avec le régime alimentaire et l'exercice physique.",
+      "dosage_adulte": "700 mg 2 à 3 fois par jour au cours des repas. Augmentation progressive. Maximum 3g/jour.",
+      "dosage_enfant": "À partir de 10 ans: 500 à 700 mg 2 fois par jour. Maximum 2g/jour.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs fréquents en début de traitement: nausées, diarrhées, douleurs abdominales, perte d'appétit. Diminuent avec le temps.",
+      "contre_indications": "Insuffisance rénale sévère, insuffisance hépatique, insuffisance cardiaque, alcoolisme. Arrêt obligatoire avant injection de produit de contraste iodé.",
+      "conseil": "Toujours prendre au cours des repas pour réduire les effets digestifs. Surveiller la fonction rénale régulièrement. Arrêter avant tout examen avec produit de contraste iodé.",
+      "forme": "Comprimé",
+      "age_min": 10,
+      "age_max": 120,
+      "condition": "Diabète"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Diaphag 80 mg comp",
+    "original": { "category": "Endocrinologie et Diabète", "dci": "Gliclazide" },
+    "enriched": {
+      "indication": "Sulfamide hypoglycémiant pour traitement du diabète de type 2 chez l'adulte quand le régime alimentaire et l'exercice physique seuls sont insuffisants.",
+      "dosage_adulte": "Dose initiale: 40 à 80 mg par jour au petit-déjeuner. Augmentation progressive jusqu'à 320 mg/jour. Dose minimale efficace.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hypoglycémie (baisse du sucre: vertiges, sueurs, tremblements, confusion), prise de poids, troubles digestifs, réactions cutanées rares.",
+      "contre_indications": "Diabète de type 1, insuffisance rénale ou hépatique sévère, grossesse, allaitement, allergie aux sulfamides.",
+      "conseil": "Prendre le matin au petit-déjeuner. Avoir toujours du sucre sur soi. Surveiller la glycémie régulièrement. Eviter l'alcool (risque d'hypoglycémie).",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Diabète"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Isoptyl 40mg Gouttes Buv",
+    "original": { "category": "Neurologie & Psychiatrie", "dci": "Vérapamil" },
+    "enriched": {
+      "indication": "Inhibiteur calcique non dihydropyridine pour traitement des troubles du rythme cardiaque supraventriculaires, de l'hypertension artérielle et de la prévention des migraines.",
+      "dosage_adulte": "Troubles du rythme: 40 à 120 mg 3 fois par jour. Hypertension: 120 à 240 mg 2 fois par jour. Migraine: 120 à 240 mg/jour. Dose ajustée par le médecin.",
+      "dosage_enfant": "Sur prescription cardiologique stricte selon poids et indication.",
+      "dosage_nourrisson": "Usage hospitalier sous surveillance cardiaque continue.",
+      "effets_secondaires": "Constipation (fréquente), bradycardie, hypotension, fatigue, maux de tête, œdèmes. Bloc auriculo-ventriculaire possible.",
+      "contre_indications": "Bradycardie sévère, bloc auriculo-ventriculaire, insuffisance cardiaque sévère, hypotension, association aux bêtabloquants (risque de bloc), allergie au vérapamil.",
+      "conseil": "Ne jamais associer aux bêtabloquants sans surveillance cardiaque étroite. Prendre à heure fixe. Eviter le jus de pamplemousse. Surveiller la fréquence cardiaque. Ne jamais arrêter brutalement.",
+      "forme": "Gouttes",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Troubles neurologiques"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Rumava",
+    "original": { "category": "Immunologie", "dci": "Leflunomide" },
+    "enriched": {
+      "indication": "Immunosuppresseur antirhumatismal modificateur de la maladie (DMARD) pour traitement de la polyarthrite rhumatoïde active et du rhumatisme psoriasique actif chez l'adulte. Ralentit la progression des lésions articulaires.",
+      "dosage_adulte": "Dose de charge: 100 mg/jour pendant 3 jours (optionnelle). Dose d'entretien: 20 mg une fois par jour. Peut être réduite à 10 mg/jour si effets secondaires.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Diarrhées, nausées, douleurs abdominales, élévation des enzymes hépatiques, hypertension, chute de cheveux, éruptions cutanées, infections.",
+      "contre_indications": "Grossesse et allaitement (contraception obligatoire pendant et jusqu'à 2 ans après l'arrêt), insuffisance hépatique sévère, immunodéficience sévère, infections graves non contrôlées.",
+      "conseil": "Surveillance hépatique régulière obligatoire (transaminases). Contraception efficace obligatoire chez la femme en âge de procréer. Ne jamais arrêter sans avis médical. Procédure de washout nécessaire avant grossesse.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Inflammation"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "ZANIDIP",
+    "original": { "category": "CARDIO", "dci": "Lercanidipine" },
+    "enriched": {
+      "indication": "Inhibiteur calcique dihydropyridine de 3e génération pour traitement de l'hypertension artérielle essentielle chez l'adulte. Bonne tolérance digestive et moins d'œdèmes que les autres inhibiteurs calciques.",
+      "dosage_adulte": "10 mg une fois par jour le matin, au moins 15 minutes avant le petit-déjeuner. Peut être augmenté à 20 mg/jour si contrôle tensionnel insuffisant.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Œdèmes des chevilles (moins fréquents que l'amlodipine), bouffées de chaleur, maux de tête, palpitations, vertiges, fatigue.",
+      "contre_indications": "Insuffisance rénale ou hépatique sévère, grossesse, allaitement, insuffisance cardiaque non contrôlée, allergie aux dihydropyridines. Eviter le jus de pamplemousse.",
+      "conseil": "Prendre le matin 15 minutes avant le petit-déjeuner. Eviter absolument le jus de pamplemousse (augmente les taux sanguins). Ne jamais arrêter brutalement.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Zanidip 10 mg comp",
+    "original": { "category": "CARDIO", "dci": "Lercanidipine" },
+    "enriched": {
+      "indication": "Inhibiteur calcique pour traitement de l'hypertension artérielle essentielle chez l'adulte.",
+      "dosage_adulte": "10 mg une fois par jour le matin, au moins 15 minutes avant le petit-déjeuner. Augmentation possible à 20 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Œdèmes des chevilles, bouffées de chaleur, maux de tête, palpitations, vertiges.",
+      "contre_indications": "Insuffisance rénale ou hépatique sévère, grossesse, allaitement, insuffisance cardiaque non contrôlée.",
+      "conseil": "Prendre 15 minutes avant le petit-déjeuner. Eviter le jus de pamplemousse. Ne jamais arrêter brutalement. Surveiller la tension régulièrement.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Celecox 200mg gélule",
+    "original": { "category": "Douleur et Inflammation", "dci": "Célécoxib" },
+    "enriched": {
+      "indication": "Anti-inflammatoire non stéroïdien inhibiteur sélectif COX-2 pour traitement symptomatique de l'arthrose, polyarthrite rhumatoïde et spondylarthrite ankylosante chez l'adulte.",
+      "dosage_adulte": "Arthrose: 200 mg une fois par jour ou 100 mg deux fois par jour. Polyarthrite rhumatoïde: 100 à 200 mg deux fois par jour. Maximum 400 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs (moins fréquents que les AINS classiques), maux de tête, hypertension, œdèmes, risque cardiovasculaire accru en usage prolongé.",
+      "contre_indications": "Maladie cardiovasculaire établie, insuffisance rénale ou hépatique sévère, grossesse à partir du 6e mois, allergie aux sulfonamides ou aux AINS.",
+      "conseil": "Utiliser la dose minimale efficace pendant la durée la plus courte possible. Surveiller la tension artérielle. Peut être pris avec ou sans nourriture.",
+      "forme": "Gélule",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Inflammation"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Coxibrex 200 mg",
+    "original": { "category": "Douleur et Inflammation", "dci": "Célécoxib" },
+    "enriched": {
+      "indication": "Inhibiteur sélectif COX-2 pour traitement de l'arthrose, polyarthrite rhumatoïde et spondylarthrite ankylosante. Meilleure tolérance gastrique que les AINS classiques.",
+      "dosage_adulte": "200 mg une fois par jour ou 100 mg deux fois par jour. Peut être augmenté jusqu'à 400 mg/jour selon l'indication.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs modérés, hypertension, œdèmes, risque cardiovasculaire en usage prolongé.",
+      "contre_indications": "Maladie cardiovasculaire établie, insuffisance rénale ou hépatique sévère, grossesse à partir du 6e mois, allergie aux sulfonamides.",
+      "conseil": "Dose minimale efficace sur durée la plus courte. Surveiller la tension. Peut être pris à n'importe quel moment de la journée.",
+      "forme": "Gélule",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Inflammation"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Fradene 20 mg",
+    "original": { "category": "Douleur et Inflammation", "dci": "Piroxicam" },
+    "enriched": {
+      "indication": "Anti-inflammatoire non stéroïdien à longue durée d'action pour traitement des rhumatismes inflammatoires: polyarthrite rhumatoïde, arthrose, spondylarthrite et poussées de goutte.",
+      "dosage_adulte": "20 mg une fois par jour au cours d'un repas. Dose maximale: 20 mg/jour. Durée: la plus courte possible.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs (ulcère gastrique fréquent), maux de tête, vertiges, réactions cutanées sévères (syndrome de Stevens-Johnson possible), risque cardiovasculaire.",
+      "contre_indications": "Ulcère gastrique actif, insuffisance rénale ou hépatique sévère, grossesse à partir du 6e mois, allergie aux AINS, antécédents de réactions cutanées sévères.",
+      "conseil": "Toujours prendre avec un repas. Associer un protecteur gastrique (oméprazole). Durée maximale recommandée: 2 semaines. Signaler immédiatement toute éruption cutanée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Inflammation"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "No pain DS 550mg comp",
+    "original": { "category": "Douleur et Inflammation", "dci": "Naproxène sodique" },
+    "enriched": {
+      "indication": "Anti-inflammatoire non stéroïdien à longue durée d'action pour traitement des douleurs modérées à intenses: douleurs dentaires, dysménorrhée, douleurs musculaires, arthrose.",
+      "dosage_adulte": "550 mg (1 comprimé) en dose initiale, puis 275 mg toutes les 6 à 8 heures si nécessaire. Maximum 1375 mg le premier jour, puis 1100 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Troubles digestifs (nausées, brûlures, ulcère), maux de tête, vertiges, risque cardiovasculaire et rénal.",
+      "contre_indications": "Ulcère gastrique actif, insuffisance rénale ou hépatique sévère, grossesse à partir du 6e mois, allergie aux AINS.",
+      "conseil": "Prendre avec nourriture et un grand verre d'eau. Longue durée d'action: ne pas reprendre trop tôt. Ne pas dépasser 5 jours sans avis médical.",
+      "forme": "Comprimé",
+      "age_min": 15,
+      "age_max": 120,
+      "condition": "Douleur / Fièvre"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Supremase 150 mg",
+    "original": { "category": "Douleur et Inflammation", "dci": "Serratiopeptidase" },
+    "enriched": {
+      "indication": "Enzyme anti-inflammatoire et fibrinolytique pour réduction des œdèmes et des inflammations post-traumatiques ou post-chirurgicaux: entorses, contusions, œdèmes dentaires.",
+      "dosage_adulte": "150 mg 1 à 3 fois par jour à jeun selon l'indication. Durée: 1 à 4 semaines.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Très bien toléré. Troubles digestifs légers. Réactions allergiques très rares.",
+      "contre_indications": "Allergie à la serratiopeptidase. Troubles de la coagulation. Grossesse et allaitement: déconseillé par précaution.",
+      "conseil": "Prendre à jeun pour meilleure absorption (30 minutes avant les repas). Ne pas écraser les comprimés gastrorésistants.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Inflammation"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Xycare 5 mg",
+    "original": { "category": "Respiratoire", "dci": "Lévocétirizine Dihydrochloride" },
+    "enriched": {
+      "indication": "Antihistaminique de 2e génération pour traitement de la rhinite allergique saisonnière et perannuelle, de l'urticaire chronique idiopathique chez l'adulte et l'enfant.",
+      "dosage_adulte": "5 mg une fois par jour le soir. Peut être réduit à 2.5 mg/jour si insuffisance rénale.",
+      "dosage_enfant": "À partir de 6 ans: 2.5 mg le soir. À partir de 12 ans: 5 mg le soir.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Somnolence légère (plus que la cétirizine), maux de tête, sécheresse buccale, fatigue, nausées.",
+      "contre_indications": "Allergie à la lévocétirizine ou cétirizine, insuffisance rénale sévère, enfant de moins de 6 ans.",
+      "conseil": "Prendre le soir (peut provoquer légère somnolence). Peut être pris avec ou sans nourriture. Arrêter 48h avant un test allergologique cutané.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Allergie"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Ebasta 10 mg",
+    "original": { "category": "Respiratoire", "dci": "Ébastine" },
+    "enriched": {
+      "indication": "Antihistaminique non sédatif de 2e génération pour traitement de la rhinite allergique saisonnière et perannuelle et de l'urticaire chronique chez l'adulte et l'adolescent.",
+      "dosage_adulte": "10 mg une fois par jour. Peut être augmenté à 20 mg/jour dans les cas sévères.",
+      "dosage_enfant": "À partir de 12 ans: 10 mg une fois par jour.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Maux de tête, sécheresse buccale, somnolence très rare, nausées légères. Non sédatif à dose standard.",
+      "contre_indications": "Allergie à l'ébastine. Insuffisance hépatique sévère. Prudence avec médicaments allongeant le QT.",
+      "conseil": "Peut être pris avec ou sans nourriture à n'importe quel moment de la journée. Non sédatif: pas de restriction pour la conduite.",
+      "forme": "Comprimé",
+      "age_min": 12,
+      "age_max": 120,
+      "condition": "Allergie"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Dormazine 100 mg Comp DRG B/30",
+    "original": { "category": "Respiratoire", "dci": "Doxylamine" },
+    "enriched": {
+      "indication": "Antihistaminique sédatif pour traitement de courte durée des insomnies occasionnelles chez l'adulte.",
+      "dosage_adulte": "25 à 50 mg au coucher. Commencer par 25 mg si patient âgé ou sensible. Durée maximale: 2 semaines.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Somnolence diurne résiduelle, sécheresse buccale, constipation, rétention urinaire, confusion (personnes âgées).",
+      "contre_indications": "Glaucome à angle fermé, adénome prostatique, insuffisance hépatique sévère, enfant de moins de 15 ans, grossesse.",
+      "conseil": "Prendre 30 minutes avant le coucher. Eviter l'alcool. Ne pas conduire le lendemain matin (somnolence résiduelle possible). Usage de courte durée uniquement.",
+      "forme": "Comprimé",
+      "age_min": 15,
+      "age_max": 120,
+      "condition": "Troubles neurologiques"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Tobradex Cool Gel",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Tobramycine + Dexaméthasone" },
+    "enriched": {
+      "indication": "Association antibiotique-corticoïde ophtalmique pour traitement des inflammations oculaires avec risque ou présence d'infection bactérienne: conjonctivites bactériennes inflammatoires, blépharoconjonctivites.",
+      "dosage_adulte": "Appliquer 1 à 2 fois par jour dans le cul-de-sac conjonctival inférieur. Durée: 7 à 14 jours selon réponse clinique.",
+      "dosage_enfant": "Sur prescription de l'ophtalmologiste uniquement.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Légère vision trouble transitoire, sensation de brûlure, augmentation possible de la pression intraoculaire si usage prolongé.",
+      "contre_indications": "Infections virales oculaires (herpès), infections fongiques, allergie à la tobramycine ou dexaméthasone, glaucome non traité.",
+      "conseil": "Appliquer dans le cul-de-sac inférieur. Enlever les lentilles de contact. Surveiller la pression oculaire si traitement prolongé. Ne jamais utiliser sur œil rouge d'origine inconnue sans diagnostic.",
+      "forme": "Crème / Pommade",
+      "age_min": 2,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Cartéol L.P. 2%",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Carteolol hydrochloride" },
+    "enriched": {
+      "indication": "Bêtabloquant ophtalmique pour réduction de la pression intraoculaire dans le glaucome chronique à angle ouvert et l'hypertension oculaire.",
+      "dosage_adulte": "1 goutte dans l'œil atteint 2 fois par jour (matin et soir). Forme LP: 1 goutte une fois par jour.",
+      "dosage_enfant": "Sur prescription de l'ophtalmologiste uniquement.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Légère irritation locale, vision trouble transitoire. Effets systémiques possibles: bradycardie, bronchospasme, hypotension.",
+      "contre_indications": "Asthme, BPCO sévère, bradycardie sévère, bloc auriculo-ventriculaire, insuffisance cardiaque non contrôlée.",
+      "conseil": "Appuyer sur le coin interne de l'œil 1 minute après instillation pour réduire absorption systémique. Traitement chronique: ne jamais arrêter sans avis. Informer le cardiologue.",
+      "forme": "Gouttes",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Opticis 1 mg/ml",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Olopatadine" },
+    "enriched": {
+      "indication": "Antihistaminique et stabilisateur des mastocytes ophtalmique pour traitement de la conjonctivite allergique saisonnière: démangeaisons et rougeurs oculaires liées aux allergies.",
+      "dosage_adulte": "1 goutte dans chaque œil 2 fois par jour (matin et soir) espacées d'au moins 8 heures.",
+      "dosage_enfant": "À partir de 3 ans: même posologie que l'adulte.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Légère sensation de brûlure à l'instillation, maux de tête, goût amer, vision trouble transitoire.",
+      "contre_indications": "Allergie à l'olopatadine. Lentilles de contact souples: attendre 15 minutes après instillation.",
+      "conseil": "Se laver les mains avant utilisation. Attendre 15 minutes avant de remettre les lentilles. Peut être utilisé pendant toute la saison allergique.",
+      "forme": "Gouttes",
+      "age_min": 3,
+      "age_max": 120,
+      "condition": "Allergie"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Optipred 10 mg / ml F/5ml Collyre",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Prednisolone acetate" },
+    "enriched": {
+      "indication": "Corticoïde ophtalmique pour traitement des inflammations oculaires non infectieuses: uvéites antérieures, kératites, inflammation post-chirurgicale oculaire.",
+      "dosage_adulte": "1 à 2 gouttes dans l'œil atteint 4 à 6 fois par jour en phase aiguë. Diminution progressive selon réponse clinique.",
+      "dosage_enfant": "Sur prescription stricte de l'ophtalmologiste.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Augmentation de la pression intraoculaire (glaucome cortisonique), cataracte en usage prolongé, infections oculaires favorisées.",
+      "contre_indications": "Infections oculaires virales (herpès), bactériennes ou fongiques non traitées, glaucome non traité.",
+      "conseil": "Agiter avant utilisation. Surveiller la pression oculaire si traitement prolongé. Enlever les lentilles pendant le traitement. Ne pas utiliser longtemps sans contrôle ophtalmologique.",
+      "forme": "Gouttes",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Liposic 0.2% Gel",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Carbomère" },
+    "enriched": {
+      "indication": "Larme artificielle en gel pour traitement du syndrome de l'œil sec sévère et des kératoconjonctivites sèches lorsque les collyres classiques sont insuffisants.",
+      "dosage_adulte": "1 application dans le cul-de-sac conjonctival 3 à 5 fois par jour. De préférence le soir au coucher pour la forme gel épaisse.",
+      "dosage_enfant": "Peut être utilisé chez l'enfant sous surveillance médicale.",
+      "dosage_nourrisson": "Sur prescription médicale.",
+      "effets_secondaires": "Vision trouble transitoire après application (normale avec le gel). Très bien toléré. Réactions allergiques exceptionnelles.",
+      "contre_indications": "Allergie au carbomère ou aux conservateurs. Lentilles de contact: attendre 15 minutes.",
+      "conseil": "Le gel provoque une vision trouble temporaire après application: ne pas conduire immédiatement. Idéal au coucher. Conserver au réfrigérateur après ouverture.",
+      "forme": "Gouttes",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Naabak 4.9g/100ml Coll",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Acide N-acétyl aspartyl glutamique (NAAGA)" },
+    "enriched": {
+      "indication": "Collyre antiallergique pour traitement préventif et curatif de la conjonctivite allergique saisonnière et des réactions allergiques oculaires.",
+      "dosage_adulte": "1 à 2 gouttes dans chaque œil 4 fois par jour. Peut être utilisé en préventif avant l'exposition aux allergènes.",
+      "dosage_enfant": "À partir de 1 an: même posologie que l'adulte.",
+      "dosage_nourrisson": "Sur prescription médicale.",
+      "effets_secondaires": "Légère sensation de brûlure transitoire à l'instillation. Très bien toléré. Réactions allergiques exceptionnelles.",
+      "contre_indications": "Allergie aux composants. Compatible avec les lentilles de contact souples.",
+      "conseil": "Peut être utilisé en préventif dès le début de la saison allergique. Compatible avec le port de lentilles de contact. Se laver les mains avant utilisation.",
+      "forme": "Gouttes",
+      "age_min": 1,
+      "age_max": 120,
+      "condition": "Allergie"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Fluidabak 1.5% Collyre F/10ml",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Povidone" },
+    "enriched": {
+      "indication": "Larme artificielle à base de povidone pour traitement du syndrome de l'œil sec, sécheresse oculaire et inconfort lié aux lentilles de contact ou à l'environnement.",
+      "dosage_adulte": "1 à 2 gouttes dans chaque œil selon les besoins, plusieurs fois par jour.",
+      "dosage_enfant": "Peut être utilisé chez l'enfant.",
+      "dosage_nourrisson": "Sur prescription médicale.",
+      "effets_secondaires": "Très bien toléré. Vision légèrement trouble transitoire. Réactions allergiques exceptionnelles.",
+      "contre_indications": "Allergie à la povidone. Compatible avec les lentilles de contact souples.",
+      "conseil": "Peut être utilisé autant de fois que nécessaire. Compatible avec les lentilles de contact. Agiter avant emploi si nécessaire.",
+      "forme": "Gouttes",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Vibac 1.5% 10 mlCollyre",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Povidone iodée" },
+    "enriched": {
+      "indication": "Antiseptique ophtalmique à base de povidone iodée pour désinfection oculaire préopératoire et traitement des conjonctivites virales et bactériennes légères.",
+      "dosage_adulte": "1 à 2 gouttes dans l'œil atteint 4 à 6 fois par jour. En préopératoire: selon protocole chirurgical.",
+      "dosage_enfant": "Sur prescription de l'ophtalmologiste.",
+      "dosage_nourrisson": "Sur prescription stricte.",
+      "effets_secondaires": "Légère irritation oculaire, sensation de brûlure transitoire. Coloration légère de la conjonctive (temporaire).",
+      "contre_indications": "Allergie à l'iode ou à la povidone iodée. Hyperthyroïdie non traitée. Lentilles de contact: ne pas utiliser pendant le traitement.",
+      "conseil": "Enlever les lentilles de contact. Ne pas utiliser si allergie connue à l'iode. Signaler immédiatement toute réaction allergique.",
+      "forme": "Gouttes",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Clomycine 1% pde",
+    "original": { "category": "Ophtalmologie / ORL", "dci": "Chlortétracycline hydrochloride" },
+    "enriched": {
+      "indication": "Antibiotique tétracycline topique ophtalmique pour traitement des conjonctivites bactériennes, trachome, blépharites infectieuses et infections oculaires à chlamydia.",
+      "dosage_adulte": "Appliquer 1 cm de pommade dans le cul-de-sac conjonctival inférieur 3 à 4 fois par jour. Durée: 7 à 14 jours.",
+      "dosage_enfant": "À partir de 1 an: même application que l'adulte.",
+      "dosage_nourrisson": "Sur prescription médicale stricte.",
+      "effets_secondaires": "Vision trouble temporaire après application (normale avec pommade). Légère irritation locale. Réactions allergiques rares.",
+      "contre_indications": "Allergie aux tétracyclines. Port de lentilles de contact pendant le traitement.",
+      "conseil": "Appliquer en tirant doucement la paupière inférieure. Vision trouble normale après application de la pommade. Enlever les lentilles. Eviter contact avec les yeux après application des mains.",
+      "forme": "Crème / Pommade",
+      "age_min": 1,
+      "age_max": 120,
+      "condition": "Ophtalmologie / ORL"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Exval",
+    "original": { "category": "CARDIO", "dci": "Valsartan" },
+    "enriched": {
+      "indication": "Antagoniste des récepteurs de l'angiotensine II (sartan) pour traitement de l'hypertension artérielle, de l'insuffisance cardiaque et en post-infarctus du myocarde chez l'adulte.",
+      "dosage_adulte": "Hypertension: 80 à 320 mg une fois par jour. Post-infarctus: dose initiale 20 mg 2 fois/jour, augmentation progressive jusqu'à 160 mg 2 fois/jour. Insuffisance cardiaque: dose initiale 40 mg 2 fois/jour.",
+      "dosage_enfant": "À partir de 6 ans: 40 mg/jour si poids < 35 kg, 80 mg/jour si poids > 35 kg.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, hypotension, hyperkaliémie, élévation des enzymes hépatiques, fatigue.",
+      "contre_indications": "Grossesse (2e et 3e trimestre), allaitement, insuffisance hépatique sévère, association à l'aliskiren chez diabétiques ou insuffisants rénaux.",
+      "conseil": "Peut être pris avec ou sans nourriture à heure fixe. Surveiller la tension et la fonction hépatique. Ne jamais arrêter sans avis médical.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Extel",
+    "original": { "category": "CARDIO", "dci": "Telmisartan" },
+    "enriched": {
+      "indication": "Antagoniste des récepteurs de l'angiotensine II (sartan) pour traitement de l'hypertension artérielle essentielle et prévention cardiovasculaire chez les patients à haut risque.",
+      "dosage_adulte": "20 à 80 mg une fois par jour. Dose habituelle efficace: 40 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, hypotension, constipation, hyperkaliémie, élévation des enzymes hépatiques.",
+      "contre_indications": "Grossesse, allaitement, insuffisance hépatique sévère, obstruction biliaire, association à l'aliskiren chez diabétiques.",
+      "conseil": "Avaler entier avec un verre d'eau. Peut être pris avec ou sans nourriture, à heure fixe. Surveiller la tension régulièrement.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Aprovasc",
+    "original": { "category": "CARDIO", "dci": "Irbesartan + Amlodipine" },
+    "enriched": {
+      "indication": "Association fixe d'un sartan et d'un inhibiteur calcique pour traitement de l'hypertension artérielle essentielle insuffisamment contrôlée par monothérapie.",
+      "dosage_adulte": "1 comprimé par jour. Différents dosages disponibles (150/5mg, 150/10mg, 300/5mg, 300/10mg) selon besoin.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Œdèmes des chevilles (amlodipine), vertiges, maux de tête, hyperkaliémie, bouffées de chaleur.",
+      "contre_indications": "Grossesse (2e et 3e trimestre), insuffisance hépatique sévère, hypotension sévère, sténose aortique sévère.",
+      "conseil": "Prendre à heure fixe avec ou sans nourriture. Ne jamais arrêter sans avis médical. Surveiller la tension et le potassium.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "COTAREC",
+    "original": { "category": "CARDIO", "dci": "Valsartan + Hydrochlorothiazide" },
+    "enriched": {
+      "indication": "Association fixe d'un sartan et d'un diurétique thiazidique pour traitement de l'hypertension artérielle essentielle non contrôlée par le valsartan seul.",
+      "dosage_adulte": "1 comprimé par jour le matin. Dosages disponibles selon besoin (80/12.5mg, 160/12.5mg, 160/25mg).",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hypokaliémie, vertiges, hypotension, hyperuricémie, photosensibilité.",
+      "contre_indications": "Grossesse, allergie aux sulfamides, insuffisance rénale sévère, hypokaliémie sévère.",
+      "conseil": "Prendre le matin pour éviter les réveils nocturnes. Surveiller le potassium régulièrement. Protection solaire recommandée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "TELMISARTE +",
+    "original": { "category": "CARDIO", "dci": "Telmisartan + Hydrochlorothiazide" },
+    "enriched": {
+      "indication": "Association fixe d'un sartan et d'un diurétique thiazidique pour traitement de l'hypertension artérielle essentielle non contrôlée par le telmisartan seul.",
+      "dosage_adulte": "1 comprimé par jour (40/12.5mg ou 80/12.5mg ou 80/25mg selon prescription).",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hypokaliémie, vertiges, hypotension, photosensibilité, hyperuricémie.",
+      "contre_indications": "Grossesse, allergie aux sulfamides, insuffisance rénale ou hépatique sévère, obstruction biliaire.",
+      "conseil": "Prendre le matin avec ou sans nourriture. Surveiller le potassium et la tension. Protection solaire recommandée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "NOVAROL",
+    "original": { "category": "CARDIO", "dci": "Rosuvastatine" },
+    "enriched": {
+      "indication": "Hypolipémiant statine pour traitement de l'hypercholestérolémie et prévention des maladies cardiovasculaires chez l'adulte à risque.",
+      "dosage_adulte": "5 à 20 mg une fois par jour le soir. Dose initiale habituelle: 10 mg/jour. Maximum 40 mg/jour dans les cas sévères.",
+      "dosage_enfant": "À partir de 6 ans pour hypercholestérolémie familiale: dose adaptée par le spécialiste.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Maux de tête, douleurs musculaires (myalgies — surveiller), troubles digestifs, élévation des enzymes hépatiques.",
+      "contre_indications": "Maladie hépatique active, grossesse, allaitement, insuffisance rénale sévère, myopathie.",
+      "conseil": "Prendre le soir de préférence. Signaler immédiatement toute douleur musculaire inexpliquée. Bilan hépatique avant et pendant le traitement.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "ASPIRINE Cardio",
+    "original": { "category": "CARDIO", "dci": "Acide acétylsalicylique" },
+    "enriched": {
+      "indication": "Antiagrégant plaquettaire à faible dose pour prévention secondaire des accidents cardiovasculaires: infarctus du myocarde, AVC ischémique, chez les patients à risque.",
+      "dosage_adulte": "75 à 100 mg une fois par jour, de préférence au cours d'un repas.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Irritation gastrique, saignements digestifs, saignements prolongés, réactions allergiques.",
+      "contre_indications": "Allergie à l'aspirine ou aux AINS, ulcère gastrique actif, troubles de la coagulation, enfant de moins de 16 ans (syndrome de Reye), grossesse (3e trimestre).",
+      "conseil": "Prendre au cours d'un repas pour protéger l'estomac. Ne jamais arrêter sans avis médical. Informer tout professionnel de santé avant une intervention.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Exirb",
+    "original": { "category": "CARDIO", "dci": "Irbesartan" },
+    "enriched": {
+      "indication": "Antagoniste des récepteurs de l'angiotensine II (sartan) pour traitement de l'hypertension artérielle essentielle et néphropathie diabétique chez l'adulte.",
+      "dosage_adulte": "150 mg une fois par jour. Peut être augmenté à 300 mg/jour selon la réponse tensionnelle.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Vertiges, fatigue, hyperkaliémie, nausées. Pas de toux contrairement aux IEC.",
+      "contre_indications": "Grossesse (2e et 3e trimestre), allaitement, insuffisance hépatique sévère.",
+      "conseil": "Peut être pris avec ou sans nourriture. Personne âgée > 75 ans: débuter à 75 mg/jour. Surveiller la tension et le potassium.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "CRESTATINE",
+    "original": { "category": "CARDIO", "dci": "Rosuvastatine" },
+    "enriched": {
+      "indication": "Hypolipémiant statine pour traitement de l'hypercholestérolémie et prévention cardiovasculaire chez l'adulte à risque.",
+      "dosage_adulte": "5 à 20 mg une fois par jour le soir. Dose habituelle: 10 mg/jour. Maximum 40 mg/jour si nécessaire.",
+      "dosage_enfant": "À partir de 6 ans pour hypercholestérolémie familiale sur prescription du spécialiste.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Maux de tête, myalgies (douleurs musculaires), troubles digestifs, élévation des transaminases.",
+      "contre_indications": "Maladie hépatique active, grossesse, allaitement, myopathie, insuffisance rénale sévère.",
+      "conseil": "Prendre le soir. Signaler toute douleur musculaire persistante. Bilan hépatique régulier.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Superstat",
+    "original": { "category": "CARDIO", "dci": "Rosuvastatine" },
+    "enriched": {
+      "indication": "Hypolipémiant statine pour réduction du cholestérol LDL et prévention cardiovasculaire chez l'adulte.",
+      "dosage_adulte": "5 à 20 mg une fois par jour le soir. Dose initiale habituelle: 10 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Myalgies, maux de tête, troubles digestifs, élévation des enzymes hépatiques.",
+      "contre_indications": "Maladie hépatique active, grossesse, allaitement, myopathie.",
+      "conseil": "Prendre le soir. Surveiller les douleurs musculaires et la fonction hépatique régulièrement.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Cresovast",
+    "original": { "category": "CARDIO", "dci": "Rosuvastatine" },
+    "enriched": {
+      "indication": "Hypolipémiant statine pour traitement de l'hypercholestérolémie et prévention des événements cardiovasculaires.",
+      "dosage_adulte": "5 à 20 mg une fois par jour le soir. Maximum 40 mg/jour si nécessaire et sous surveillance.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Myalgies, maux de tête, troubles digestifs, élévation des enzymes hépatiques.",
+      "contre_indications": "Maladie hépatique active, grossesse, allaitement, myopathie, insuffisance rénale sévère.",
+      "conseil": "Prendre le soir de préférence. Signaler toute douleur musculaire. Bilan lipidique et hépatique réguliers.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "COVERAM",
+    "original": { "category": "CARDIO", "dci": "Périndopril + Amlodipine" },
+    "enriched": {
+      "indication": "Association fixe d'un IEC et d'un inhibiteur calcique pour traitement de l'hypertension artérielle et de l'angine de poitrine stable chez l'adulte.",
+      "dosage_adulte": "1 comprimé par jour le matin. Plusieurs dosages disponibles selon les doses de chaque composant.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Toux sèche (périndopril), œdèmes des chevilles (amlodipine), vertiges, maux de tête, bouffées de chaleur.",
+      "contre_indications": "Grossesse, antécédents d'angioedème sous IEC, hypotension sévère, sténose aortique sévère.",
+      "conseil": "Prendre le matin avec ou sans nourriture. Ne jamais arrêter brutalement. Surveiller la tension régulièrement.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "CO-APROVEL",
+    "original": { "category": "CARDIO", "dci": "Irbesartan + Hydrochlorothiazide" },
+    "enriched": {
+      "indication": "Association fixe d'un sartan et d'un diurétique thiazidique pour traitement de l'hypertension artérielle essentielle non contrôlée par l'irbesartan seul.",
+      "dosage_adulte": "1 comprimé par jour. Dosages disponibles: 150/12.5mg ou 300/12.5mg ou 300/25mg.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hypokaliémie, vertiges, hypotension, photosensibilité.",
+      "contre_indications": "Grossesse, allergie aux sulfamides, insuffisance rénale ou hépatique sévère.",
+      "conseil": "Prendre le matin avec ou sans nourriture. Surveiller le potassium régulièrement. Protection solaire recommandée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "CO-IRBEK",
+    "original": { "category": "CARDIO", "dci": "Irbesartan + Hydrochlorothiazide" },
+    "enriched": {
+      "indication": "Association fixe d'un sartan et d'un diurétique thiazidique pour traitement de l'hypertension artérielle essentielle non contrôlée par l'irbesartan seul.",
+      "dosage_adulte": "1 comprimé par jour le matin. Dosages disponibles: 150/12.5mg ou 300/12.5mg ou 300/25mg.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Hypokaliémie, vertiges, hypotension, photosensibilité, hyperuricémie.",
+      "contre_indications": "Grossesse, allergie aux sulfamides, insuffisance rénale ou hépatique sévère.",
+      "conseil": "Prendre le matin. Surveiller le potassium et la tension régulièrement. Protection solaire recommandée.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Acétylsalicylique 100mg",
+    "original": { "category": "CARDIO", "dci": "Acide acétylsalicylique" },
+    "enriched": {
+      "indication": "Antiagrégant plaquettaire à faible dose pour prévention secondaire des événements cardiovasculaires chez les patients à risque: post-infarctus, post-AVC ischémique.",
+      "dosage_adulte": "100 mg une fois par jour de préférence au cours d'un repas.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Irritation gastrique, saignements digestifs, ecchymoses, saignements prolongés.",
+      "contre_indications": "Allergie à l'aspirine, ulcère gastrique actif, troubles de la coagulation, enfant de moins de 16 ans.",
+      "conseil": "Prendre au cours d'un repas. Ne jamais arrêter sans avis médical. Informer le chirurgien ou dentiste avant toute opération.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Renipril 5mg",
+    "original": { "category": "CARDIO", "dci": "Enalapril" },
+    "enriched": {
+      "indication": "Inhibiteur de l'enzyme de conversion (IEC) pour traitement de l'hypertension artérielle et de l'insuffisance cardiaque chez l'adulte.",
+      "dosage_adulte": "Dose initiale: 5 mg une fois par jour. Dose d'entretien: 10 à 20 mg/jour en 1 à 2 prises. Maximum 40 mg/jour.",
+      "dosage_enfant": "À partir de 6 ans sur prescription cardiopédiatrique stricte selon le poids.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Toux sèche persistante, vertiges, hyperkaliémie, hypotension, angioedème rare mais grave.",
+      "contre_indications": "Grossesse, antécédents d'angioedème sous IEC, sténose bilatérale des artères rénales, hyperkaliémie.",
+      "conseil": "Peut être pris avec ou sans repas. Se lever doucement pour éviter les vertiges. Signaler toute toux persistante.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Renipril 20mg",
+    "original": { "category": "CARDIO", "dci": "Enalapril" },
+    "enriched": {
+      "indication": "Inhibiteur de l'enzyme de conversion (IEC) pour traitement de l'hypertension artérielle modérée à sévère et de l'insuffisance cardiaque chez l'adulte.",
+      "dosage_adulte": "10 à 20 mg une fois par jour. Dose d'entretien selon réponse tensionnelle. Maximum 40 mg/jour.",
+      "dosage_enfant": null,
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Toux sèche persistante, vertiges, hyperkaliémie, hypotension, angioedème rare.",
+      "contre_indications": "Grossesse, antécédents d'angioedème, sténose bilatérale des artères rénales, hyperkaliémie.",
+      "conseil": "Peut être pris avec ou sans repas, à heure fixe. Se lever doucement. Surveiller la tension et le potassium.",
+      "forme": "Comprimé",
+      "age_min": 18,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Lisinopril 20mg",
+    "original": { "category": "CARDIO", "dci": "Lisinopril" },
+    "enriched": {
+      "indication": "Inhibiteur de l'enzyme de conversion (IEC) pour traitement de l'hypertension artérielle, de l'insuffisance cardiaque et en post-infarctus du myocarde.",
+      "dosage_adulte": "10 à 20 mg une fois par jour. Dose d'entretien selon réponse. Maximum 80 mg/jour pour hypertension sévère.",
+      "dosage_enfant": "À partir de 6 ans pour hypertension: dose adaptée au poids sur prescription médicale.",
+      "dosage_nourrisson": null,
+      "effets_secondaires": "Toux sèche persistante, vertiges, hyperkaliémie, hypotension, angioedème rare.",
+      "contre_indications": "Grossesse, antécédents d'angioedème sous IEC, sténose bilatérale des artères rénales.",
+      "conseil": "Peut être pris avec ou sans repas, à heure fixe. Se lever doucement pour éviter les vertiges. Ne jamais arrêter sans avis médical.",
+      "forme": "Comprimé",
+      "age_min": 6,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
+  },
+  {
+    "id": "FIND_IN_SUPABASE",
+    "name": "Captopril 25mg",
+    "original": { "category": "CARDIO", "dci": "Captopril" },
+    "enriched": {
+      "indication": "Inhibiteur de l'enzyme de conversion (IEC) à courte durée d'action pour traitement de l'hypertension artérielle et de l'insuffisance cardiaque, notamment en situation aiguë.",
+      "dosage_adulte": "12.5 à 25 mg 2 à 3 fois par jour. Dose initiale plus faible chez le sujet âgé ou insuffisant rénal. Maximum 150 mg/jour.",
+      "dosage_enfant": "Sur prescription cardiopédiatrique selon le poids.",
+      "dosage_nourrisson": "En milieu hospitalier sur prescription stricte.",
+      "effets_secondaires": "Toux sèche, vertiges, hyperkaliémie, hypotension, troubles du goût, angioedème rare.",
+      "contre_indications": "Grossesse, antécédents d'angioedème, sténose bilatérale des artères rénales, hyperkaliémie.",
+      "conseil": "Prendre 1 heure avant les repas pour meilleure absorption. Se lever doucement. Surveiller la tension et le potassium.",
+      "forme": "Comprimé",
+      "age_min": 0,
+      "age_max": 120,
+      "condition": "Hypertension"
+    }
   }
 ]

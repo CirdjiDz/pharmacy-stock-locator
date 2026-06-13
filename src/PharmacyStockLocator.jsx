@@ -1471,7 +1471,7 @@ setIsUnlocked(true);
         </div>
 
         {showModal && (
-          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[99999] p-4">
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[9999999] p-4">
             <div className="bg-white rounded-3xl shadow-2xl w-full max-w-4xl p-8 relative z-[100000] max-h-[95vh] overflow-y-auto">
               <h2 className="text-3xl font-bold mb-6 text-gray-800">
                 {editingMedicine ? 'Editer Le Médicament' : 'Ajouter un Médicament'}
